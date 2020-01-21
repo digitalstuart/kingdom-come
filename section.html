@@ -10,16 +10,20 @@
 </head>
 
 <body>
-
+	<div id="style-selector-control" class="map-control">
+		<input type="radio" name="show-hide" id="hide-poi"
+          class="selector-control">
+		<label for="hide-poi">Hide</label>
+		<input type="radio" name="show-hide" id="show-poi"
+          class="selector-control" checked="checked">
+		<label for="show-poi">Show</label>
+	</div>
 	<div id="map"></div>
 
 	<script src="assets/js/map.js"></script>
 	<script src="assets/js/script.js"></script>
 	<script async defer
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6wPg4sL6mFGbTE_8-469dlsDYW-0F5-Q&callback=initMap">
-	</script>
-	<script type="text/javascript"
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6wPg4sL6mFGbTE_8-469dlsDYW-0F5-Q&libraries=places">
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6wPg4sL6mFGbTE_8-469dlsDYW-0F5-Q&libraries=places&callback=initMap">
 	</script>
 
 </body>
