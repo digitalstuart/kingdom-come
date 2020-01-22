@@ -16,6 +16,7 @@ function initMap() {
         map.setOptions({ styles: styles['default'] });
     });
 
+
     var request = {
         placeId: 'ChIJv-E6Ans1RUgR43eqb3GewPs',
         fields: ['name', 'formatted_address', 'place_id', 'geometry', 'rating', 'opening_hours']
@@ -39,13 +40,17 @@ function initMap() {
     });
 }
 
+
+
+
 var styles = {
     default: null,
     hide: [
-                {
+        {
             featureType: 'all',
             elementType: 'labels.icon',
             stylers: [{ visibility: 'off' }]
         }
+        
     ]
 };
