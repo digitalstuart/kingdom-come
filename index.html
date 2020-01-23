@@ -23,11 +23,11 @@
 				<div class="btn-group">
 					<button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Choose your town</button>
 					<div class="dropdown-menu">
-						<a class="dropdown-item">Dingle</a>
-						<a class="dropdown-item">Kenmare</a>
-						<a class="dropdown-item">Killarney</a>
-						<a class="dropdown-item">Listowel</a>
-						<a class="dropdown-item">Tralee</a>
+						<a class="dropdown-item" onclick="clickLinkDingle()">Dingle</a>
+						<a class="dropdown-item" onclick="clickLinkKenmare()">Kenmare</a>
+						<a class="dropdown-item" onclick="clickLinkKillarney()">Killarney</a>
+						<a class="dropdown-item" onclick="clickLinkListowel()">Listowel</a>
+						<a class="dropdown-item" onclick="clickLinkTralee()">Tralee</a>
 					</div>
 				</div>
 			</div>
@@ -39,7 +39,8 @@
 			<div class="col">
 				<div class="main-image">
 					<img id="dingle" src="assets/images/dingle.jpg" class="img-fluid" alt="Dingle Peninsula">
-                    <button onclick="imageSwap()">Test</button>
+                    <button onclick="mapTest()">Test</button>
+                    <div id="test">Empty test div</div>
 				</div>
 				</div>
 			</div>
@@ -73,14 +74,9 @@
 						</div>
 						<div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
 							data-parent="#accordionExample">
-							<div class="card-body">
-								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-								squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
-								quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
-								squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-								craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
-								butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
-								nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+							<div class="card-body" id="quote-one">
+								You don't get to Dingle by accident: it is on the way to nothing but itself. Travel
+								writer, Andrew McCarthy
 							</div>
 						</div>
 					</div>
@@ -92,14 +88,9 @@
 						</div>
 						<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
 							data-parent="#accordionExample">
-							<div class="card-body">
-								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-								squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
-								quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
-								squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-								craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
-								butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
-								nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+							<div class="card-body" id="quote-two">
+								It's beautiful. It's well worth the trip. It's something everyone should do if they get
+								the chance. Star Wars actor, Mark Hamill
 							</div>
 						</div>
 					</div>
@@ -111,14 +102,11 @@
 						</div>
 						<div id="collapseThree" class="collapse" aria-labelledby="headingThree"
 							data-parent="#accordionExample">
-							<div class="card-body">
-								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-								squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
-								quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it
-								squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-								craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
-								butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
-								nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+							<div class="card-body" id="quote-three">
+								Anchor a boat in the Blasket Sound on the edge of Europe. Climb to the top of An
+								BlascaodMór and look West. Imagine you can touch America, you can feel the past and
+								history of the people who went before you. There is an aura there, a feeling it’s
+								mystical. Unknown
 							</div>
 						</div>
 					</div>
