@@ -1,3 +1,13 @@
+let url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+ireland+tralee&key=AIzaSyAXPJDWXhzlAY0N8mMUcgFJ6yNSEd0vMg8";
+
+$.getJSON(url, function (data) {
+    for (let i = 0; i < data.results.length; i++) {
+        function mapTest() {
+            document.getElementById("test").innerHTML = data.results[i].formatted_address;
+        }
+    }
+});
+
 let quotes = '{ "quotesString" : [' +
     '{ "quote": "You do not get to Dingle by accident it is on the way to nothing but itself" , "who": "Andrew McCarthy travel writer" },' +
     '{ "quote": "It is beautiful. It is well worth the trip. It is something everyone should do if they get the chance" , "who": "Mark Hamill Star Wars actor" },' +
