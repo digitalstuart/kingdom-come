@@ -56,12 +56,3 @@ function clickLinkDingle() {
     document.getElementById("quote-two").innerHTML = quotesObject.quotesString[1].quote + " " + quotesObject.quotesString[1].who;
     document.getElementById("quote-three").innerHTML = quotesObject.quotesString[2].quote + " " + quotesObject.quotesString[2].who;
 }
-
-let mapSomething = JSON.parse('maps.json');
-
-console.log(mapSomething.results[0].formatted_address);
-
-function mapTest () {
-    document.getElementById("test").innerHTML = mapSomething.results[0].formatted_address;
-    document.getElementById("button-test").onclick = function() {mapTest()};
-}

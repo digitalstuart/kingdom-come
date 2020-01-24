@@ -1,56 +1,53 @@
+function loadJSON(callback) {
+
+    let xobj = new XMLHttpRequest();
+    xobj.open('GET', 'assets/maps.json', true);
+    xobj.onreadystatechange = function() {
+        if (xobj.readyState == 4 && xobj.status == "200") {
+
+            // .open will NOT return a value but simply returns undefined in async mode so use a callback
+            callback(xobj.responseText);
+
+        }
+    }
+    xobj.send(null);
+
+}
+
+// Call to function with anonymous callback
+loadJSON(function(response) {
+    jsonresponse = JSON.parse(response);
+    console.log(jsonresponse.results[1].geometry.location.lat);
+    
+    // Do Something with the response e.g.
+    //jsonresponse = JSON.parse(response);
+
+    // Assuming json data is wrapped in square brackets as Drew suggests
+    //console.log(jsonresponse[1].name);
+
+});
+
+function mapTest () {
+    document.getElementById("test").innerHTML = jsonresponse.results[1].formatted_address;    
+}
+
+document.getElementById("button-test").onclick = function() {mapTest()};
+
 function initMap() {
-    var map = new google.maps.Map(document.getElementById('map'), {
+    
+    let map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 52.272145, lng: -9.7164645 },
         zoom: 14,
         mapTypeControl: false
     });
-
-    var styleControl = document.getElementById('style-selector-control');
-    map.controls[google.maps.ControlPosition.TOP_LEFT].push(styleControl);
-
-    // Apply new JSON when the user chooses to hide/show features.
-    document.getElementById('hide-poi').addEventListener('click', function () {
-        map.setOptions({ styles: styles['hide'] });
+       
+        for (let i = 0; i < jsonresponse.results.length; i++) {
+        let lat = jsonresponse.results[i].geometry.location.lat;
+        let lng = jsonresponse.results[i].geometry.location.lng;
+        let latLng = new google.maps.LatLng(lat, lng);
+        let marker = new google.maps.Marker({
+            position: latLng,
+            map: map
     });
-    document.getElementById('show-poi').addEventListener('click', function () {
-        map.setOptions({ styles: styles['default'] });
-    });
-
-
-    var request = {
-        placeId: 'ChIJv-E6Ans1RUgR43eqb3GewPs',
-        fields: ['name', 'formatted_address', 'place_id', 'geometry', 'rating', 'opening_hours']
-    };
-
-    var infowindow = new google.maps.InfoWindow();
-    var service = new google.maps.places.PlacesService(map);
-
-    service.getDetails(request, function (place, status) {
-        if (status === google.maps.places.PlacesServiceStatus.OK) {
-            var marker = new google.maps.Marker({
-                map: map,
-                position: place.geometry.location
-            });
-            google.maps.event.addListener(marker, 'click', function () {
-                infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + 'Rating ' + place.rating + '<br>' +
-                    place.formatted_address + '</div>');
-                infowindow.open(map, this);
-            });
-        }
-    });
+    }
 }
-
-
-
-
-var styles = {
-    default: null,
-    hide: [
-        {
-            featureType: 'all',
-            elementType: 'labels.icon',
-            stylers: [{ visibility: 'off' }]
-        }
-        
-    ]
-};
