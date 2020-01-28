@@ -42,3 +42,15 @@ document.getElementById("dingle-link").addEventListener("click", function () { d
 document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("quote-one").innerHTML = quotesObject.quotesString[0].quote + " " + quotesObject.quotesString[0].who });
 document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("quote-two").innerHTML = quotesObject.quotesString[1].quote + " " + quotesObject.quotesString[1].who });
 document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("quote-three").innerHTML = quotesObject.quotesString[2].quote + " " + quotesObject.quotesString[2].who });
+
+function buttonText(x) {
+  if (x.matches) { // If media query matches
+    document.getElementById("button-text").innerHTML = "Choose your town<br>Roghnaigh do bhaile";
+  } else {
+    document.getElementById("button-text").innerHTML = "Choose your town/Roghnaigh do bhaile";
+  }
+}
+
+var x = window.matchMedia("(max-width: 768px)")
+buttonText(x) // Call listener function at run time
+x.addListener(buttonText) // Attach listener function on state changes

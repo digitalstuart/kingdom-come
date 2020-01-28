@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
+
 html {
     margin: 0;
     padding: 0;
@@ -5,11 +7,12 @@ html {
 
 .navbar {
     color: rgb(255, 221, 0);
-    background-color: #008c44;
+    background-color: #008c44;    
 }
 
 .navbar-brand {
     color: rgb(255, 221, 0);
+    font-family: "Courgette", sans-serif;
 }
 
 #background-image {
@@ -20,6 +23,32 @@ html {
 
 .btn-group {
     margin-top: 100px;
+}
+
+.btn, .show>.btn-secondary.dropdown-toggle, .btn-secondary:focus {
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;    
+}
+
+.show>.btn-secondary.dropdown-toggle:focus {
+    box-shadow: none;
+}
+
+.dropdown-toggle::after {
+    content: none;
+}
+
+.dropdown-menu {
+    background-color: transparent;
+    color: #fff;
+    box-shadow: none;
+    border: none;    
+}
+
+.dropdown-item {
+    text-align: center;
+    font-size: 1.25rem;
 }
 
 div#map {min-height: 360px;}
@@ -43,3 +72,11 @@ div#map {min-height: 360px;}
         line-height: 30px;
         vertical-align: baseline;
       }
+
+@media only screen and (max-width: 576px) {
+
+#navbar-text {
+    display: none;
+}
+
+}
