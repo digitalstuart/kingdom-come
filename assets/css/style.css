@@ -3,6 +3,25 @@ html {
     padding: 0;
 }
 
+.navbar {
+    color: rgb(255, 221, 0);
+    background-color: #008c44;
+}
+
+.navbar-brand {
+    color: rgb(255, 221, 0);
+}
+
+#background-image {
+    background: url("../images/dingle.jpg") no-repeat center center scroll;
+    background-size: cover;
+    height: 50vh;
+}
+
+.btn-group {
+    margin-top: 100px;
+}
+
 div#map {min-height: 360px;}
 
 .map-control {

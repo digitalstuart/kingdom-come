@@ -8,40 +8,28 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/style.css" type="text/css">
-    	<script src="assets/js/example.js"></script>
+	<script src="assets/js/example.js"></script>
 	<title>Kingdom Come</title>
 </head>
 
 <body>
-	<nav class="navbar navbar-light bg-light">
+	<nav class="navbar fixed-top">
 		<a class="navbar-brand" href="index.html">Kingdom Come</a>
 		<span>Visit Kerry and you'll want to stay forever</span>
 	</nav>
 
-	<section class="container-fluid">
+	<section class="container-fluid" id="background-image">
 		<div class="row">
 			<div class="col">
 				<div class="btn-group">
-					<button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Choose your town</button>
+					<button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Choose your town<br>Roghnaigh do bhaile</button>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" onclick="clickLinkDingle()">Dingle</a>
-						<a class="dropdown-item" onclick="clickLinkKenmare()">Kenmare</a>
-						<a class="dropdown-item" onclick="clickLinkKillarney()">Killarney</a>
-						<a class="dropdown-item" onclick="clickLinkListowel()">Listowel</a>
-						<a class="dropdown-item" onclick="clickLinkTralee()">Tralee</a>
+						<a class="dropdown-item" id="dingle-link">Dingle</a>
+						<a class="dropdown-item" id="kenmare-link">Kenmare</a>
+						<a class="dropdown-item" id="killarney-link">Killarney</a>
+						<a class="dropdown-item" id="listowel-link">Listowel</a>
+						<a class="dropdown-item" id="tralee-link">Tralee</a>
 					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="container-fluid">
-		<div class="row">
-			<div class="col">
-				<div class="main-image">
-					<img id="dingle" src="assets/images/dingle.jpg" class="img-fluid" alt="Dingle Peninsula">
-					<button id="button-test">Test</button>
-					<div id="test">Empty test div</div>
 				</div>
 			</div>
 		</div>
@@ -58,6 +46,8 @@
           class="selector-control" checked="checked">
 					<label for="show-poi">Show</label>
 				</div>
+				<button id="button-test">Test</button>
+				<div id="test">Empty test div</div>
 				<div id="map"></div>
 			</div>
 		</div>
@@ -129,14 +119,14 @@
 
 
 	<script src="assets/js/map.js"></script>
-	<script src="assets/js/script.js"></script>    
+	<script src="assets/js/script.js"></script>
 	<script
 		src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
 	</script>
 	<script async defer
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6wPg4sL6mFGbTE_8-469dlsDYW-0F5-Q&libraries=places&callback=initMap">
 	</script>
-    <!-- Do I need this? -->
+	<!-- Do I need this? -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
