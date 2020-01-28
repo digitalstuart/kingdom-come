@@ -18,7 +18,7 @@ html {
 #background-image {
     background: url("../images/dingle.jpg") no-repeat center center scroll;
     background-size: cover;
-    height: 50vh;
+    height: 100vh;
 }
 
 .btn-group {
@@ -48,7 +48,7 @@ html {
 
 .dropdown-item {
     text-align: center;
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
 
 div#map {min-height: 360px;}
