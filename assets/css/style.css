@@ -51,6 +51,40 @@ html {
     font-size: 1rem;
 }
 
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.flex-item {
+    position: relative;
+}
+
+.flex-item:not(:last-child) {
+    margin-right: 2rem;
+}
+
+.three-things {
+    margin-top: 20rem;
+    color: #fff;
+}
+
+.three-things-image {     
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+}
+
+.three-things-text {
+    color: black;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
 div#map {min-height: 360px;}
 
 .map-control {
@@ -77,6 +111,12 @@ div#map {min-height: 360px;}
 
 #navbar-text {
     display: none;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 }
