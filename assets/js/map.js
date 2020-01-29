@@ -1,3 +1,5 @@
+var JSONresponse;
+
 function loadJSON(callback) {
 
     let xobj = new XMLHttpRequest();
@@ -17,7 +19,8 @@ function loadJSON(callback) {
 // Call to function with anonymous callback
 loadJSON(function(response) {
     JSONresponse = JSON.parse(response);
-    console.log(JSONresponse.results[1].name);
+    console.log(JSONresponse);
+    console.log(JSONresponse.results[0].name);
     
     // Do Something with the response e.g.
     //jsonresponse = JSON.parse(response);
