@@ -1,7 +1,7 @@
 let quotes = '{ "quotesString" : [' +
-    '{ "quote": "You do not get to Dingle by accident it is on the way to nothing but itself" , "who": "Andrew McCarthy travel writer" },' +
-    '{ "quote": "It is beautiful. It is well worth the trip. It is something everyone should do if they get the chance" , "who": "Mark Hamill Star Wars actor" },' +
-    '{ "quote": "You can feel the past and history of the people who went before you. There is an aura there, a feeling it’s mystical" , "who": "Unknown" },' +
+    '{ "quote": "It is beautiful. It is well worth the trip. It is something everyone should do if they get the chance." , "who": "Mark Hamill, Star Wars actor" },' +
+    '{ "quote": "You do not get to Dingle by accident. It is on the way to nothing but itself." , "who": "Andrew McCarthy, travel writer" },' +
+    '{ "quote": "You can feel the past and history of the people who went before you. There is an aura there, a feeling, it is mystical." , "who": "Joe Bloggs, tourist" },' +
     '{ "quote": "Kenmare quote 1" , "who": "Kenmare person 1" },' +
     '{ "quote": "Kenmare quote 2" , "who": "Kenmare person 2" },' +
     '{ "quote": "Kenmare quote 3" , "who": "Kenmare person 3" },' +
@@ -54,3 +54,23 @@ function buttonText(x) {
 var x = window.matchMedia("(max-width: 768px)")
 buttonText(x) // Call listener function at run time
 x.addListener(buttonText) // Attach listener function on state changes
+
+//Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+document.getElementById("myBtn").addEventListener("click", function topFunction() {
+  let myDiv = document.getElementById("scroll-point");
+  scrollTo(myDiv, 0, 100);
+});

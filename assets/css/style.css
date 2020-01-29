@@ -133,8 +133,7 @@ div#map {min-height: 360px;}
         vertical-align: baseline;
       }
 
-#accordionExample {
-    font-family: "Courgette", sans-serif;
+#accordionExample {    
     margin-top: 2rem;
 }
 
@@ -147,7 +146,7 @@ div#map {min-height: 360px;}
 }
 
 .accordion>.card>.card-header {
-    border-radius: 25px;
+    border-radius: 10px;
 }
 
 .card {
@@ -163,11 +162,36 @@ div#map {min-height: 360px;}
 .card-body {
     padding-top: 1rem;
     padding-bottom: 0;
+    font-family: "Courgette", sans-serif;
 }
 
 .quotes {
     color: rgb(255, 221, 0);
     font-size: 27px;
+}
+
+#myBtn {
+  display: none; 
+  position: fixed; 
+  bottom: 20px; 
+  right: 15px; 
+  z-index: 99;  
+  outline: none; 
+  background-color: #008c44; 
+  color: rgb(255, 221, 0); 
+  cursor: pointer; 
+  padding-top: 8.5px;
+  padding-bottom: 8.5px;
+  padding-left: 15px; 
+  padding-right: 15px;
+  border-radius: 10px; 
+  border: 1px solid black;
+  font-size: 1.25rem; 
+}
+
+#myBtn:hover {
+  background-color: rgb(255, 221, 0); 
+  color: #008c44;
 }
 
 /* Bounce down arrow */
