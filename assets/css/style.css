@@ -1,8 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Uncial+Antiqua&display=swap');
 
 html {
     margin: 0;
-    padding: 0;
+    padding: 0;    
+}
+
+body {
+    font-family: "Uncial Antiqua", sans-serif;
 }
 
 .navbar {
@@ -11,8 +15,7 @@ html {
 }
 
 .navbar-brand {
-    color: rgb(255, 221, 0);
-    font-family: "Courgette", sans-serif;
+    color: rgb(255, 221, 0);    
 }
 
 #background-image {
@@ -22,7 +25,7 @@ html {
 }
 
 .btn-group {
-    margin-top: 100px;
+    margin-top: 4rem;
 }
 
 .btn, .show>.btn-secondary.dropdown-toggle, .btn-secondary:focus {
@@ -46,31 +49,36 @@ html {
     border: none;    
 }
 
-.dropdown-item {
-    text-align: center;
+.dropdown-menu.show {
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-item {    
     font-size: 1rem;
 }
 
 .flex-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
 }
 
 .flex-item {
-    position: relative;
+    position: relative;    
 }
 
 .flex-item:not(:last-child) {
-    margin-right: 2rem;
+    margin-bottom: 1rem;
 }
 
 .three-things {
-    margin-top: 20rem;
+    margin-top: 11rem;
     color: #fff;
 }
 
 .three-things-image {     
+    border: 2px solid #008c44;
     border-radius: 50%;
     max-width: 100%;
     height: auto;
@@ -111,12 +119,6 @@ div#map {min-height: 360px;}
 
 #navbar-text {
     display: none;
-}
-
-.flex-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 }
