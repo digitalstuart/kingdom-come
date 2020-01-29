@@ -45,7 +45,7 @@ document.getElementById("dingle-link").addEventListener("click", function () { d
 
 function buttonText(x) {
   if (x.matches) { // If media query matches
-    document.getElementById("button-text").innerHTML = "Choose your town<br>Roghnaigh do bhaile";
+    document.getElementById("button-text").innerHTML = "Choose your town";
   } else {
     document.getElementById("button-text").innerHTML = "Choose your town/Roghnaigh do bhaile";
   }
