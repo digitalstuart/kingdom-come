@@ -133,14 +133,6 @@ div#map {min-height: 360px;}
         vertical-align: baseline;
       }
 
-.container-accordion {
-    padding-left: 0;
-}
-
-.accordion {
-    width: 100vw;
-}
-
 #accordionExample {
     font-family: "Courgette", sans-serif;
     margin-top: 2rem;
@@ -154,12 +146,28 @@ div#map {min-height: 360px;}
     text-decoration: none;
 }
 
+.accordion>.card>.card-header {
+    border-radius: 25px;
+}
+
+.card {
+    margin-bottom: 1rem;
+    border: 0;
+}
+
 .card-header {    
-    background-color: #008c44;
+    background-color: #008c44;    
+    text-align: center;
+}
+
+.card-body {
+    padding-top: 1rem;
+    padding-bottom: 0;
 }
 
 .quotes {
     color: rgb(255, 221, 0);
+    font-size: 27px;
 }
 
 /* Bounce down arrow */
@@ -275,5 +283,4 @@ div#map {min-height: 360px;}
     font-size: 0.9rem;
 }
 
-}    
-
+}  
