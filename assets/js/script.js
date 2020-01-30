@@ -17,8 +17,21 @@ let quotes = '{ "quotesString" : [' +
 
 let quotesObject = JSON.parse(quotes);
 
+
+
 document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("background-image").style.backgroundImage = "url('assets/images/kenmare.jpg')" });
-document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("quote-one").innerHTML = quotesObject.quotesString[3].quote + " " + quotesObject.quotesString[3].who });
+document.getElementById("kenmare-link").addEventListener("click", function () {
+    let options = {
+    strings: [quotesObject.quotesString[3].quote],
+    typeSpeed: 40,
+    loop: true,
+    loopCount: Infinity,
+    showCursor: false
+};
+
+let typed = new Typed ('.quote-one', options);
+});
+
 document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("quote-two").innerHTML = quotesObject.quotesString[4].quote + " " + quotesObject.quotesString[4].who });
 document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("quote-three").innerHTML = quotesObject.quotesString[5].quote + " " + quotesObject.quotesString[5].who });
 
@@ -74,3 +87,4 @@ document.getElementById("myBtn").addEventListener("click", function topFunction(
   let myDiv = document.getElementById("scroll-point");
   scrollTo(myDiv, 0, 100);
 });
+
