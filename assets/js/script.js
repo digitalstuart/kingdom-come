@@ -18,40 +18,10 @@ let quotes = '{ "quotesString" : [' +
 let quotesObject = JSON.parse(quotes);
 
 document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("background-image").style.backgroundImage = "url('assets/images/kenmare.jpg')" });
-
-document.getElementById("kenmare-link").addEventListener("click", function () {
-    let options = {
-    strings: [quotesObject.quotesString[3].quote],
-    typeSpeed: 100,
-    loop: true,
-    loopCount: Infinity,
-    showCursor: false
-};
-let typed = new Typed ('.quote-one', options);
-});
-
-document.getElementById("kenmare-link").addEventListener("click", function () {
-    let options = {
-    strings: [quotesObject.quotesString[4].quote],
-    typeSpeed: 100,
-    loop: true,
-    loopCount: Infinity,
-    showCursor: false
-};
-let typed = new Typed ('.quote-two', options);
-});
-
-document.getElementById("kenmare-link").addEventListener("click", function () {
-    let options = {
-    strings: [quotesObject.quotesString[5].quote + " ^100 " + quotesObject.quotesString[6].who + " ^100 "],
-    typeSpeed: 100,
-    loop: true,
-    loopCount: Infinity,
-    showCursor: false, 
-    backSpeed: 50,
-};
-let typed = new Typed ('.quote-three', options);
-});
+document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("quote-one").innerHTML = quotesObject.quotesString[3].quote + " " + quotesObject.quotesString[3].who });
+document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("quote-two").innerHTML = quotesObject.quotesString[4].quote });
+document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("who-two").innerHTML = quotesObject.quotesString[4].who });
+document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("quote-three").innerHTML = quotesObject.quotesString[5].quote + " " + quotesObject.quotesString[5].who });
 
 document.getElementById("killarney-link").addEventListener("click", function () { document.getElementById("background-image").style.backgroundImage = "url('assets/images/killarney.jpg')" });
 document.getElementById("killarney-link").addEventListener("click", function () { document.getElementById("quote-one").innerHTML = quotesObject.quotesString[6].quote + " " + quotesObject.quotesString[6].who });
