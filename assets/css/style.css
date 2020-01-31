@@ -10,6 +10,25 @@ body {
     font-family: "Uncial Antiqua", sans-serif;
 }
 
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+}
+
+blockquote:before {
+  color: #ccc;  
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote p {
+  display: inline;
+}
+
 .navbar {
     color: rgb(255, 221, 0);
     background-color: #008c44;    
@@ -53,7 +72,7 @@ body {
     background-color: transparent;
     color: #fff;
     box-shadow: none;
-    border: none;    
+    border: none;   
 }
 
 .dropdown-menu.show {
@@ -64,7 +83,7 @@ body {
 .dropdown-item {    
     font-size: 1rem;
     cursor: pointer;
-    padding: .25rem 0;    
+    padding: .25rem 0;
 }
 
 .dropdown-item:first-child {
@@ -110,7 +129,6 @@ body {
     font-size: 0.9rem;
 }
 
-
 div#map {min-height: 360px;}
 
 .map-control {
@@ -132,6 +150,16 @@ div#map {min-height: 360px;}
         line-height: 30px;
         vertical-align: baseline;
       }
+
+#map-link {
+    position: absolute;
+    bottom: 30px;
+}
+
+#map-link > a {
+    color: #fff;
+    text-decoration: none;
+}
 
 #accordionExample {    
     margin-top: 2rem;
