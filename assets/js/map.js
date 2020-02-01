@@ -50,13 +50,13 @@ loadJSON(function(response) {
 
 function initMap() {
 
-    let restaurantsObject = JSON.parse(restaurants);
-
     let map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 52.272145, lng: -9.7164645 },
         zoom: 14,
         mapTypeControl: false
     });
+
+    let restaurantsObject = JSON.parse(restaurants);
 
     for (let i = 0; i < restaurantsObject.restaurantsString.length; i++) {
         let lat = restaurantsObject.restaurantsString[i].lat;
@@ -67,5 +67,16 @@ function initMap() {
             map: map
         });
 
-    }
+        let contentTest = restaurantsObject.restaurantsString[i].formatted_address + " " + restaurantsObject.restaurantsString[i].name;
+        let contentString = contentTest;
+        let infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+
+        marker.addListener('click', function () {
+            infowindow.open(map, marker);
+        });
+
+    };
 }
+
