@@ -32,7 +32,9 @@ loadJSON(function(response) {
 
 });
 
-*/       
+*/
+
+let gmarkers = [];
 
 let restaurants = '{ "restaurantsString" : [' +
     '{ "formatted_address": "2a Prince\'s St, Tralee, Co. Kerry, Ireland" , "lat": 52.26767539999999 , "lng": -9.709615399999999 , "name": "Il Pomo Doro Tralee Restaurant" , "rating": 4.5 , "user_ratings_total": 314},' +
@@ -79,95 +81,111 @@ function initMap() {
         mapTypeControl: false
     });
 
-    document.getElementById("eat").addEventListener("click", function() {
+    document.getElementById("eat").addEventListener("click", function () {
+
+        let restaurantsObject = JSON.parse(restaurants);
+
+        for (let i = 0; i < restaurantsObject.restaurantsString.length; i++) {
+            let lat = restaurantsObject.restaurantsString[i].lat;
+            let lng = restaurantsObject.restaurantsString[i].lng;
+            let latLng = new google.maps.LatLng(lat, lng);
+            let marker = new google.maps.Marker({
+                position: latLng,
+                map: map
+            });
+
+            gmarkers.push(marker);
+
+            let contentTest = restaurantsObject.restaurantsString[i].formatted_address + " " + restaurantsObject.restaurantsString[i].name;
+            let infowindow = new google.maps.InfoWindow({
+                content: contentTest
+            });
+
+            marker.addListener('mouseover', function () {
+                infowindow.open(map, marker);
+            });
+
+            marker.addListener('mouseout', function () {
+                infowindow.close();
+            });
+
+            document.getElementById("eat").addEventListener("click", function () {
+
+            for (i = 0; i < gmarkers.length; i++) {
+                gmarkers[i].setMap(null);
+            };
+
+        });
+
+        };       
+
+    });
+
     
-    let restaurantsObject = JSON.parse(restaurants);
 
-    for (let i = 0; i < restaurantsObject.restaurantsString.length; i++) {
-        let lat = restaurantsObject.restaurantsString[i].lat;
-        let lng = restaurantsObject.restaurantsString[i].lng;
-        let latLng = new google.maps.LatLng(lat, lng);
-        let marker = new google.maps.Marker({
-            position: latLng,
-            map: map
-        });
+    /* HOTELS */
 
-        let contentTest = restaurantsObject.restaurantsString[i].formatted_address + " " + restaurantsObject.restaurantsString[i].name;
-        let infowindow = new google.maps.InfoWindow({
-            content: contentTest
-        });
+    document.getElementById("stay").addEventListener("click", function () {
 
-        marker.addListener('mouseover', function () {
-            infowindow.open(map, marker);
-        });
+        let hotelsObject = JSON.parse(hotels);
 
-        marker.addListener('mouseout', function () {
-            infowindow.close();
-        });
+        for (let i = 0; i < hotelsObject.hotelsString.length; i++) {
+            let lat = hotelsObject.hotelsString[i].lat;
+            let lng = hotelsObject.hotelsString[i].lng;
+            let latLng = new google.maps.LatLng(lat, lng);
+            let marker = new google.maps.Marker({
+                position: latLng,
+                map: map
+            });
 
-    };
+            let contentTest = hotelsObject.hotelsString[i].formatted_address + " " + hotelsObject.hotelsString[i].name;
+            let infowindow = new google.maps.InfoWindow({
+                content: contentTest
+            });
 
-});
+            marker.addListener('mouseover', function () {
+                infowindow.open(map, marker);
+            });
 
-    document.getElementById("stay").addEventListener("click", function() {
+            marker.addListener('mouseout', function () {
+                infowindow.close();
+            });
 
-    let hotelsObject = JSON.parse(hotels);
+        };
 
-    for (let i = 0; i < hotelsObject.hotelsString.length; i++) {
-        let lat = hotelsObject.hotelsString[i].lat;
-        let lng = hotelsObject.hotelsString[i].lng;
-        let latLng = new google.maps.LatLng(lat, lng);
-        let marker = new google.maps.Marker({
-            position: latLng,
-            map: map
-        });        
+    });
 
-        let contentTest = hotelsObject.hotelsString[i].formatted_address + " " + hotelsObject.hotelsString[i].name;
-        let infowindow = new google.maps.InfoWindow({
-            content: contentTest
-        });
+    /* PUBS */
 
-        marker.addListener('mouseover', function () {
-            infowindow.open(map, marker);
-        });
+    document.getElementById("drink").addEventListener("click", function () {
 
-        marker.addListener('mouseout', function () {
-            infowindow.close();
-        });
+        let pubsObject = JSON.parse(pubs);
 
-    };
+        for (let i = 0; i < pubsObject.pubsString.length; i++) {
+            let lat = pubsObject.pubsString[i].lat;
+            let lng = pubsObject.pubsString[i].lng;
+            let latLng = new google.maps.LatLng(lat, lng);
+            let marker = new google.maps.Marker({
+                position: latLng,
+                map: map
+            });
 
-});
+            let contentTest = pubsObject.pubsString[i].formatted_address + " " + pubsObject.pubsString[i].name;
+            let infowindow = new google.maps.InfoWindow({
+                content: contentTest
+            });
 
-document.getElementById("drink").addEventListener("click", function() {
-    
-    let pubsObject = JSON.parse(pubs);
+            marker.addListener('mouseover', function () {
+                infowindow.open(map, marker);
+            });
 
-    for (let i = 0; i < pubsObject.pubsString.length; i++) {
-        let lat = pubsObject.pubsString[i].lat;
-        let lng = pubsObject.pubsString[i].lng;
-        let latLng = new google.maps.LatLng(lat, lng);
-        let marker = new google.maps.Marker({
-            position: latLng,
-            map: map
-        });
+            marker.addListener('mouseout', function () {
+                infowindow.close();
+            });
 
-        let contentTest = pubsObject.pubsString[i].formatted_address + " " + pubsObject.pubsString[i].name;
-        let infowindow = new google.maps.InfoWindow({
-            content: contentTest
-        });
+        };
 
-        marker.addListener('mouseover', function () {
-            infowindow.open(map, marker);
-        });
-
-        marker.addListener('mouseout', function () {
-            infowindow.close();
-        });
-
-    };
-
-});
+    });
 
 }
 
