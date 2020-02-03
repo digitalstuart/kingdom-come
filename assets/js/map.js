@@ -32,7 +32,7 @@ loadJSON(function(response) {
 
 });
 
-*/
+*/       
 
 let restaurants = '{ "restaurantsString" : [' +
     '{ "formatted_address": "2a Prince\'s St, Tralee, Co. Kerry, Ireland" , "lat": 52.26767539999999 , "lng": -9.709615399999999 , "name": "Il Pomo Doro Tralee Restaurant" , "rating": 4.5 , "user_ratings_total": 314},' +
@@ -57,8 +57,21 @@ let hotels = '{ "hotelsString" : [' +
     '{ "formatted_address": "Upper Castle Street, Cloonalour, Tralee, Co. Kerry, Ireland", "lat" : 52.2689218, "lng" : -9.702276099999999, "name" : "Benners Hotel Tralee", "rating" : 4.3, "user_ratings_total" : 412},' +
     '{ "formatted_address": "Leebrook, Tralee, Co. Kerry, V92 W279, Ireland", "lat" : 52.26106499999999, "lng" : -9.660157999999999, "name" : "Ballygarry House Hotel and Spa", "rating" : 4.7, "user_ratings_total" : 1111},' +
     '{ "formatted_address": "Mary St, Tralee, Co. Kerry, Ireland", "lat" : 52.26782499999999, "lng" : -9.7080758, "name" : "Tralee Holiday Lodge Guest Accommodation", "rating" : 3.8, "user_ratings_total" : 204} ]}';
-    
-    function initMap() {
+
+let pubs = '{ "pubsString" : [' +
+    '{ "formatted_address": "30 Lower Castle St, Cloonalour, Tralee, Co. Kerry, V92 N9FT, Ireland", "lat" : 52.26921300000001, "lng" : -9.703892999999999, "name": "Baily\'s Corner", "rating": 4.6, "user_ratings_total": 348},' +
+    '{ "formatted_address": "18 The Mall, Gallowsfields, Tralee, Co. Kerry, V92 DD5X, Ireland", "lat" : 52.2694564, "lng" : -9.704781100000002, "name" : "Paddy Mac\'s Pub", "rating" : 4.5, "user_ratings_total" : 205},' +
+    '{ "formatted_address": "27 The Mall, Balloonagh, Tralee, Co. Kerry, V92 HN40, Ireland", "lat" : 52.2696373, "lng" : -9.705735299999999, "name" : "An Teach Beag", "rating" : 4.3, "user_ratings_total" : 133},' +
+    '{ "formatted_address": "Rock St, Balloonagh, Tralee, Co. Kerry, Ireland", "lat" : 52.2701812, "lng" : -9.708096899999999, "name" : "Kirbys Brogue Inn", "rating" : 4.6, "user_ratings_total" : 1158},' +
+    '{ "formatted_address": "41 Bridge St, Tralee, Co. Kerry, Ireland", "lat" : 52.26920399999999, "lng" : -9.708067999999999, "name" : "Sean Ogs Bar & B&B", "rating" : 4.6, "user_ratings_total" : 432},' +
+    '{ "formatted_address": "77 Rock St, Gallowsfields, Tralee, Co. Kerry, Ireland", "lat" : 52.2721216, "lng" : -9.7073798, "name" : "The Castle Bar", "rating" : 4.6, "user_ratings_total" : 120},' +
+    '{ "formatted_address": "22 Castle St, Tralee, Co. Kerry, Ireland", "lat" : 52.2691403, "lng" : -9.702966999999999, "name" : "Turners Bar", "rating" : 4.4, "user_ratings_total" : 160},' +
+    '{ "formatted_address": "28 Lower Castle St, Cloonalour, Tralee, Co. Kerry, V92 AD60, Ireland", "lat" : 52.2692419, "lng" : -9.703685199999999, "name" : "The Blasket Bar", "rating" : 4.4, "user_ratings_total" : 292},' +
+    '{ "formatted_address": "5 Brogue maker\'s Ln, Gallowsfields, Tralee, Co. Kerry, V92 NA46, Ireland", "lat" : 52.2706652, "lng" : -9.7054466, "name" : "Roundy\'s Bar", "rating" : 4.4, "user_ratings_total" : 87},' +
+    '{ "formatted_address": "Pembroke St, Balloonagh, Tralee, Co. Kerry, Ireland", "lat" : 52.2715185, "lng" : -9.708596499999999, "name" : "The Greyhound Bar", "rating" : 4.6, "user_ratings_total" : 198} ]}';
+
+
+function initMap() {
 
     let map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 52.272145, lng: -9.7164645 },
@@ -66,7 +79,8 @@ let hotels = '{ "hotelsString" : [' +
         mapTypeControl: false
     });
 
-
+    document.getElementById("eat").addEventListener("click", function() {
+    
     let restaurantsObject = JSON.parse(restaurants);
 
     for (let i = 0; i < restaurantsObject.restaurantsString.length; i++) {
@@ -83,15 +97,19 @@ let hotels = '{ "hotelsString" : [' +
             content: contentTest
         });
 
-        marker.addListener('click', function () {
+        marker.addListener('mouseover', function () {
             infowindow.open(map, marker);
         });
 
-        map.addListener('click', function () {
+        marker.addListener('mouseout', function () {
             infowindow.close();
         });
 
     };
+
+});
+
+    document.getElementById("stay").addEventListener("click", function() {
 
     let hotelsObject = JSON.parse(hotels);
 
@@ -102,21 +120,54 @@ let hotels = '{ "hotelsString" : [' +
         let marker = new google.maps.Marker({
             position: latLng,
             map: map
-        });
+        });        
 
         let contentTest = hotelsObject.hotelsString[i].formatted_address + " " + hotelsObject.hotelsString[i].name;
         let infowindow = new google.maps.InfoWindow({
             content: contentTest
         });
 
-        marker.addListener('click', function () {
+        marker.addListener('mouseover', function () {
             infowindow.open(map, marker);
         });
 
-        map.addListener('click', function () {
+        marker.addListener('mouseout', function () {
             infowindow.close();
         });
 
     };
+
+});
+
+document.getElementById("drink").addEventListener("click", function() {
+    
+    let pubsObject = JSON.parse(pubs);
+
+    for (let i = 0; i < pubsObject.pubsString.length; i++) {
+        let lat = pubsObject.pubsString[i].lat;
+        let lng = pubsObject.pubsString[i].lng;
+        let latLng = new google.maps.LatLng(lat, lng);
+        let marker = new google.maps.Marker({
+            position: latLng,
+            map: map
+        });
+
+        let contentTest = pubsObject.pubsString[i].formatted_address + " " + pubsObject.pubsString[i].name;
+        let infowindow = new google.maps.InfoWindow({
+            content: contentTest
+        });
+
+        marker.addListener('mouseover', function () {
+            infowindow.open(map, marker);
+        });
+
+        marker.addListener('mouseout', function () {
+            infowindow.close();
+        });
+
+    };
+
+});
+
 }
 
