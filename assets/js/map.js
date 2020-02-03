@@ -68,13 +68,16 @@ function initMap() {
         });
 
         let contentTest = restaurantsObject.restaurantsString[i].formatted_address + " " + restaurantsObject.restaurantsString[i].name;
-        let contentString = contentTest;
         let infowindow = new google.maps.InfoWindow({
-            content: contentString
+            content: contentTest
         });
 
         marker.addListener('click', function () {
             infowindow.open(map, marker);
+        });        
+
+        map.addListener('click', function() {
+            infowindow.close();
         });
 
     };
