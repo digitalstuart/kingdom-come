@@ -2831,7 +2831,288 @@
             "establishment"
          ],
          "user_ratings_total" : 87
+      },
+      {
+         "formatted_address" : "Ballyard Rd, Ballyard, Tralee, Co. Kerry, Ireland",
+         "geometry" : {
+            "location" : {
+               "lat" : 52.261875,
+               "lng" : -9.711390099999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 52.26321367989272,
+                  "lng" : -9.710076070107279
+               },
+               "southwest" : {
+                  "lat" : 52.26051402010728,
+                  "lng" : -9.712775729892723
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+         "id" : "9d455424b96c405204797c6f50d59a8f61f95e1a",
+         "name" : "Tralee Bay Wetlands Eco & Activity Park",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3024,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118109286940537977943\"\u003eTim Goldsmith\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAA31LWCNAuFf6Ajo3HyxTvuIbkoJFOZNn5oePl5ptkJR6TGA2AAXcHeucAHiMRN0vVrfb9s-xIk-kN79G8PMCqvqEIwdNSzCXUDtFEObQ8y48TWqFonoGgAgbRpceNXIweEhCTkXBWQ1d8Ne6Z-MrMiORBGhR2qHL2a6CymFW4FBd-Ke45Z72TIw",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJWTyCH4BKRUgRHHyUH1UG3QA",
+         "plus_code" : {
+            "compound_code" : "776Q+QC Tralee, County Kerry",
+            "global_code" : "9C4G776Q+QC"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJWTyCH4BKRUgRHHyUH1UG3QA",
+         "types" : [
+            "tourist_attraction",
+            "amusement_park",
+            "park",
+            "point_of_interest",
+            "establishment"
+         ],
+         "user_ratings_total" : 532
+      },
+      {
+         "formatted_address" : "Ashe Memorial Hall,, Denny St, Tralee, Co. Kerry, V92 CXE3, Ireland",
+         "geometry" : {
+            "location" : {
+               "lat" : 52.2667702,
+               "lng" : -9.706156499999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 52.26814927989273,
+                  "lng" : -9.704959620107276
+               },
+               "southwest" : {
+                  "lat" : 52.26544962010728,
+                  "lng" : -9.70765927989272
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+         "id" : "6c77ced1a45e3d09968934d88cd73a7efd10e31f",
+         "name" : "Kerry County Museum",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 4000,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114181467624840042251\"\u003ehesham alnajjar\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAATY5rv-1HehZnJIMpP4hsd_6kxZenRA94-6MaFXE0tbxMZCjWHz6UkzJGhQgWKnqu5eUjMCuaVUAj2W7kyml0CCGOUTtPFNSTiK2fFbr8JDQACdRalKHa3Ply77zljVldEhCgUOFmmhZH3R0o5vhrB_zGGhRV99HtzCfqYvu3Ztq1fMiv6rCbng",
+               "width" : 6000
+            }
+         ],
+         "place_id" : "ChIJZfsN-Hs1RUgRjj0QKgEsvwQ",
+         "plus_code" : {
+            "compound_code" : "778V+PG Tralee, County Kerry",
+            "global_code" : "9C4G778V+PG"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJZfsN-Hs1RUgRjj0QKgEsvwQ",
+         "types" : [ "museum", "tourist_attraction", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 397
+      },
+      {
+         "formatted_address" : "Brewery Rd, Cloonalour, Tralee, Co. Kerry, Ireland",
+         "geometry" : {
+            "location" : {
+               "lat" : 52.274583,
+               "lng" : -9.700597999999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 52.27570187989271,
+                  "lng" : -9.699469470107278
+               },
+               "southwest" : {
+                  "lat" : 52.27300222010727,
+                  "lng" : -9.702169129892722
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/stadium-71.png",
+         "id" : "f42c8e3fb7d37346a7a7716d76bd5345a337fdca",
+         "name" : "Kingdom Greyhound Stadium",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 2268,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115862826111422097873\"\u003eChristine Picard\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAZhGlujVovShcw4vsjFauzKxJah_x6ZhXMU6haXpGgvWMhGWu9ljQ7X3pUJ77E67oruIecuqA8PqiXMm9BIdsLWp7qfsZ9UXApG9a1-AfasxwthIUYVSO7J_f1812i8G9EhBeaBLYwi5Sb5V8MC4Ekg6YGhTpCjLMaZFnDTAtXRdKG1oFcgj7yA",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJjVaEfWU1RUgRWRVW1VQickY",
+         "plus_code" : {
+            "compound_code" : "77FX+RQ Tralee, Cloonalour, Tralee, County Kerry",
+            "global_code" : "9C4G77FX+RQ"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJjVaEfWU1RUgRWRVW1VQickY",
+         "types" : [
+            "stadium",
+            "tourist_attraction",
+            "bar",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+         ],
+         "user_ratings_total" : 293
+      },
+      {
+         "formatted_address" : "Ratass, Tralee, Co. Kerry, Ireland",
+         "geometry" : {
+            "location" : {
+               "lat" : 52.2674564,
+               "lng" : -9.6783973
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 52.26847002989272,
+                  "lng" : -9.677134970107279
+               },
+               "southwest" : {
+                  "lat" : 52.26577037010727,
+                  "lng" : -9.679834629892722
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+         "id" : "ba7f8fc5adf847159d7c69f59336622b234cb81d",
+         "name" : "Rathass Church",
+         "photos" : [
+            {
+               "height" : 720,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113032603482549744884\"\u003eShelly Sands\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRZAAAAXJjisRiiMEnAtKBkAjU-4_BgS82BvFhm7CD-1PfGDHJ9ZlQGO9KF0g6V-LvZedTdH1fIUJffkbhUqsJnXz9owKWihXZ-flWORe8zU2g0iB_1m6W_NmimjxiGQ3sjSvB1EhCpUTo8fQF3G47EK_QjK9AhGhT1kq3lvzvUl5nha91k80wA7ZpzVQ",
+               "width" : 960
+            }
+         ],
+         "place_id" : "ChIJ_7c9bQs1RUgRauqHe2J9hsA",
+         "plus_code" : {
+            "compound_code" : "788C+XJ Tralee, County Kerry",
+            "global_code" : "9C4G788C+XJ"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJ_7c9bQs1RUgRauqHe2J9hsA",
+         "types" : [ "tourist_attraction", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 13
+      },
+      {
+         "formatted_address" : "Windmill Ln, Blennerville, Tralee, Co. Kerry, Ireland",
+         "geometry" : {
+            "location" : {
+               "lat" : 52.2568655,
+               "lng" : -9.736840899999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 52.25809872989272,
+                  "lng" : -9.735475320107279
+               },
+               "southwest" : {
+                  "lat" : 52.25539907010728,
+                  "lng" : -9.738174979892722
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+         "id" : "f1d40d45780e8977debce778e5b469bd7b00d713",
+         "name" : "Blennerville Windmill",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3024,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107976846612510855390\"\u003eKubanako\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAcVwnokpJRy-w_KkKoqZDLXrtDhH-rxgAF4D2ve6OGTLjQpnUE-o761bs9iZmzXVeNN1LkHJhb-mOLcjABzIBUq-ELVkV98I5UUjZ_0RWHBjaORUXmiFddwsbwFyTmpD2EhBsXkXtufxH5PkL0GlVpGm5GhTyqdLN7-AJlG9zeKQfOcWggL3e6w",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJ43oWbGBKRUgRMvjS_B8wFsY",
+         "plus_code" : {
+            "compound_code" : "7747+P7 Ballyvelly, County Kerry",
+            "global_code" : "9C4G7747+P7"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJ43oWbGBKRUgRMvjS_B8wFsY",
+         "types" : [ "tourist_attraction", "point_of_interest", "establishment" ],
+         "user_ratings_total" : 685
+      },
+      {
+         "formatted_address" : "Unit 18 Tralee Shopping Centre, Tralee, Co. Kerry, Ireland",
+         "geometry" : {
+            "location" : {
+               "lat" : 52.2701681,
+               "lng" : -9.707449499999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 52.27147567989272,
+                  "lng" : -9.706206970107278
+               },
+               "southwest" : {
+                  "lat" : 52.26877602010727,
+                  "lng" : -9.708906629892722
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+         "id" : "371893faa726349626596076ca4729469a768c0c",
+         "name" : "Jane Hilliard Gallery",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 1061,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117457691949230528375\"\u003eJane Hilliard Gallery\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAr3YEpT_8GgzFDMWn3IrM01ivSK5RQz-JlfWjzSSpdt_uHk7yyGZ3aa5f1XNAzY5tB35VPXQGUjw3tTiq31aJ8lMXRaOysHzcGCbdciNTLkA-X_wRo_VFBjRey6YJRcBTEhCmSERAs_edKco1MDTtZnwAGhTWT3mweeZBXATLJDYC26I5za8D2w",
+               "width" : 2963
+            }
+         ],
+         "place_id" : "ChIJpUqEC3s1RUgRUfjym9-xkco",
+         "plus_code" : {
+            "compound_code" : "77CV+32 Tralee, Cloonalour, Tralee, County Kerry",
+            "global_code" : "9C4G77CV+32"
+         },
+         "rating" : 5,
+         "reference" : "ChIJpUqEC3s1RUgRUfjym9-xkco",
+         "types" : [
+            "art_gallery",
+            "tourist_attraction",
+            "point_of_interest",
+            "establishment"
+         ],
+         "user_ratings_total" : 9
       }
    ],
+
    "status" : "OK"
 }
