@@ -1,9 +1,10 @@
+let gmarkers = [];
+
 function loadJSON(map) {
 
     let xobj = new XMLHttpRequest();
     xobj.open('GET', 'assets/tralee_restaurants.json', true);
-    xobj.onreadystatechange = function () {
-        console.log('hello')
+    xobj.onreadystatechange = function () {        
         if (xobj.readyState == 4 && xobj.status == "200") {
             let data = JSON.parse(xobj.responseText);
             markers(data.results, map);
@@ -11,8 +12,6 @@ function loadJSON(map) {
     }
     xobj.send(null);
 }
-
-let gmarkers = [];
 
 function initMap() {
 
@@ -55,27 +54,38 @@ function markers(data, map) {
 
 }
 
-console.log('hello 2')
+function eurgh() {
+let xobj = new XMLHttpRequest();
+    xobj.open('GET', 'assets/tralee_restaurants.json', true);
+    xobj.onreadystatechange = function () {        
+        if (xobj.readyState == 4 && xobj.status == "200") {
+            let data = JSON.parse(xobj.responseText);
+            markers(data.results, map);
+        }
+    }
+    xobj.send(null);
+
+function show(data, map) {
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].types[0] == "restaurant") {
+            gmarkers[i].setVisible(true);
+        }
+    }    
+}
+
+function hide(data, map) {
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].types[0] == "restaurant") {
+            gmarkers[i].setVisible(false);
+        }
+    }
+}
+
+hide("restaurant");
+
+}
 
 /*
-
-function show(data) {
-    for (var i = 0; i < data.length; i++) {
-        if (data[i].category == 'restaurants') {
-            data[i].setVisible(true);
-        }
-    }
-}
-
-function hide(data) {
-    for (var i = 0; i < data.length; i++) {
-        if (data[i].category == 'restaurants') {
-            data[i].setVisible(false);
-        }
-    }
-}
-
-hide("restaurants");
 
 hide("hotels");
 

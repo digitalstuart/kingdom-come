@@ -1,23 +1,16 @@
 /*
-
 var JSONresponse;
-
 function loadJSON(callback) {
-
     let xobj = new XMLHttpRequest();
     xobj.open('GET', 'assets/tralee_restaurants.json', true);
     xobj.onreadystatechange = function() {
         if (xobj.readyState == 4 && xobj.status == "200") {
-
             // .open will NOT return a value but simply returns undefined in async mode so use a callback
             callback(xobj.responseText);
-
         }
     }
     xobj.send(null);
-
 }
-
 // Call to function with anonymous callback
 loadJSON(function(response) {
     JSONresponse = JSON.parse(response);
@@ -26,12 +19,9 @@ loadJSON(function(response) {
     
     // Do Something with the response e.g.
     //jsonresponse = JSON.parse(response);
-
     // Assuming json data is wrapped in square brackets as Drew suggests
     //console.log(jsonresponse[1].name);
-
 });
-
 */
 
 let restaurantMarkers = [];
@@ -333,4 +323,3 @@ function initMap() {
           
 
 }
-
