@@ -1,13 +1,11 @@
-let gmarkers = [];
-
 function loadJSON(map) {
 
     let xobj = new XMLHttpRequest();
     xobj.open('GET', 'assets/tralee_restaurants.json', true);
-    xobj.onreadystatechange = function () {        
+    xobj.onreadystatechange = function () {
         if (xobj.readyState == 4 && xobj.status == "200") {
             let data = JSON.parse(xobj.responseText);
-            markers(data.results, map);
+            markers(data.results, map);            
         }
     }
     xobj.send(null);
@@ -22,7 +20,6 @@ function initMap() {
     });
 
     loadJSON(map);
-
 }
 
 function markers(data, map) {
@@ -33,9 +30,7 @@ function markers(data, map) {
         let marker = new google.maps.Marker({
             position: latLng,
             map: map
-        });
-
-        gmarkers.push(marker);
+        });        
 
         let mapContent = data[i].formatted_address + " " + data[i].name;
         let infowindow = new google.maps.InfoWindow({
@@ -53,58 +48,3 @@ function markers(data, map) {
     }
 
 }
-
-function eurgh() {
-let xobj = new XMLHttpRequest();
-    xobj.open('GET', 'assets/tralee_restaurants.json', true);
-    xobj.onreadystatechange = function () {        
-        if (xobj.readyState == 4 && xobj.status == "200") {
-            let data = JSON.parse(xobj.responseText);
-            markers(data.results, map);
-        }
-    }
-    xobj.send(null);
-
-function show(data, map) {
-    for (var i = 0; i < data.length; i++) {
-        if (data[i].types[0] == "restaurant") {
-            gmarkers[i].setVisible(true);
-        }
-    }    
-}
-
-function hide(data, map) {
-    for (var i = 0; i < data.length; i++) {
-        if (data[i].types[0] == "restaurant") {
-            gmarkers[i].setVisible(false);
-        }
-    }
-}
-
-hide("restaurant");
-
-}
-
-/*
-
-hide("hotels");
-
-hide("pubs");
-
-$(".checkbox").click(function () {
-
-    var cat = $(this).attr("value");
-
-    // If checked
-
-    if ($(this).is(":checked")) {
-        show(cat);
-    }
-
-    else {
-        hide(cat);
-    }
-
-});
-
-*/
