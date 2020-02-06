@@ -131,38 +131,85 @@ function initMap() {
 
     };
 
-    function show(category) {        
+    function show(restaurants) {
 
-        for (var i = 0; i < restaurantsObject.restaurantsString.length; i++) {
+        for (i = 0, j = 0, k = 0; i < restaurantsObject.restaurantsString.length && j < hotelsObject.hotelsString.length && k < pubsObject.pubsString.length; i++ , j++ , k++) {
 
             if (restaurantsObject.restaurantsString[i].category == 'restaurants') {
 
                 restaurantMarkers[i].setVisible(true);
 
             }
+
+            if (hotelsObject.hotelsString[i].category == 'hotels') {
+
+                hotelMarkers[i].setVisible(false);
+
+            }
+
+            if (pubsObject.pubsString[i].category == 'hotels') {
+
+                pubMarkers[i].setVisible(false);
+
+            }
+
         }
 
-        for (var i = 0; i < hotelsObject.hotelsString.length; i++) {
+    }
+
+    function show(hotels) {
+
+        for (i = 0, j = 0, k = 0; i < restaurantsObject.restaurantsString.length && j < hotelsObject.hotelsString.length && k < pubsObject.pubsString.length; i++ , j++ , k++) {
+
+            if (restaurantsObject.restaurantsString[i].category == 'restaurants') {
+
+                restaurantMarkers[i].setVisible(false);
+
+            }
 
             if (hotelsObject.hotelsString[i].category == 'hotels') {
 
                 hotelMarkers[i].setVisible(true);
 
             }
-        }
 
-        for (var i = 0; i < pubsObject.pubsString.length; i++) {
+            if (pubsObject.pubsString[i].category == 'hotels') {
 
-            if (pubsObject.pubsString[i].category == 'pubs') {
-
-                pubMarkers[i].setVisible(true);
+                pubMarkers[i].setVisible(false);
 
             }
+
         }
 
     }
 
-    function hide(category) {
+    function show(pubs) {
+
+        for (i = 0, j = 0, k = 0; i < restaurantsObject.restaurantsString.length && j < hotelsObject.hotelsString.length && k < pubsObject.pubsString.length; i++ , j++ , k++) {
+
+            if (restaurantsObject.restaurantsString[i].category == 'restaurants') {
+
+                restaurantMarkers[i].setVisible(false);
+
+            }
+
+            if (hotelsObject.hotelsString[i].category == 'hotels') {
+
+                hotelMarkers[i].setVisible(false);
+
+            }
+
+            if (pubsObject.pubsString[i].category == 'hotels') {
+
+                pubMarkers[i].setVisible(true);
+
+            }
+
+        }
+
+    }
+
+    function hide(cat) {
 
         for (var i = 0; i < restaurantsObject.restaurantsString.length; i++) {
 
