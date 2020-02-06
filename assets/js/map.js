@@ -1,4 +1,6 @@
-let markers = [];
+let restaurantMarkers = [];
+let hotelMarkers = [];
+let pubMarkers = [];
 
 let restaurants = '{ "restaurantsString" : [' +
     '{ "formatted_address": "2a Prince\'s St, Tralee, Co. Kerry, Ireland" , "lat": 52.26767539999999 , "lng": -9.709615399999999 , "name": "Il Pomo Doro Tralee Restaurant" , "rating": 4.5 , "user_ratings_total": 314 , "category": "restaurants"},' +
@@ -57,7 +59,7 @@ function initMap() {
             map: map
         });
 
-        markers.push(eatMarker);
+        restaurantMarkers.push(eatMarker);
 
         let mapContent = restaurantsObject.restaurantsString[i].formatted_address + " " + restaurantsObject.restaurantsString[i].name;
         let infowindow = new google.maps.InfoWindow({
@@ -84,6 +86,8 @@ function initMap() {
             map: map
         });
 
+        hotelMarkers.push(stayMarker);
+
         let mapContent = hotelsObject.hotelsString[i].formatted_address + " " + hotelsObject.hotelsString[i].name;
         let infowindow = new google.maps.InfoWindow({
             content: mapContent
@@ -109,6 +113,8 @@ function initMap() {
             map: map
         });
 
+        pubMarkers.push(drinkMarker);
+
         let mapContent = pubsObject.pubsString[i].formatted_address + " " + pubsObject.pubsString[i].name;
         let infowindow = new google.maps.InfoWindow({
             content: mapContent
@@ -125,16 +131,35 @@ function initMap() {
 
     };
 
-    function show(category) {
+    function show(category) {        
 
         for (var i = 0; i < restaurantsObject.restaurantsString.length; i++) {
 
             if (restaurantsObject.restaurantsString[i].category == 'restaurants') {
 
-                markers[i].setVisible(true);
+                restaurantMarkers[i].setVisible(true);
 
             }
         }
+
+        for (var i = 0; i < hotelsObject.hotelsString.length; i++) {
+
+            if (hotelsObject.hotelsString[i].category == 'hotels') {
+
+                hotelMarkers[i].setVisible(true);
+
+            }
+        }
+
+        for (var i = 0; i < pubsObject.pubsString.length; i++) {
+
+            if (pubsObject.pubsString[i].category == 'pubs') {
+
+                pubMarkers[i].setVisible(true);
+
+            }
+        }
+
     }
 
     function hide(category) {
@@ -143,13 +168,34 @@ function initMap() {
 
             if (restaurantsObject.restaurantsString[i].category == 'restaurants') {
 
-                markers[i].setVisible(false);
+                restaurantMarkers[i].setVisible(false);
 
             }
         }
+
+        for (var i = 0; i < hotelsObject.hotelsString.length; i++) {
+
+            if (hotelsObject.hotelsString[i].category == 'hotels') {
+
+                hotelMarkers[i].setVisible(false);
+
+            }
+        }
+
+        for (var i = 0; i < pubsObject.pubsString.length; i++) {
+
+            if (pubsObject.pubsString[i].category == 'pubs') {
+
+                pubMarkers[i].setVisible(false);
+
+            }
+        }
+
     }
 
     hide('restaurants')
+    hide('hotels')
+    hide('pubs')
 
     $(".checkbox").click(function () {
 
