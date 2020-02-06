@@ -64,10 +64,6 @@ blockquote p {
     box-shadow: none;
 }
 
-.dropdown-toggle::after {
-    content: none;
-}
-
 .dropdown-menu {
     background-color: transparent;
     color: #fff;
