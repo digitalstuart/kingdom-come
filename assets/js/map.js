@@ -1,18 +1,19 @@
+/*
+
 let restaurantMarkers = [];
 let hotelMarkers = [];
 let pubMarkers = [];
 
+*/
+
 let restaurants = '{ "restaurantsString" : [' +
-    '{ "formatted_address": "2a Prince\'s St, Tralee, Co. Kerry, Ireland" , "lat": 52.26767539999999 , "lng": -9.709615399999999 , "name": "Il Pomo Doro Tralee Restaurant" , "rating": 4.5 , "user_ratings_total": 314 , "category": "restaurants"},' +
-    '{ "formatted_address": "14 Prince\'s St, Tralee, Co. Kerry, V92 VX26, Ireland", "lat" : 52.2664082, "lng" : -9.710678699999999, "name" : "Croí Restaurant", "rating" : 4.7, "user_ratings_total" : 237 , "category": "restaurants"},' +
-    '{ "formatted_address": "6 Courthouse Ln, Cloonalour, Tralee, Co. Kerry, Ireland", "lat" : 52.2697118, "lng" : -9.7038691, "name" : "Chez Christophe", "rating" : 4.8, "user_ratings_total" : 87 , "category": "restaurants"},' +
-    '{ "formatted_address": "16 Abbey St, Tralee, Co. Kerry, Ireland", "lat" : 52.2690241, "lng" : -9.707827099999999, "name" : "Cassidy\'s Restaurants", "rating" : 4.6, "user_ratings_total" : 237 , "category": "restaurants"},' +
-    '{ "formatted_address": "11 Denny St, Tralee, Co. Kerry, V92 YFH0, Ireland", "lat" : 52.2684888, "lng" : -9.705575099999999, "name" : "Denny Lane Restaurant & Wine Bar", "rating" : 4.4, "user_ratings_total" : 132 , "category": "restaurants"},' +
-    '{ "formatted_address": "17 Denny St, Tralee, Co. Kerry, Ireland", "lat" : 52.2680726, "lng" : -9.7057906, "name" : "Finnegan\'s Restaurant & Wine Cellar", "rating" : 4.1, "user_ratings_total" : 65 , "category": "restaurants"},' +
-    '{ "formatted_address": "1-2 Ivy Terrace, Tralee, Co. Kerry, Ireland", "lat" : 52.2675049, "lng" : -9.7086284, "name" : "Bella Bia", "rating" : 4.7, "user_ratings_total" : 269 , "category": "restaurants"},' +
-    '{ "formatted_address": "2 Ashe St, Cloonalour, Tralee, Co. Kerry, V92 P7K3, Ireland", "lat" : 52.26956240000001, "lng" : -9.7042758, "name" : "Lana Tralee Asian Street Food", "rating" : 4.5, "user_ratings_total" : 440 , "category": "restaurants"},' +
-    '{ "formatted_address": "4 Ashe St, Cloonalour, Tralee, Co. Kerry, V92 CP29, Ireland", "lat" : 52.2695872, "lng" : -9.7042012, "name" : "Mozarts Tapas", "rating" : 4.4, "user_ratings_total" : 71 , "category": "restaurants"},' +
-    '{ "formatted_address": "1 The Mall, Balloonagh, Tralee, Co. Kerry, Ireland", "lat" : 52.2695745, "lng" : -9.706239699999999, "name" : "Quinlans Fresh Fish and Seafood Bar Tralee", "rating" : 4.7, "user_ratings_total" : 128 , "category": "restaurants"} ]}';
+    '{ "formatted_address": "Green Street, Dingle, County Kerry, Ireland" , "lat": 52.1415429 , "lng": -10.2704251 , "name": "The Fish Box/Flannery\'s Seafood Bar" , "rating": 5.0 , "user_ratings_total": 500},' +
+    '{ "formatted_address": "Main Street, Grove, Dingle, County Kerry, Ireland" , "lat" : 52.1415871 , "lng" : -10.2686796, "name" : "Land To Sea", "rating" : 5.0, "user_ratings_total" : 89},' +
+    '{ "formatted_address": "Lower Main Street, Grove, Dingle, County Kerry, Ireland" , "lat" : 52.1412065 , "lng" : -10.2672304, "name" : "Pantri Cafe", "rating" : 5.0, "user_ratings_total" : 136},' +
+    '{ "formatted_address": "Green Street, Dingle, County Kerry, Ireland" , "lat" : 52.140976 , "lng" : -10.271026, "name" : "Bean In Dingle", "rating" : 5.0, "user_ratings_total" : 351},' +
+    '{ "formatted_address": "Strand Street, Dingle, County Kerry, Ireland" , "lat" : 52.1393625 , "lng" : -10.2747959 , "name" : "James Long Pub", "rating" : 5.0, "user_ratings_total" : 103} ]}';
+
+/*
 
 let hotels = '{ "hotelsString" : [' +
     '{ "formatted_address": "V92 W56F, Maine St, Tralee, Co. Kerry, Ireland", "lat" : 52.2707571, "lng" : -9.7046674, "name": "The Ashe Hotel", "rating": 4.5, "user_ratings_total": 782 , "category": "hotels"},' +
@@ -38,17 +39,18 @@ let pubs = '{ "pubsString" : [' +
     '{ "formatted_address": "5 Brogue maker\'s Ln, Gallowsfields, Tralee, Co. Kerry, V92 NA46, Ireland", "lat" : 52.2706652, "lng" : -9.7054466, "name" : "Roundy\'s Bar", "rating" : 4.4, "user_ratings_total" : 87 , "category": "pubs"},' +
     '{ "formatted_address": "Pembroke St, Balloonagh, Tralee, Co. Kerry, Ireland", "lat" : 52.2715185, "lng" : -9.708596499999999, "name" : "The Greyhound Bar", "rating" : 4.6, "user_ratings_total" : 198 , "category": "pubs"} ]}';
 
+*/
+
 function initMap() {
 
     let map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: 52.272145, lng: -9.7164645 },
+        center: { lat: 52.1406427, lng: -10.2889963 },
         zoom: 14,
         mapTypeControl: false
     });
 
     let restaurantsObject = JSON.parse(restaurants);
-    let hotelsObject = JSON.parse(hotels);
-    let pubsObject = JSON.parse(pubs);
+    let image = 'https://i.imgur.com/M2nsXS1.png?1'
 
     for (let i = 0; i < restaurantsObject.restaurantsString.length; i++) {
         let lat = restaurantsObject.restaurantsString[i].lat;
@@ -56,10 +58,10 @@ function initMap() {
         let latLng = new google.maps.LatLng(lat, lng);
         let eatMarker = new google.maps.Marker({
             position: latLng,
-            map: map
+            map: map,
+            animation: google.maps.Animation.DROP,
+            icon: image
         });
-
-        restaurantMarkers.push(eatMarker);
 
         let mapContent = restaurantsObject.restaurantsString[i].formatted_address + " " + restaurantsObject.restaurantsString[i].name;
         let infowindow = new google.maps.InfoWindow({
@@ -77,6 +79,10 @@ function initMap() {
 
     };
 
+}
+
+/*
+
     for (let i = 0; i < hotelsObject.hotelsString.length; i++) {
         let lat = hotelsObject.hotelsString[i].lat;
         let lng = hotelsObject.hotelsString[i].lng;
@@ -85,8 +91,6 @@ function initMap() {
             position: latLng,
             map: map
         });
-
-        hotelMarkers.push(stayMarker);
 
         let mapContent = hotelsObject.hotelsString[i].formatted_address + " " + hotelsObject.hotelsString[i].name;
         let infowindow = new google.maps.InfoWindow({
@@ -113,8 +117,6 @@ function initMap() {
             map: map
         });
 
-        pubMarkers.push(drinkMarker);
-
         let mapContent = pubsObject.pubsString[i].formatted_address + " " + pubsObject.pubsString[i].name;
         let infowindow = new google.maps.InfoWindow({
             content: mapContent
@@ -131,118 +133,35 @@ function initMap() {
 
     };
 
-    function show(restaurants) {
-
-        for (i = 0, j = 0, k = 0; i < restaurantsObject.restaurantsString.length && j < hotelsObject.hotelsString.length && k < pubsObject.pubsString.length; i++ , j++ , k++) {
-
-            if (restaurantsObject.restaurantsString[i].category == 'restaurants') {
-
-                restaurantMarkers[i].setVisible(true);
-
-            }
-
-            if (hotelsObject.hotelsString[i].category == 'hotels') {
-
-                hotelMarkers[i].setVisible(false);
-
-            }
-
-            if (pubsObject.pubsString[i].category == 'hotels') {
-
-                pubMarkers[i].setVisible(false);
-
-            }
-
-        }
-
-    }
-
-    function show(hotels) {
-
-        for (i = 0, j = 0, k = 0; i < restaurantsObject.restaurantsString.length && j < hotelsObject.hotelsString.length && k < pubsObject.pubsString.length; i++ , j++ , k++) {
-
-            if (restaurantsObject.restaurantsString[i].category == 'restaurants') {
-
-                restaurantMarkers[i].setVisible(false);
-
-            }
-
-            if (hotelsObject.hotelsString[i].category == 'hotels') {
-
-                hotelMarkers[i].setVisible(true);
-
-            }
-
-            if (pubsObject.pubsString[i].category == 'hotels') {
-
-                pubMarkers[i].setVisible(false);
-
-            }
-
-        }
-
-    }
-
-    function show(pubs) {
-
-        for (i = 0, j = 0, k = 0; i < restaurantsObject.restaurantsString.length && j < hotelsObject.hotelsString.length && k < pubsObject.pubsString.length; i++ , j++ , k++) {
-
-            if (restaurantsObject.restaurantsString[i].category == 'restaurants') {
-
-                restaurantMarkers[i].setVisible(false);
-
-            }
-
-            if (hotelsObject.hotelsString[i].category == 'hotels') {
-
-                hotelMarkers[i].setVisible(false);
-
-            }
-
-            if (pubsObject.pubsString[i].category == 'hotels') {
-
-                pubMarkers[i].setVisible(true);
-
-            }
-
-        }
-
-    }
-
-    function hide(cat) {
-
-        for (var i = 0; i < restaurantsObject.restaurantsString.length; i++) {
-
-            if (restaurantsObject.restaurantsString[i].category == 'restaurants') {
-
-                restaurantMarkers[i].setVisible(false);
-
-            }
-        }
-
-        for (var i = 0; i < hotelsObject.hotelsString.length; i++) {
-
-            if (hotelsObject.hotelsString[i].category == 'hotels') {
-
-                hotelMarkers[i].setVisible(false);
-
-            }
-        }
-
-        for (var i = 0; i < pubsObject.pubsString.length; i++) {
-
-            if (pubsObject.pubsString[i].category == 'pubs') {
-
-                pubMarkers[i].setVisible(false);
-
-            }
-        }
-
-    }
-
     hide('restaurants')
     hide('hotels')
     hide('pubs')
+
+    function show() {
+
+        for (i = 0, j = 0, k = 0; i < restaurantsObject.restaurantsString.length && j < hotelsObject.hotelsString.length && k < pubsObject.pubsString.length; i++ , j++ , k++) {
+
+            if (pubsObject.pubsString[k].category == 'pubs') {
+
+                restaurantMarkers[i].setVisible(false);
+                hotelMarkers[i].setVisible(false);
+                pubMarkers[i].setVisible(true)
+            }
+        }
+    }
+
+    function hide() {
+
+        for (i = 0, j = 0, k = 0; i < restaurantsObject.restaurantsString.length && j < hotelsObject.hotelsString.length && k < pubsObject.pubsString.length; i++ , j++ , k++) {
+
+            if (pubsObject.pubsString[i].category == 'pubs') {
+
+                restaurantMarkers[i].setVisible(false);
+                hotelMarkers[i].setVisible(false);
+                pubMarkers[i].setVisible(false)
+            }
+        }
+    }
 
     $(".checkbox").click(function () {
 
@@ -264,4 +183,4 @@ function initMap() {
 
     });
 
-}
+*/
