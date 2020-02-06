@@ -1,32 +1,4 @@
-/*
-var JSONresponse;
-function loadJSON(callback) {
-    let xobj = new XMLHttpRequest();
-    xobj.open('GET', 'assets/tralee_restaurants.json', true);
-    xobj.onreadystatechange = function() {
-        if (xobj.readyState == 4 && xobj.status == "200") {
-            // .open will NOT return a value but simply returns undefined in async mode so use a callback
-            callback(xobj.responseText);
-        }
-    }
-    xobj.send(null);
-}
-// Call to function with anonymous callback
-loadJSON(function(response) {
-    JSONresponse = JSON.parse(response);
-    console.log(JSONresponse);
-    console.log(placesObject.placesString[0].name);
-    
-    // Do Something with the response e.g.
-    //jsonresponse = JSON.parse(response);
-    // Assuming json data is wrapped in square brackets as Drew suggests
-    //console.log(jsonresponse[1].name);
-});
-*/
-
-let restaurantMarkers = [];
-let hotelMarkers = [];
-let pubMarkers = [];
+let markers = [];
 
 let restaurants = '{ "restaurantsString" : [' +
     '{ "formatted_address": "2a Prince\'s St, Tralee, Co. Kerry, Ireland" , "lat": 52.26767539999999 , "lng": -9.709615399999999 , "name": "Il Pomo Doro Tralee Restaurant" , "rating": 4.5 , "user_ratings_total": 314 , "category": "restaurants"},' +
@@ -70,256 +42,133 @@ function initMap() {
         center: { lat: 52.272145, lng: -9.7164645 },
         zoom: 14,
         mapTypeControl: false
-    });    
+    });
 
-        let restaurantsObject = JSON.parse(restaurants);
-        let hotelsObject = JSON.parse(hotels);
-        let pubsObject = JSON.parse(pubs);
-                
-        for (let i = 0; i < restaurantsObject.restaurantsString.length; i++) {
-            let lat = restaurantsObject.restaurantsString[i].lat;
-            let lng = restaurantsObject.restaurantsString[i].lng;
-            let latLng = new google.maps.LatLng(lat, lng);
-            let eatMarker = new google.maps.Marker({
-                position: latLng,
-                map: map
-            });
+    let restaurantsObject = JSON.parse(restaurants);
+    let hotelsObject = JSON.parse(hotels);
+    let pubsObject = JSON.parse(pubs);
 
-            restaurantMarkers.push(eatMarker);            
+    for (let i = 0; i < restaurantsObject.restaurantsString.length; i++) {
+        let lat = restaurantsObject.restaurantsString[i].lat;
+        let lng = restaurantsObject.restaurantsString[i].lng;
+        let latLng = new google.maps.LatLng(lat, lng);
+        let eatMarker = new google.maps.Marker({
+            position: latLng,
+            map: map
+        });
 
-            let mapContent = restaurantsObject.restaurantsString[i].formatted_address + " " + restaurantsObject.restaurantsString[i].name;
-            let infowindow = new google.maps.InfoWindow({
-                content: mapContent
-            });
+        markers.push(eatMarker);
 
-            eatMarker.addListener('mouseover', function () {
-                infowindow.open(map, eatMarker);
-            });
+        let mapContent = restaurantsObject.restaurantsString[i].formatted_address + " " + restaurantsObject.restaurantsString[i].name;
+        let infowindow = new google.maps.InfoWindow({
+            content: mapContent
+        });
 
-            eatMarker.addListener('mouseout', function () {
-                infowindow.close();
-            });
-            
+        eatMarker.addListener('mouseover', function () {
+            infowindow.open(map, eatMarker);
+        });
 
-        };   
+        eatMarker.addListener('mouseout', function () {
+            infowindow.close();
+        });
 
-        for (let i = 0; i < hotelsObject.hotelsString.length; i++) {
-            let lat = hotelsObject.hotelsString[i].lat;
-            let lng = hotelsObject.hotelsString[i].lng;
-            let latLng = new google.maps.LatLng(lat, lng);
-            let stayMarker = new google.maps.Marker({
-                position: latLng,
-                map: map
-            });
 
-            hotelMarkers.push(stayMarker);            
+    };
 
-            let mapContent = hotelsObject.hotelsString[i].formatted_address + " " + hotelsObject.hotelsString[i].name;
-            let infowindow = new google.maps.InfoWindow({
-                content: mapContent
-            });
+    for (let i = 0; i < hotelsObject.hotelsString.length; i++) {
+        let lat = hotelsObject.hotelsString[i].lat;
+        let lng = hotelsObject.hotelsString[i].lng;
+        let latLng = new google.maps.LatLng(lat, lng);
+        let stayMarker = new google.maps.Marker({
+            position: latLng,
+            map: map
+        });
 
-            stayMarker.addListener('mouseover', function () {
-                infowindow.open(map, stayMarker);
-            });
+        let mapContent = hotelsObject.hotelsString[i].formatted_address + " " + hotelsObject.hotelsString[i].name;
+        let infowindow = new google.maps.InfoWindow({
+            content: mapContent
+        });
 
-            stayMarker.addListener('mouseout', function () {
-                infowindow.close();
-            });
-            
+        stayMarker.addListener('mouseover', function () {
+            infowindow.open(map, stayMarker);
+        });
 
-        };    
+        stayMarker.addListener('mouseout', function () {
+            infowindow.close();
+        });
 
-        for (let i = 0; i < pubsObject.pubsString.length; i++) {
-            let lat = pubsObject.pubsString[i].lat;
-            let lng = pubsObject.pubsString[i].lng;
-            let latLng = new google.maps.LatLng(lat, lng);
-            let drinkMarker = new google.maps.Marker({
-                position: latLng,
-                map: map
-            });
 
-            pubMarkers.push(drinkMarker);            
+    };
 
-            let mapContent = pubsObject.pubsString[i].formatted_address + " " + pubsObject.pubsString[i].name;
-            let infowindow = new google.maps.InfoWindow({
-                content: mapContent
-            });
+    for (let i = 0; i < pubsObject.pubsString.length; i++) {
+        let lat = pubsObject.pubsString[i].lat;
+        let lng = pubsObject.pubsString[i].lng;
+        let latLng = new google.maps.LatLng(lat, lng);
+        let drinkMarker = new google.maps.Marker({
+            position: latLng,
+            map: map
+        });
 
-            drinkMarker.addListener('mouseover', function () {
-                infowindow.open(map, drinkMarker);
-            });
+        let mapContent = pubsObject.pubsString[i].formatted_address + " " + pubsObject.pubsString[i].name;
+        let infowindow = new google.maps.InfoWindow({
+            content: mapContent
+        });
 
-            drinkMarker.addListener('mouseout', function () {
-                infowindow.close();
-            });
-            
+        drinkMarker.addListener('mouseover', function () {
+            infowindow.open(map, drinkMarker);
+        });
 
-        };       
+        drinkMarker.addListener('mouseout', function () {
+            infowindow.close();
+        });
 
-        function showRestaurants() {
 
-        for (var i=0; i < restaurantsObject.restaurantsString.length; i++) {
+    };
 
-          if (restaurantsObject.restaurantsString[i].category == 'restaurants') {
+    function show(category) {
 
-            restaurantMarkers[i].setVisible(true);
+        for (var i = 0; i < restaurantsObject.restaurantsString.length; i++) {
 
-          }
-        }   
-        }  
+            if (restaurantsObject.restaurantsString[i].category == 'restaurants') {
 
-        function showHotels() {
+                markers[i].setVisible(true);
 
-        for (var i=0; i < hotelsObject.hotelsString.length; i++) {
+            }
+        }
+    }
 
-          if (hotelsObject.hotelsString[i].category == 'hotels') {
+    function hide(category) {
 
-            hotelMarkers[i].setVisible(true);
+        for (var i = 0; i < restaurantsObject.restaurantsString.length; i++) {
 
-          } 
-        }   
+            if (restaurantsObject.restaurantsString[i].category == 'restaurants') {
+
+                markers[i].setVisible(false);
+
+            }
+        }
+    }
+
+    hide('restaurants')
+
+    $(".checkbox").click(function () {
+
+        var cat = $(this).attr("value");
+
+        // If checked
+
+        if ($(this).is(":checked")) {
+
+            show(cat);
+
         }
 
-        function showPubs() {
+        else {
 
-        for (var i=0; i < pubsObject.pubsString.length; i++) {
+            hide(cat);
 
-          if (pubsObject.pubsString[i].category == 'pubs') {
-
-            pubMarkers[i].setVisible(true);
-
-          }        
-
-        } 
-        }     
-
-        
-
-        function hideRestaurants() {
-
-        for (var i=0; i < restaurantsObject.restaurantsString.length; i++) {
-
-          if (restaurantsObject.restaurantsString[i].category == 'restaurants') {
-
-            restaurantMarkers[i].setVisible(false);
-
-          }
-        }     
         }
 
-        function hideHotels() {
-
-        for (var i=0; i < hotelsObject.hotelsString.length; i++) {
-
-          if (hotelsObject.hotelsString[i].category == 'hotels') {
-
-            hotelMarkers[i].setVisible(false);
-
-          } 
-        }   
-        }
-
-        function hidePubs() {
-
-        for (var i=0; i < pubsObject.pubsString.length; i++) {
-
-          if (pubsObject.pubsString[i].category == 'pubs') {
-
-            pubMarkers[i].setVisible(false);
-
-          }        
-
-        } 
-        } 
-
-        hideRestaurants("restaurants");
-
-         hideHotels("hotels");
-
-          hidePubs("pubs");
-       
-
-      $(".checkbox").click(function(){
-
-            var cat = $(this).attr("value = Pubs");
-
-        
-
-            // If checked
-
-            if ($(this).is(":checked"))
-
-            {
-
-                showPubs(cat);
-
-            }
-
-            else
-
-            {
-
-                hidePubs(cat);
-
-            }
-
-          });
-
-
-          $(".checkbox").click(function(){
-
-            var cat = $(this).attr("value = Restaurants");
-
-        
-
-            // If checked
-
-            if ($(this).is(":checked"))
-
-            {
-
-                showRestaurants(cat);
-
-            }
-
-            else
-
-            {
-
-                hideRestaurants(cat);
-
-            }
-
-          });
-
-
-          $(".checkbox").click(function(){
-
-            var cat = $(this).attr("value = Hotels");
-
-        
-
-            // If checked
-
-            if ($(this).is(":checked"))
-
-            {
-
-                showHotels(cat);
-
-            }
-
-            else
-
-            {
-
-                hideHotels(cat);
-
-            }
-
-          });
-
-          
+    });
 
 }
