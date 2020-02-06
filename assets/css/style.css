@@ -117,12 +117,13 @@ blockquote p {
 }
 
 .three-things-text {
+    font-family: 'Courgette', sans-serif;
     color: black;
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 div#map {min-height: 360px;}
@@ -325,7 +326,7 @@ div#map {min-height: 360px;}
 .three-things-text {
     color: black;
     position: absolute;
-    top: 20%;
+    top: 15%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 0.9rem;
