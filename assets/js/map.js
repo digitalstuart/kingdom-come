@@ -57,10 +57,20 @@ let pubs = '{ "pubsString" : [' +
 
 function initMap() {
 
+    let myStyles = [
+        {
+            featureType: "poi",
+            elementType: "labels",
+            stylers: [
+                { visibility: "off" }
+            ]
+        }
+    ];
+
     let map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 52.1406427, lng: -10.2889963 },
         zoom: 14,
-        mapTypeControl: false
+        styles: myStyles
     });
 
     let eatingObject = JSON.parse(eating);
@@ -68,7 +78,7 @@ function initMap() {
     let stayingObject = JSON.parse(staying);
     let eatingImage = 'https://i.imgur.com/M2nsXS1.png?1';
     let attractionsImage = 'https://i.imgur.com/QlNM9nx.png?1';
-    let stayingImage = 'https://i.imgur.com/z0wt3rY.png?1' ;
+    let stayingImage = 'https://i.imgur.com/z0wt3rY.png?1';
 
     for (let i = 0; i < eatingObject.eatingString.length; i++) {
         let lat = eatingObject.eatingString[i].lat;
@@ -97,31 +107,31 @@ function initMap() {
     };
 
     for (let i = 0; i < attractionsObject.attractionsString.length; i++) {
-            let lat = attractionsObject.attractionsString[i].lat;
-            let lng = attractionsObject.attractionsString[i].lng;
-            let latLng = new google.maps.LatLng(lat, lng);
-            let attractionsMarker = new google.maps.Marker({
-                position: latLng,
-                map: map,
-                animation: google.maps.Animation.DROP,
-                icon: attractionsImage
-            });
+        let lat = attractionsObject.attractionsString[i].lat;
+        let lng = attractionsObject.attractionsString[i].lng;
+        let latLng = new google.maps.LatLng(lat, lng);
+        let attractionsMarker = new google.maps.Marker({
+            position: latLng,
+            map: map,
+            animation: google.maps.Animation.DROP,
+            icon: attractionsImage
+        });
 
-            let mapContent = attractionsObject.attractionsString[i].formatted_address + " " + attractionsObject.attractionsString[i].name;
-            let infowindow = new google.maps.InfoWindow({
-                content: mapContent
-            });
+        let mapContent = attractionsObject.attractionsString[i].formatted_address + " " + attractionsObject.attractionsString[i].name;
+        let infowindow = new google.maps.InfoWindow({
+            content: mapContent
+        });
 
-            attractionsMarker.addListener('mouseover', function () {
-                infowindow.open(map, attractionsMarker);
-            });
+        attractionsMarker.addListener('mouseover', function () {
+            infowindow.open(map, attractionsMarker);
+        });
 
-            attractionsMarker.addListener('mouseout', function () {
-                infowindow.close();
-            });
-        };
+        attractionsMarker.addListener('mouseout', function () {
+            infowindow.close();
+        });
+    };
 
-        for (let i = 0; i < stayingObject.stayingString.length; i++) {
+    for (let i = 0; i < stayingObject.stayingString.length; i++) {
         let lat = stayingObject.stayingString[i].lat;
         let lng = stayingObject.stayingString[i].lng;
         let latLng = new google.maps.LatLng(lat, lng);
@@ -147,7 +157,7 @@ function initMap() {
 
     };
 
-    }
+}
 
 /*
 
