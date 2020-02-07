@@ -6,12 +6,26 @@ let pubMarkers = [];
 
 */
 
-let restaurants = '{ "restaurantsString" : [' +
+let eating = '{ "eatingString" : [' +
     '{ "formatted_address": "Green Street, Dingle, County Kerry, Ireland" , "lat": 52.1415429 , "lng": -10.2704251 , "name": "The Fish Box/Flannery\'s Seafood Bar" , "rating": 5.0 , "user_ratings_total": 500},' +
     '{ "formatted_address": "Main Street, Grove, Dingle, County Kerry, Ireland" , "lat" : 52.1415871 , "lng" : -10.2686796, "name" : "Land To Sea", "rating" : 5.0, "user_ratings_total" : 89},' +
     '{ "formatted_address": "Lower Main Street, Grove, Dingle, County Kerry, Ireland" , "lat" : 52.1412065 , "lng" : -10.2672304, "name" : "Pantri Cafe", "rating" : 5.0, "user_ratings_total" : 136},' +
     '{ "formatted_address": "Green Street, Dingle, County Kerry, Ireland" , "lat" : 52.140976 , "lng" : -10.271026, "name" : "Bean In Dingle", "rating" : 5.0, "user_ratings_total" : 351},' +
     '{ "formatted_address": "Strand Street, Dingle, County Kerry, Ireland" , "lat" : 52.1393625 , "lng" : -10.2747959 , "name" : "James Long Pub", "rating" : 5.0, "user_ratings_total" : 103} ]}';
+
+let attractions = '{ "attractionsString" : [' +
+    '{ "formatted_address": "Carhoo West, County Kerry, Ireland" , "lat": 52.1155202 , "lng": -10.2816985 , "name": "Eask Tower" , "rating": 5.0 , "user_ratings_total": 251},' +
+    '{ "formatted_address": "Coumeenoole North, County Kerry, Ireland" , "lat" : 52.1098114 , "lng" : -10.4644343, "name" : "Coumeenoole Beach", "rating" : 5.0, "user_ratings_total" : 258},' +
+    '{ "formatted_address": "Farranredmond, Dingle, County Kerry, Ireland" , "lat" : 52.1418288 , "lng" : -10.2892974, "name" : "Dingle Distillery", "rating" : 4.5, "user_ratings_total" : 447},' +
+    '{ "formatted_address": "Main Street, Grove, Dingle, County Kerry, Ireland" , "lat" : 52.1415585 , "lng" : -10.2680867 , "name" : "St James\' Church", "rating" : 4.5, "user_ratings_total" : 332},' +
+    '{ "formatted_address": "Gallarus, Dingle, County Kerry, Ireland" , "lat" : 52.1736605 , "lng" : -10.3523922, "name" : "Gallarus Oratory", "rating" : 4.5, "user_ratings_total" : 1583} ]}';
+
+let staying = '{ "stayingString" : [' +
+    '{ "formatted_address": "Upper John Street, Farraneesteenig, Dingle, County Kerry, Ireland" , "lat": 52.1338631 , "lng": -10.2571086 , "name": "Pax Guest House" , "rating": 5.0 , "user_ratings_total": 1926},' +
+    '{ "formatted_address": "The Wood, Dingle, County Kerry, Ireland" , "lat" : 52.1410543 , "lng" : -10.2864218, "name" : "Castlewood House", "rating" : 5.0, "user_ratings_total" : 1441},' +
+    '{ "formatted_address": "The Wood, Dingle, County Kerry, Ireland" , "lat" : 52.1408627 , "lng" : -10.2858315, "name" : "Heaton\'s Guesthouse", "rating" : 5.0, "user_ratings_total" : 1293},' +
+    '{ "formatted_address": "Gortonora, Dingle, County Kerry, Ireland" , "lat" : 52.1381733 , "lng" : -10.262914 , "name" : "Greenmount House", "rating" : 5.0, "user_ratings_total" : 1080},' +
+    '{ "formatted_address": "The Wood, Dingle, County Kerry, Ireland" , "lat" : 52.14006089999999 , "lng" : -10.2889296, "name" : "Milltown House", "rating" : 5.0, "user_ratings_total" : 631} ]}';
 
 /*
 
@@ -49,37 +63,91 @@ function initMap() {
         mapTypeControl: false
     });
 
-    let restaurantsObject = JSON.parse(restaurants);
-    let image = 'https://i.imgur.com/M2nsXS1.png?1'
+    let eatingObject = JSON.parse(eating);
+    let attractionsObject = JSON.parse(attractions);
+    let stayingObject = JSON.parse(staying);
+    let eatingImage = 'https://i.imgur.com/M2nsXS1.png?1';
+    let attractionsImage = 'https://i.imgur.com/QlNM9nx.png?1';
+    let stayingImage = 'https://i.imgur.com/z0wt3rY.png?1' ;
 
-    for (let i = 0; i < restaurantsObject.restaurantsString.length; i++) {
-        let lat = restaurantsObject.restaurantsString[i].lat;
-        let lng = restaurantsObject.restaurantsString[i].lng;
+    for (let i = 0; i < eatingObject.eatingString.length; i++) {
+        let lat = eatingObject.eatingString[i].lat;
+        let lng = eatingObject.eatingString[i].lng;
         let latLng = new google.maps.LatLng(lat, lng);
-        let eatMarker = new google.maps.Marker({
+        let eatingMarker = new google.maps.Marker({
             position: latLng,
             map: map,
             animation: google.maps.Animation.DROP,
-            icon: image
+            icon: eatingImage
         });
 
-        let mapContent = restaurantsObject.restaurantsString[i].formatted_address + " " + restaurantsObject.restaurantsString[i].name;
+        let mapContent = eatingObject.eatingString[i].formatted_address + " " + eatingObject.eatingString[i].name;
         let infowindow = new google.maps.InfoWindow({
             content: mapContent
         });
 
-        eatMarker.addListener('mouseover', function () {
-            infowindow.open(map, eatMarker);
+        eatingMarker.addListener('mouseover', function () {
+            infowindow.open(map, eatingMarker);
         });
 
-        eatMarker.addListener('mouseout', function () {
+        eatingMarker.addListener('mouseout', function () {
             infowindow.close();
         });
 
+    };
+
+    for (let i = 0; i < attractionsObject.attractionsString.length; i++) {
+            let lat = attractionsObject.attractionsString[i].lat;
+            let lng = attractionsObject.attractionsString[i].lng;
+            let latLng = new google.maps.LatLng(lat, lng);
+            let attractionsMarker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                animation: google.maps.Animation.DROP,
+                icon: attractionsImage
+            });
+
+            let mapContent = attractionsObject.attractionsString[i].formatted_address + " " + attractionsObject.attractionsString[i].name;
+            let infowindow = new google.maps.InfoWindow({
+                content: mapContent
+            });
+
+            attractionsMarker.addListener('mouseover', function () {
+                infowindow.open(map, attractionsMarker);
+            });
+
+            attractionsMarker.addListener('mouseout', function () {
+                infowindow.close();
+            });
+        };
+
+        for (let i = 0; i < stayingObject.stayingString.length; i++) {
+        let lat = stayingObject.stayingString[i].lat;
+        let lng = stayingObject.stayingString[i].lng;
+        let latLng = new google.maps.LatLng(lat, lng);
+        let stayingMarker = new google.maps.Marker({
+            position: latLng,
+            map: map,
+            animation: google.maps.Animation.DROP,
+            icon: stayingImage
+        });
+
+        let mapContent = stayingObject.stayingString[i].formatted_address + " " + stayingObject.stayingString[i].name;
+        let infowindow = new google.maps.InfoWindow({
+            content: mapContent
+        });
+
+        stayingMarker.addListener('mouseover', function () {
+            infowindow.open(map, stayingMarker);
+        });
+
+        stayingMarker.addListener('mouseout', function () {
+            infowindow.close();
+        });
 
     };
 
-}
+    }
 
 /*
 
