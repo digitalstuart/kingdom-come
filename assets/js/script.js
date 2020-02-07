@@ -32,7 +32,6 @@ document.getElementById("kenmare-link").addEventListener("click", function () { 
 document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("text-two").innerHTML = 'Square' });
 document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("text-three").innerHTML = 'Main St' });
 
-
 document.getElementById("killarney-link").addEventListener("click", function () { document.getElementById("background-image").style.backgroundImage = "url('assets/images/killarney.jpg')" });
 document.getElementById("killarney-link").addEventListener("click", function () { document.getElementById("quote-one").innerHTML = quotesObject.quotesString[6].quote + " " + quotesObject.quotesString[6].who });
 document.getElementById("killarney-link").addEventListener("click", function () { document.getElementById("quote-two").innerHTML = quotesObject.quotesString[7].quote + " " + quotesObject.quotesString[7].who });
@@ -88,15 +87,3 @@ document.getElementById("dingle-link").addEventListener("click", function () { d
 document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("text-one").innerHTML = 'Fungie' });
 document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("text-two").innerHTML = 'Inch' });
 document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("text-three").innerHTML = 'Oceanworld' });
-
-function buttonText(x) {
-  if (x.matches) { // If media query matches
-    document.getElementById("button-text").innerHTML = "Choose your town";
-  } else {
-    document.getElementById("button-text").innerHTML = "Choose your town/Roghnaigh do bhaile";
-  }
-}
-
-var x = window.matchMedia("(max-width: 768px)")
-buttonText(x) // Call listener function at run time
-x.addListener(buttonText) // Attach listener function on state changes

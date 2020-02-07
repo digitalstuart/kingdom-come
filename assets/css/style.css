@@ -104,6 +104,11 @@ div#map {
     position: relative;
     }
 
+div#map2 {
+    min-height: 360px;
+    position: relative;
+    }
+
 #map-link {
     position: absolute;
     bottom: 30px;

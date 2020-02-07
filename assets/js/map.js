@@ -157,6 +157,111 @@ function initMap() {
 
     };
 
+
+    document.getElementById("kenmare-link").addEventListener("click", function () {
+
+        let myStyles = [
+            {
+                featureType: "poi",
+                elementType: "labels",
+                stylers: [
+                    { visibility: "off" }
+                ]
+            }
+        ];
+
+        let map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: 52.1406427, lng: -10.2889963 },
+            zoom: 14,
+            styles: myStyles
+        });
+
+        let eatingObject = JSON.parse(eating);
+        let attractionsObject = JSON.parse(attractions);
+        let stayingObject = JSON.parse(staying);
+        let eatingImage = 'http://www.myiconfinder.com/uploads/iconsets/256-256-f900504cdc9f243b1c6852985c35a7f7.png';
+        let attractionsImage = 'https://i.imgur.com/QlNM9nx.png?1';
+        let stayingImage = 'https://i.imgur.com/z0wt3rY.png?1';
+
+        for (let i = 0; i < eatingObject.eatingString.length; i++) {
+            let lat = eatingObject.eatingString[i].lat;
+            let lng = eatingObject.eatingString[i].lng;
+            let latLng = new google.maps.LatLng(lat, lng);
+            let eatingMarker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                animation: google.maps.Animation.DROP,
+                icon: eatingImage
+            });
+
+            let mapContent = eatingObject.eatingString[i].formatted_address + " " + eatingObject.eatingString[i].name;
+            let infowindow = new google.maps.InfoWindow({
+                content: mapContent
+            });
+
+            eatingMarker.addListener('mouseover', function () {
+                infowindow.open(map, eatingMarker);
+            });
+
+            eatingMarker.addListener('mouseout', function () {
+                infowindow.close();
+            });
+
+        };
+
+        for (let i = 0; i < attractionsObject.attractionsString.length; i++) {
+            let lat = attractionsObject.attractionsString[i].lat;
+            let lng = attractionsObject.attractionsString[i].lng;
+            let latLng = new google.maps.LatLng(lat, lng);
+            let attractionsMarker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                animation: google.maps.Animation.DROP,
+                icon: attractionsImage
+            });
+
+            let mapContent = attractionsObject.attractionsString[i].formatted_address + " " + attractionsObject.attractionsString[i].name;
+            let infowindow = new google.maps.InfoWindow({
+                content: mapContent
+            });
+
+            attractionsMarker.addListener('mouseover', function () {
+                infowindow.open(map, attractionsMarker);
+            });
+
+            attractionsMarker.addListener('mouseout', function () {
+                infowindow.close();
+            });
+        };
+
+        for (let i = 0; i < stayingObject.stayingString.length; i++) {
+            let lat = stayingObject.stayingString[i].lat;
+            let lng = stayingObject.stayingString[i].lng;
+            let latLng = new google.maps.LatLng(lat, lng);
+            let stayingMarker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                animation: google.maps.Animation.DROP,
+                icon: stayingImage
+            });
+
+            let mapContent = stayingObject.stayingString[i].formatted_address + " " + stayingObject.stayingString[i].name;
+            let infowindow = new google.maps.InfoWindow({
+                content: mapContent
+            });
+
+            stayingMarker.addListener('mouseover', function () {
+                infowindow.open(map, stayingMarker);
+            });
+
+            stayingMarker.addListener('mouseout', function () {
+                infowindow.close();
+            });
+
+        };
+
+    });
+
 }
 
 /*
