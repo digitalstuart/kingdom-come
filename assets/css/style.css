@@ -126,27 +126,10 @@ blockquote p {
     font-size: 0.8rem;
 }
 
-div#map {min-height: 360px;}
-
-.map-control {
-        background-color: #fff;
-        border: 1px solid #ccc;
-        box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
-        font-family: 'Roboto','sans-serif';
-        margin: 10px;
-        padding-right: 5px;
-        /* Hide the control initially, to prevent it from appearing
-           before the map loads. */
-        display: none;
-      }
-      /* Display the control once it is inside the map. */
-      #map .map-control { display: block; }
-
-      .selector-control {
-        font-size: 14px;
-        line-height: 30px;
-        vertical-align: baseline;
-      }
+div#map {
+    min-height: 360px;
+    position: relative;
+    }
 
 #map-link {
     position: absolute;
@@ -156,6 +139,25 @@ div#map {min-height: 360px;}
 #map-link > a {
     color: #fff;
     text-decoration: none;
+}
+
+#info-box {
+    font-family: 'Courgette', sans-serif;
+    font-size: 0.8rem;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    padding-top: 12px;
+    width: 15vw;
+    position: absolute;
+    top: 50px;
+    right: 50rem;
+    background-color: white;
+}
+
+#info-box-list {
+    list-style-type: none;
+    padding-left: 7px;
 }
 
 #accordionExample {    
@@ -198,7 +200,7 @@ div#map {min-height: 360px;}
 #myBtn {
   display: none; 
   position: fixed; 
-  bottom: 20px; 
+  bottom: 15px; 
   right: 15px; 
   z-index: 99;  
   outline: none; 
