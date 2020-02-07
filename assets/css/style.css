@@ -40,6 +40,10 @@ blockquote p {
     margin-right: 32px;
 }
 
+.nav-item {
+    cursor: pointer;
+}
+
 .nav-item:not(:last-child) {
     padding-bottom: 10px;
 }
