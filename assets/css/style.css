@@ -170,30 +170,6 @@ div#map {
     font-size: 27px;
 }
 
-#myBtn {
-  display: none; 
-  position: fixed; 
-  bottom: 15px; 
-  right: 15px; 
-  z-index: 99;  
-  outline: none; 
-  background-color: #008c44; 
-  color: rgb(255, 221, 0); 
-  cursor: pointer; 
-  padding-top: 8.5px;
-  padding-bottom: 8.5px;
-  padding-left: 15px; 
-  padding-right: 15px;
-  border-radius: 10px; 
-  border: 1px solid black;
-  font-size: 1.25rem; 
-}
-
-#myBtn:hover {
-  background-color: rgb(255, 221, 0); 
-  color: #008c44;
-}
-
 /* Bounce down arrow */
 
 @-moz-keyframes bounce {

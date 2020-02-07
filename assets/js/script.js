@@ -100,24 +100,3 @@ function buttonText(x) {
 var x = window.matchMedia("(max-width: 768px)")
 buttonText(x) // Call listener function at run time
 x.addListener(buttonText) // Attach listener function on state changes
-
-//Get the button:
-mybutton = document.getElementById("myBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-document.getElementById("myBtn").addEventListener("click", function topFunction() {
-  let myDiv = document.getElementById("scroll-point");
-  scrollTo(myDiv, 0, 100);
-});
-
