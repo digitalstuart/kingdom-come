@@ -7,32 +7,39 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.12.0/css/all.css">
 	<link rel="stylesheet" href="assets/css/style.css" type="text/css">
 	<title>Kingdom Come</title>
 </head>
 
 <body>
-	<nav class="navbar fixed-top">
+	<nav class="navbar fixed-top navbar-expand-md">
 		<a class="navbar-brand" href="index.html">KINGDOM COME</a>
-		<span id="navbar-text">Visit Kerry and you'll want to stay forever</span>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span><i class="fas fa-bars"></i></span>
+                </button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+					<span id="dingle-link"><strong>Dingle</strong></span>
+				</li>
+				<li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+					<span id="kenmare-link"><strong>Kenmare</strong></span>
+				</li>
+				<li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+					<span id="killarney-link"><strong>Killarney</strong></span>
+				</li>
+				<li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+					<span id="listowel-link"><strong>Listowel</strong></span>
+				</li>
+				<li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+					<span id="tralee-link"><strong>Tralee</strong></span>
+				</li>
+			</ul>
+		</div>
 	</nav>
 
-	<section class="container-fluid" id="background-image">
-		<div class="row">
-			<div class="col text-center">
-				<div class="btn-group">
-					<button id="scroll-point" class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="button-text"><strong>Choose your town</strong></span></button>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" id="dingle-link"><strong>Dingle</strong></a>
-						<a class="dropdown-item" id="kenmare-link"><strong>Kenmare</strong></a>
-						<a class="dropdown-item" id="killarney-link"><strong>Killarney</strong></a>
-						<a class="dropdown-item" id="listowel-link"><strong>Listowel</strong></a>
-						<a class="dropdown-item" id="tralee-link"><strong>Tralee</strong></a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="container-fluid">
+	<section class="container-fluid" id="background-image">		
 			<div class="row">
 				<div class="col-6 offset-3 col-md-12 offset-md-0 ">
 					<div class="flex-container three-things text-center">
@@ -72,10 +79,14 @@
 				<div id="map"></div>
 				<div id="info-box">
 					<ul id="info-box-list">
-						<li><img src="https://i.imgur.com/M2nsXS1.png?1" alt="Map marker pin icon"><span>Top places to eat</span></li>
-						<li><img src="https://i.imgur.com/QlNM9nx.png?1" alt="Map marker pin icon"><span>Top places to go</span></li>
-						<li><img src="https://i.imgur.com/z0wt3rY.png?1" alt="Map marker pin icon"><span>Top places to stay</span></li>
-						<li><img src="https://i.imgur.com/7PtVyNi.png?1" alt="Magnifying glass icon"><span>Zoom out for more</span></li>
+						<li><img src="https://i.imgur.com/M2nsXS1.png?1" alt="Map marker pin icon"><span>Top places to eat</span>
+						</li>
+						<li><img src="https://i.imgur.com/QlNM9nx.png?1" alt="Map marker pin icon"><span>Top places to go</span>
+						</li>
+						<li><img src="https://i.imgur.com/z0wt3rY.png?1" alt="Map marker pin icon"><span>Top places to stay</span>
+						</li>
+						<li><img src="https://i.imgur.com/7PtVyNi.png?1" alt="Magnifying glass icon"><span>Zoom out for more</span>
+						</li>
 					</ul>
 				</div>
 				<!--
@@ -168,7 +179,7 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
 		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
 	</script>
-	<script src="assets/js/script.js"></script>	
+	<script src="assets/js/script.js"></script>
 </body>
 
 </html>
