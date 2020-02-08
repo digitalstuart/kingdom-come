@@ -157,6 +157,7 @@ function initMap() {
 
     };
 
+    //Kenmare map code
 
     document.getElementById("kenmare-link").addEventListener("click", function () {
 
@@ -171,7 +172,7 @@ function initMap() {
         ];
 
         let map = new google.maps.Map(document.getElementById('map'), {
-            center: { lat: 52.1406427, lng: -10.2889963 },
+            center: { lat: 51.8843002, lng: -9.6172378 },
             zoom: 14,
             styles: myStyles
         });
@@ -262,108 +263,428 @@ function initMap() {
 
     });
 
-}
+    // Killarney map code
 
-/*
+    document.getElementById("killarney-link").addEventListener("click", function () {
 
-    for (let i = 0; i < hotelsObject.hotelsString.length; i++) {
-        let lat = hotelsObject.hotelsString[i].lat;
-        let lng = hotelsObject.hotelsString[i].lng;
-        let latLng = new google.maps.LatLng(lat, lng);
-        let stayMarker = new google.maps.Marker({
-            position: latLng,
-            map: map
-        });
-
-        let mapContent = hotelsObject.hotelsString[i].formatted_address + " " + hotelsObject.hotelsString[i].name;
-        let infowindow = new google.maps.InfoWindow({
-            content: mapContent
-        });
-
-        stayMarker.addListener('mouseover', function () {
-            infowindow.open(map, stayMarker);
-        });
-
-        stayMarker.addListener('mouseout', function () {
-            infowindow.close();
-        });
-
-
-    };
-
-    for (let i = 0; i < pubsObject.pubsString.length; i++) {
-        let lat = pubsObject.pubsString[i].lat;
-        let lng = pubsObject.pubsString[i].lng;
-        let latLng = new google.maps.LatLng(lat, lng);
-        let drinkMarker = new google.maps.Marker({
-            position: latLng,
-            map: map
-        });
-
-        let mapContent = pubsObject.pubsString[i].formatted_address + " " + pubsObject.pubsString[i].name;
-        let infowindow = new google.maps.InfoWindow({
-            content: mapContent
-        });
-
-        drinkMarker.addListener('mouseover', function () {
-            infowindow.open(map, drinkMarker);
-        });
-
-        drinkMarker.addListener('mouseout', function () {
-            infowindow.close();
-        });
-
-
-    };
-
-    hide('restaurants')
-    hide('hotels')
-    hide('pubs')
-
-    function show() {
-
-        for (i = 0, j = 0, k = 0; i < restaurantsObject.restaurantsString.length && j < hotelsObject.hotelsString.length && k < pubsObject.pubsString.length; i++ , j++ , k++) {
-
-            if (pubsObject.pubsString[k].category == 'pubs') {
-
-                restaurantMarkers[i].setVisible(false);
-                hotelMarkers[i].setVisible(false);
-                pubMarkers[i].setVisible(true)
+        let myStyles = [
+            {
+                featureType: "poi",
+                elementType: "labels",
+                stylers: [
+                    { visibility: "off" }
+                ]
             }
-        }
-    }
+        ];
 
-    function hide() {
+        let map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: 52.0605651, lng: -9.5251096 },
+            zoom: 14,
+            styles: myStyles
+        });
 
-        for (i = 0, j = 0, k = 0; i < restaurantsObject.restaurantsString.length && j < hotelsObject.hotelsString.length && k < pubsObject.pubsString.length; i++ , j++ , k++) {
+        let eatingObject = JSON.parse(eating);
+        let attractionsObject = JSON.parse(attractions);
+        let stayingObject = JSON.parse(staying);
+        let eatingImage = 'http://www.myiconfinder.com/uploads/iconsets/256-256-f900504cdc9f243b1c6852985c35a7f7.png';
+        let attractionsImage = 'https://i.imgur.com/QlNM9nx.png?1';
+        let stayingImage = 'https://i.imgur.com/z0wt3rY.png?1';
 
-            if (pubsObject.pubsString[i].category == 'pubs') {
+        for (let i = 0; i < eatingObject.eatingString.length; i++) {
+            let lat = eatingObject.eatingString[i].lat;
+            let lng = eatingObject.eatingString[i].lng;
+            let latLng = new google.maps.LatLng(lat, lng);
+            let eatingMarker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                animation: google.maps.Animation.DROP,
+                icon: eatingImage
+            });
 
-                restaurantMarkers[i].setVisible(false);
-                hotelMarkers[i].setVisible(false);
-                pubMarkers[i].setVisible(false)
+            let mapContent = eatingObject.eatingString[i].formatted_address + " " + eatingObject.eatingString[i].name;
+            let infowindow = new google.maps.InfoWindow({
+                content: mapContent
+            });
+
+            eatingMarker.addListener('mouseover', function () {
+                infowindow.open(map, eatingMarker);
+            });
+
+            eatingMarker.addListener('mouseout', function () {
+                infowindow.close();
+            });
+
+        };
+
+        for (let i = 0; i < attractionsObject.attractionsString.length; i++) {
+            let lat = attractionsObject.attractionsString[i].lat;
+            let lng = attractionsObject.attractionsString[i].lng;
+            let latLng = new google.maps.LatLng(lat, lng);
+            let attractionsMarker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                animation: google.maps.Animation.DROP,
+                icon: attractionsImage
+            });
+
+            let mapContent = attractionsObject.attractionsString[i].formatted_address + " " + attractionsObject.attractionsString[i].name;
+            let infowindow = new google.maps.InfoWindow({
+                content: mapContent
+            });
+
+            attractionsMarker.addListener('mouseover', function () {
+                infowindow.open(map, attractionsMarker);
+            });
+
+            attractionsMarker.addListener('mouseout', function () {
+                infowindow.close();
+            });
+        };
+
+        for (let i = 0; i < stayingObject.stayingString.length; i++) {
+            let lat = stayingObject.stayingString[i].lat;
+            let lng = stayingObject.stayingString[i].lng;
+            let latLng = new google.maps.LatLng(lat, lng);
+            let stayingMarker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                animation: google.maps.Animation.DROP,
+                icon: stayingImage
+            });
+
+            let mapContent = stayingObject.stayingString[i].formatted_address + " " + stayingObject.stayingString[i].name;
+            let infowindow = new google.maps.InfoWindow({
+                content: mapContent
+            });
+
+            stayingMarker.addListener('mouseover', function () {
+                infowindow.open(map, stayingMarker);
+            });
+
+            stayingMarker.addListener('mouseout', function () {
+                infowindow.close();
+            });
+
+        };
+
+    });
+    
+    // Listowel map code
+
+    document.getElementById("listowel-link").addEventListener("click", function () {
+
+        let myStyles = [
+            {
+                featureType: "poi",
+                elementType: "labels",
+                stylers: [
+                    { visibility: "off" }
+                ]
             }
-        }
-    }
+        ];
 
-    $(".checkbox").click(function () {
+        let map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: 52.4460611, lng: -9.4941203 },
+            zoom: 14,
+            styles: myStyles
+        });
 
-        var cat = $(this).attr("value");
+        let eatingObject = JSON.parse(eating);
+        let attractionsObject = JSON.parse(attractions);
+        let stayingObject = JSON.parse(staying);
+        let eatingImage = 'http://www.myiconfinder.com/uploads/iconsets/256-256-f900504cdc9f243b1c6852985c35a7f7.png';
+        let attractionsImage = 'https://i.imgur.com/QlNM9nx.png?1';
+        let stayingImage = 'https://i.imgur.com/z0wt3rY.png?1';
 
-        // If checked
+        for (let i = 0; i < eatingObject.eatingString.length; i++) {
+            let lat = eatingObject.eatingString[i].lat;
+            let lng = eatingObject.eatingString[i].lng;
+            let latLng = new google.maps.LatLng(lat, lng);
+            let eatingMarker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                animation: google.maps.Animation.DROP,
+                icon: eatingImage
+            });
 
-        if ($(this).is(":checked")) {
+            let mapContent = eatingObject.eatingString[i].formatted_address + " " + eatingObject.eatingString[i].name;
+            let infowindow = new google.maps.InfoWindow({
+                content: mapContent
+            });
 
-            show(cat);
+            eatingMarker.addListener('mouseover', function () {
+                infowindow.open(map, eatingMarker);
+            });
 
-        }
+            eatingMarker.addListener('mouseout', function () {
+                infowindow.close();
+            });
 
-        else {
+        };
 
-            hide(cat);
+        for (let i = 0; i < attractionsObject.attractionsString.length; i++) {
+            let lat = attractionsObject.attractionsString[i].lat;
+            let lng = attractionsObject.attractionsString[i].lng;
+            let latLng = new google.maps.LatLng(lat, lng);
+            let attractionsMarker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                animation: google.maps.Animation.DROP,
+                icon: attractionsImage
+            });
 
-        }
+            let mapContent = attractionsObject.attractionsString[i].formatted_address + " " + attractionsObject.attractionsString[i].name;
+            let infowindow = new google.maps.InfoWindow({
+                content: mapContent
+            });
+
+            attractionsMarker.addListener('mouseover', function () {
+                infowindow.open(map, attractionsMarker);
+            });
+
+            attractionsMarker.addListener('mouseout', function () {
+                infowindow.close();
+            });
+        };
+
+        for (let i = 0; i < stayingObject.stayingString.length; i++) {
+            let lat = stayingObject.stayingString[i].lat;
+            let lng = stayingObject.stayingString[i].lng;
+            let latLng = new google.maps.LatLng(lat, lng);
+            let stayingMarker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                animation: google.maps.Animation.DROP,
+                icon: stayingImage
+            });
+
+            let mapContent = stayingObject.stayingString[i].formatted_address + " " + stayingObject.stayingString[i].name;
+            let infowindow = new google.maps.InfoWindow({
+                content: mapContent
+            });
+
+            stayingMarker.addListener('mouseover', function () {
+                infowindow.open(map, stayingMarker);
+            });
+
+            stayingMarker.addListener('mouseout', function () {
+                infowindow.close();
+            });
+
+        };
+
+    });    
+    
+    // Tralee map code
+
+    document.getElementById("tralee-link").addEventListener("click", function () {
+
+        let myStyles = [
+            {
+                featureType: "poi",
+                elementType: "labels",
+                stylers: [
+                    { visibility: "off" }
+                ]
+            }
+        ];
+
+        let map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: 52.2721673, lng: -9.7339743 },
+            zoom: 14,
+            styles: myStyles
+        });
+
+        let eatingObject = JSON.parse(eating);
+        let attractionsObject = JSON.parse(attractions);
+        let stayingObject = JSON.parse(staying);
+        let eatingImage = 'http://www.myiconfinder.com/uploads/iconsets/256-256-f900504cdc9f243b1c6852985c35a7f7.png';
+        let attractionsImage = 'https://i.imgur.com/QlNM9nx.png?1';
+        let stayingImage = 'https://i.imgur.com/z0wt3rY.png?1';
+
+        for (let i = 0; i < eatingObject.eatingString.length; i++) {
+            let lat = eatingObject.eatingString[i].lat;
+            let lng = eatingObject.eatingString[i].lng;
+            let latLng = new google.maps.LatLng(lat, lng);
+            let eatingMarker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                animation: google.maps.Animation.DROP,
+                icon: eatingImage
+            });
+
+            let mapContent = eatingObject.eatingString[i].formatted_address + " " + eatingObject.eatingString[i].name;
+            let infowindow = new google.maps.InfoWindow({
+                content: mapContent
+            });
+
+            eatingMarker.addListener('mouseover', function () {
+                infowindow.open(map, eatingMarker);
+            });
+
+            eatingMarker.addListener('mouseout', function () {
+                infowindow.close();
+            });
+
+        };
+
+        for (let i = 0; i < attractionsObject.attractionsString.length; i++) {
+            let lat = attractionsObject.attractionsString[i].lat;
+            let lng = attractionsObject.attractionsString[i].lng;
+            let latLng = new google.maps.LatLng(lat, lng);
+            let attractionsMarker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                animation: google.maps.Animation.DROP,
+                icon: attractionsImage
+            });
+
+            let mapContent = attractionsObject.attractionsString[i].formatted_address + " " + attractionsObject.attractionsString[i].name;
+            let infowindow = new google.maps.InfoWindow({
+                content: mapContent
+            });
+
+            attractionsMarker.addListener('mouseover', function () {
+                infowindow.open(map, attractionsMarker);
+            });
+
+            attractionsMarker.addListener('mouseout', function () {
+                infowindow.close();
+            });
+        };
+
+        for (let i = 0; i < stayingObject.stayingString.length; i++) {
+            let lat = stayingObject.stayingString[i].lat;
+            let lng = stayingObject.stayingString[i].lng;
+            let latLng = new google.maps.LatLng(lat, lng);
+            let stayingMarker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                animation: google.maps.Animation.DROP,
+                icon: stayingImage
+            });
+
+            let mapContent = stayingObject.stayingString[i].formatted_address + " " + stayingObject.stayingString[i].name;
+            let infowindow = new google.maps.InfoWindow({
+                content: mapContent
+            });
+
+            stayingMarker.addListener('mouseover', function () {
+                infowindow.open(map, stayingMarker);
+            });
+
+            stayingMarker.addListener('mouseout', function () {
+                infowindow.close();
+            });
+
+        };
 
     });
 
-*/
+    // Dingle return map code
+
+    document.getElementById("dingle-link").addEventListener("click", function () {
+
+        let myStyles = [
+            {
+                featureType: "poi",
+                elementType: "labels",
+                stylers: [
+                    { visibility: "off" }
+                ]
+            }
+        ];
+
+        let map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: 52.1406427, lng: -10.2889963 },
+            zoom: 14,
+            styles: myStyles
+        });
+
+        let eatingObject = JSON.parse(eating);
+        let attractionsObject = JSON.parse(attractions);
+        let stayingObject = JSON.parse(staying);
+        let eatingImage = 'https://i.imgur.com/M2nsXS1.png?1';
+        let attractionsImage = 'https://i.imgur.com/QlNM9nx.png?1';
+        let stayingImage = 'https://i.imgur.com/z0wt3rY.png?1';
+
+        for (let i = 0; i < eatingObject.eatingString.length; i++) {
+            let lat = eatingObject.eatingString[i].lat;
+            let lng = eatingObject.eatingString[i].lng;
+            let latLng = new google.maps.LatLng(lat, lng);
+            let eatingMarker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                animation: google.maps.Animation.DROP,
+                icon: eatingImage
+            });
+
+            let mapContent = eatingObject.eatingString[i].formatted_address + " " + eatingObject.eatingString[i].name;
+            let infowindow = new google.maps.InfoWindow({
+                content: mapContent
+            });
+
+            eatingMarker.addListener('mouseover', function () {
+                infowindow.open(map, eatingMarker);
+            });
+
+            eatingMarker.addListener('mouseout', function () {
+                infowindow.close();
+            });
+
+        };
+
+        for (let i = 0; i < attractionsObject.attractionsString.length; i++) {
+            let lat = attractionsObject.attractionsString[i].lat;
+            let lng = attractionsObject.attractionsString[i].lng;
+            let latLng = new google.maps.LatLng(lat, lng);
+            let attractionsMarker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                animation: google.maps.Animation.DROP,
+                icon: attractionsImage
+            });
+
+            let mapContent = attractionsObject.attractionsString[i].formatted_address + " " + attractionsObject.attractionsString[i].name;
+            let infowindow = new google.maps.InfoWindow({
+                content: mapContent
+            });
+
+            attractionsMarker.addListener('mouseover', function () {
+                infowindow.open(map, attractionsMarker);
+            });
+
+            attractionsMarker.addListener('mouseout', function () {
+                infowindow.close();
+            });
+        };
+
+        for (let i = 0; i < stayingObject.stayingString.length; i++) {
+            let lat = stayingObject.stayingString[i].lat;
+            let lng = stayingObject.stayingString[i].lng;
+            let latLng = new google.maps.LatLng(lat, lng);
+            let stayingMarker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                animation: google.maps.Animation.DROP,
+                icon: stayingImage
+            });
+
+            let mapContent = stayingObject.stayingString[i].formatted_address + " " + stayingObject.stayingString[i].name;
+            let infowindow = new google.maps.InfoWindow({
+                content: mapContent
+            });
+
+            stayingMarker.addListener('mouseover', function () {
+                infowindow.open(map, stayingMarker);
+            });
+
+            stayingMarker.addListener('mouseout', function () {
+                infowindow.close();
+            });
+
+        };
+
+    });
+
+}
