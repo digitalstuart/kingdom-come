@@ -40,6 +40,27 @@ let kenmareStaying = '{ "kenmareStayingString" : [' +
     '{ "formatted_address": "Henry Street, Kenmare, County Kerry, Ireland" , "lat" : 51.8795254 , "lng" : -9.583607599999999 , "name" : "Coachmans Townhouse Hotel" , "rating" : 4.5 , "user_ratings_total" : 314},' +
     '{ "formatted_address": "Sneem Road, Kenmare, County Kerry, Ireland" , "lat" : 51.883027 , "lng" : -9.591343 , "name" : "Kenmare Bay Hotel & Resort" , "rating" : 4.0 , "user_ratings_total" : 1523} ]}';
 
+let killarneyEating = '{ "killarneyEatingString" : [' +
+    '{ "formatted_address": "8 High Street, Killarney, County Kerry, Ireland" , "lat" : 52.05980479999999, "lng" : -9.5096229 , "name": "Murphy Brownes" , "rating": 5.0 , "user_ratings_total": 525},' +
+    '{ "formatted_address": "93 New Street, Killarney, County Kerry, Ireland" , "lat" : 52.0588771, "lng" : -9.5111869 , "name" : "Celtic Whiskey Bar & Larder", "rating" : 4.5, "user_ratings_total" : 681},' +
+    '{ "formatted_address": "26 High Street, Killarney, County Kerry, Ireland" , "lat" : 52.060944, "lng" : -9.510202999999999, "name" : "Bricín Restaurant and Boxty House", "rating" : 4.5, "user_ratings_total" : 1927},' +
+    '{ "formatted_address": "Killarney, County Kerry, Ireland" , "lat" : 52.057955, "lng" : -9.507685, "name" : "The Cellar at The Ross", "rating" : 4.5, "user_ratings_total" : 529},' +
+    '{ "formatted_address": "66 High Street, Killarney, County Kerry, Ireland" , "lat" : 52.05987020000001, "lng" : -9.5100078, "name" : "Khao Asian Street Food", "rating" : 4.5, "user_ratings_total" : 547} ]}';
+
+let killarneyAttractions = '{ "killarneyAttractionsString" : [' +
+    '{ "formatted_address": "County Kerry, Ireland" , "lat" : 52.0058447, "lng" : -9.556180299999999 , "name" : "Killarney National Park" , "rating" : 5.0 , "user_ratings_total" : 7123},' +
+    '{ "formatted_address": "Inchycullane, Killarney, County Kerry, Ireland" , "lat" : 52.0819357, "lng" : -9.496975599999999, "name" : "Falconry Kerry", "rating" : 5.0, "user_ratings_total" : 464},' +
+    '{ "formatted_address": "The National Park, Dromyrourk, Killarney, County Kerry, Ireland" , "lat" : 52.0180696, "lng" : -9.5041358, "name" : "Muckross House, Gardens & Traditional Farms", "rating" : 4.5, "user_ratings_total" : 4907},' +
+    '{ "formatted_address": "Rossnahowgarry, Killarney, County Kerry, Ireland" , "lat" : 52.0057453, "lng" : -9.506865200000002, "name" : "Torc Waterfall", "rating" : 4.5, "user_ratings_total" : 3686},' +
+    '{ "formatted_address": "Ross Road, Ross Island, Killarney, County Kerry, Ireland" , "lat" : 52.0412494, "lng" : -9.531438099999999 , "name" : "Ross Castle", "rating" : 4.5, "user_ratings_total" : 2839} ]}';
+
+let killarneyStaying = '{ "killarneyStayingString" : [' +
+    '{ "formatted_address": "Town Centre, East Avenue, Dromhale, Killarney, County Kerry, Ireland" , "lat" : 52.05794849999999, "lng" : -9.5050922 , "name": "The Killarney Park" , "rating": 5.0 , "user_ratings_total": 2096},' +
+    '{ "formatted_address": "East Avenue, Killarney, County Kerry, Ireland" , "lat" : 52.057893, "lng" : -9.507648999999999 , "name" : "The Ross" , "rating" : 5.0 , "user_ratings_total" : 1097},' +
+    '{ "formatted_address": "Kenmare Place, Killarney, County Kerry, Ireland" , "lat" : 52.057947, "lng" : -9.507294 , "name" : "International Hotel Killarney" , "rating" : 4.5 , "user_ratings_total" : 3006},' +
+    '{ "formatted_address": "Muckross Road, Poulnamuck, Killarney, County Kerry, Ireland" , "lat" : 52.0459256, "lng" : -9.5044579 , "name" : "The Brehon" , "rating" : 4.5 , "user_ratings_total" : 2929},' +
+    '{ "formatted_address": "College Street, Killarney, County Kerry, Ireland" , "lat" : 52.0600377, "lng" : -9.505494299999999 , "name" : "Killarney Royal Hotel" , "rating" : 4.5 , "user_ratings_total" : 1307} ]}';
+
 function initMap() {
 
     let myStyles = [
@@ -268,16 +289,16 @@ function initMap() {
             styles: myStyles
         });
 
-        let eatingObject = JSON.parse(eating);
-        let attractionsObject = JSON.parse(attractions);
-        let stayingObject = JSON.parse(staying);
+        let killarneyEatingObject = JSON.parse(killarneyEating);
+        let killarneyAttractionsObject = JSON.parse(killarneyAttractions);
+        let killarneyStayingObject = JSON.parse(killarneyStaying);
         let eatingImage = 'https://i.imgur.com/M2nsXS1.png?1';
         let attractionsImage = 'https://i.imgur.com/QlNM9nx.png?1';
         let stayingImage = 'https://i.imgur.com/z0wt3rY.png?1';
 
-        for (let i = 0; i < eatingObject.eatingString.length; i++) {
-            let lat = eatingObject.eatingString[i].lat;
-            let lng = eatingObject.eatingString[i].lng;
+        for (let i = 0; i < killarneyEatingObject.killarneyEatingString.length; i++) {
+            let lat = killarneyEatingObject.killarneyEatingString[i].lat;
+            let lng = killarneyEatingObject.killarneyEatingString[i].lng;
             let latLng = new google.maps.LatLng(lat, lng);
             let eatingMarker = new google.maps.Marker({
                 position: latLng,
@@ -286,7 +307,7 @@ function initMap() {
                 icon: eatingImage
             });
 
-            let mapContent = eatingObject.eatingString[i].formatted_address + " " + eatingObject.eatingString[i].name;
+            let mapContent = killarneyEatingObject.killarneyEatingString[i].formatted_address + " " + killarneyEatingObject.killarneyEatingString[i].name;
             let infowindow = new google.maps.InfoWindow({
                 content: mapContent
             });
@@ -301,9 +322,9 @@ function initMap() {
 
         };
 
-        for (let i = 0; i < attractionsObject.attractionsString.length; i++) {
-            let lat = attractionsObject.attractionsString[i].lat;
-            let lng = attractionsObject.attractionsString[i].lng;
+        for (let i = 0; i < killarneyAttractionsObject.killarneyAttractionsString.length; i++) {
+            let lat = killarneyAttractionsObject.killarneyAttractionsString[i].lat;
+            let lng = killarneyAttractionsObject.killarneyAttractionsString[i].lng;
             let latLng = new google.maps.LatLng(lat, lng);
             let attractionsMarker = new google.maps.Marker({
                 position: latLng,
@@ -312,7 +333,7 @@ function initMap() {
                 icon: attractionsImage
             });
 
-            let mapContent = attractionsObject.attractionsString[i].formatted_address + " " + attractionsObject.attractionsString[i].name;
+            let mapContent = killarneyAttractionsObject.killarneyAttractionsString[i].formatted_address + " " + killarneyAttractionsObject.killarneyAttractionsString[i].name;
             let infowindow = new google.maps.InfoWindow({
                 content: mapContent
             });
@@ -326,9 +347,9 @@ function initMap() {
             });
         };
 
-        for (let i = 0; i < stayingObject.stayingString.length; i++) {
-            let lat = stayingObject.stayingString[i].lat;
-            let lng = stayingObject.stayingString[i].lng;
+        for (let i = 0; i < killarneyStayingObject.killarneyStayingString.length; i++) {
+            let lat = killarneyStayingObject.killarneyStayingString[i].lat;
+            let lng = killarneyStayingObject.killarneyStayingString[i].lng;
             let latLng = new google.maps.LatLng(lat, lng);
             let stayingMarker = new google.maps.Marker({
                 position: latLng,
@@ -337,7 +358,7 @@ function initMap() {
                 icon: stayingImage
             });
 
-            let mapContent = stayingObject.stayingString[i].formatted_address + " " + stayingObject.stayingString[i].name;
+            let mapContent = killarneyStayingObject.killarneyStayingString[i].formatted_address + " " + killarneyStayingObject.killarneyStayingString[i].name;
             let infowindow = new google.maps.InfoWindow({
                 content: mapContent
             });
