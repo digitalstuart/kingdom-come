@@ -247,6 +247,15 @@ blockquote {
     margin-right: 20px;  
 }
 
+.accordion {
+    text-align: center;
+}
+
+.card {
+    width: 31vw;
+    display: inline-block;
+}
+
 }
 
 @media only screen and (min-width: 576px) {
