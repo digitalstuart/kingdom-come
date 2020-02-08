@@ -242,7 +242,9 @@ div#map {
     margin-right: 20px;  
 }
 
-@media only screen and (min-width: 769px) {
+}
+
+@media only screen and (min-width: 576px) {
 
 .flex-container {
     display: flex;
@@ -255,9 +257,27 @@ div#map {
     margin-bottom: 0;
 }
 
+}
+
+@media only screen and (max-width: 425px) {
+
 .three-things {
-    margin-top: 20rem;
+    margin-top: 15rem;
     color: #fff;
+}
+
+#map-link {
+    position: absolute;
+    bottom: 18px;
+}
+
+#map-link > a {
+    font-size: 10px;
+    }
+
+.arrow {
+    width: 30px;
+    height: 30px;
 }
 
 }
