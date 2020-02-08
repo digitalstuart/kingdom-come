@@ -125,10 +125,6 @@ div#map {
     padding-left: 7px;
 }
 
-#accordionExample {    
-    margin-top: 2rem;
-}
-
 .btn-link:hover {
     text-decoration: none;
 }
@@ -152,9 +148,18 @@ div#map {
 }
 
 .card-body {
-    padding-top: 1rem;
     padding-bottom: 0;
     font-family: "Courgette", sans-serif;
+}
+
+blockquote {
+    margin-top: 0;
+    margin-bottom: 16px;
+    background-color: #e3dada;
+}
+
+#who-one, #who-two, #who-three {
+    margin-left: 10px;
 }
 
 .quotes {
