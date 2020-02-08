@@ -101,12 +101,6 @@ blockquote p {
 
 div#map {
     min-height: 360px;
-    position: relative;
-    }
-
-div#map2 {
-    min-height: 360px;
-    position: relative;
     }
 
 #map-link {
@@ -121,15 +115,8 @@ div#map2 {
 
 #info-box {
     font-family: 'Courgette', sans-serif;
-    font-size: 0.8rem;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
-    padding-top: 12px;
-    width: 15vw;
-    position: absolute;
-    top: 50px;
-    right: 50rem;
+    font-size: 0.8rem;    
+    padding-top: 12px;    
     background-color: white;
 }
 

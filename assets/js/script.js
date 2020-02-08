@@ -87,3 +87,34 @@ document.getElementById("dingle-link").addEventListener("click", function () { d
 document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("text-one").innerHTML = 'Fungie' });
 document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("text-two").innerHTML = 'Inch' });
 document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("text-three").innerHTML = 'Oceanworld' });
+
+function myFunction(x) {
+  if (x.matches) { // If media query matches
+    document.getElementById("eat").innerHTML = ("Places to eat")
+  } else {
+    document.getElementById("eat").innerHTML = ("Eat")
+  }
+
+    if (x.matches) { // If media query matches
+    document.getElementById("stay").innerHTML = ("Places to stay")
+  } else {
+    document.getElementById("stay").innerHTML = ("Stay")
+  }
+
+  if (x.matches) { // If media query matches
+    document.getElementById("go").innerHTML = ("Places to go")
+  } else {
+    document.getElementById("go").innerHTML = ("Go")
+  }
+
+  if (x.matches) { // If media query matches
+    document.getElementById("more").innerHTML = ("Zoom out for more")
+  } else {
+    document.getElementById("more").innerHTML = ("More")
+  }
+
+}
+
+var x = window.matchMedia("(min-width: 630px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction) // Attach listener function on state changes
