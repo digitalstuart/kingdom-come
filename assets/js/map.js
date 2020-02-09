@@ -109,8 +109,8 @@ let traleeStaying = '{ "traleeStayingString" : [' +
     ];
 
     let map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: 52.1406427, lng: -10.2889963 },
-        zoom: 14,
+        center: { lat: 52.1394887, lng: -10.2808477 },
+        zoom: 13,
         styles: myStyles
     });
 
@@ -213,7 +213,7 @@ let traleeStaying = '{ "traleeStayingString" : [' +
         ];
 
         let map = new google.maps.Map(document.getElementById('map'), {
-            center: { lat: 51.8843002, lng: -9.6172378 },
+            center: { lat: 51.8790316, lng: -9.5856994 },
             zoom: 14,
             styles: myStyles
         });
@@ -319,7 +319,7 @@ let traleeStaying = '{ "traleeStayingString" : [' +
         ];
 
         let map = new google.maps.Map(document.getElementById('map'), {
-            center: { lat: 52.0605651, lng: -9.5251096 },
+            center: { lat: 52.0615525, lng: -9.5083282 },
             zoom: 14,
             styles: myStyles
         });
@@ -425,7 +425,7 @@ let traleeStaying = '{ "traleeStayingString" : [' +
         ];
 
         let map = new google.maps.Map(document.getElementById('map'), {
-            center: { lat: 52.4460611, lng: -9.4941203 },
+            center: { lat: 52.4468587, lng: -9.4866836 },
             zoom: 14,
             styles: myStyles
         });
@@ -502,7 +502,7 @@ let traleeStaying = '{ "traleeStayingString" : [' +
         ];
 
         let map = new google.maps.Map(document.getElementById('map'), {
-            center: { lat: 52.2721673, lng: -9.7339743 },
+            center: { lat: 52.2671263, lng: -9.7095775 },
             zoom: 14,
             styles: myStyles
         });
@@ -608,8 +608,8 @@ let traleeStaying = '{ "traleeStayingString" : [' +
         ];
 
         let map = new google.maps.Map(document.getElementById('map'), {
-            center: { lat: 52.1406427, lng: -10.2889963 },
-            zoom: 14,
+            center: { lat: 52.1394887, lng: -10.2808477 },
+            zoom: 13,
             styles: myStyles
         });
 
