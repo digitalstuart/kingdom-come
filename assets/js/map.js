@@ -61,6 +61,20 @@ let killarneyStaying = '{ "killarneyStayingString" : [' +
     '{ "formatted_address": "Muckross Road, Poulnamuck, Killarney, County Kerry, Ireland" , "lat" : 52.0459256, "lng" : -9.5044579 , "name" : "The Brehon" , "rating" : 4.5 , "user_ratings_total" : 2929},' +
     '{ "formatted_address": "College Street, Killarney, County Kerry, Ireland" , "lat" : 52.0600377, "lng" : -9.505494299999999 , "name" : "Killarney Royal Hotel" , "rating" : 4.5 , "user_ratings_total" : 1307} ]}';
 
+let listowelEating = '{ "listowelEatingString" : [' +
+    '{ "formatted_address": "14 Lower William Street, Listowel, County Kerry, Ireland" , "lat" : 52.4462667, "lng" : -9.486072199999999, "name" : "The Horseshoe Bar & Restaurant", "rating" : 4.5, "user_ratings_total" : 30},' +
+    '{ "formatted_address": "38 Market Street, Listowel, County Kerry, Ireland" , "lat" : 52.44684520000001, "lng" : -9.4863991 , "name" : "Nanjinj Chinese Restaurant", "rating" : 4.5, "user_ratings_total" : 40},' +    
+    '{ "formatted_address": "41 Church Street, Listowel, County Kerry, Ireland" , "lat" : 52.44659919999999, "lng" : -9.4842248 , "name": "Allo\'s Restaurant, Bar & Bistro" , "rating": 4.0 , "user_ratings_total": 280},' +
+    '{ "formatted_address": "42 Upper William Street, Listowel, County Kerry, Ireland" , "lat" : 52.447482, "lng" : -9.485915 , "name" : "Jumbo\'s Family Restaurant", "rating" : 4.0, "user_ratings_total" : 39},' +
+    '{ "formatted_address": "Market Street, Listowel, County Kerry, Ireland" , "lat" : 52.4470921, "lng" : -9.4877907, "name" : "Eabha Joan\'s", "rating" : 4.0, "user_ratings_total" : 136} ]}';
+
+let listowelAttractions = '{ "listowelAttractionsString" : [' +
+    '{ "formatted_address": "John B. Keane Road, Listowel, County Kerry, Ireland" , "lat" : 52.4496208, "lng" : -9.490418799999999 , "name" : "Lartigue Monorail" , "rating" : 5.0 , "user_ratings_total" : 73},' +
+    '{ "formatted_address": "25 The Square, Islandmacloughry, Listowel, County Kerry, Ireland" , "lat" : 52.44435130000001, "lng" : -9.4869317 , "name" : "Listowel Castle", "rating" : 4.5, "user_ratings_total" : 123},' +
+    '{ "formatted_address": "24 The Square, Listowel, County Kerry, Ireland" , "lat" : 52.44472889999999, "lng" : -9.4862804, "name" : "Kerry Writers Museum", "rating" : 4.5, "user_ratings_total" : 33},' +
+    '{ "formatted_address": "Ballygowloge, Ballygologue, Listowel, County Kerry, Ireland" , "lat" : 52.4443441, "lng" : -9.4753219, "name" : "Garden of Europe", "rating" : 4.0, "user_ratings_total" : 22},' +
+    '{ "formatted_address": "36 The Square, Listowel, County Kerry, Ireland" , "lat" : 52.4448391, "lng" : -9.4859721 , "name" : "St John\'s Theatre & Arts Centre", "rating" : 4.5, "user_ratings_total" : 28} ]}';
+
 function initMap() {
 
     let myStyles = [
@@ -395,16 +409,14 @@ function initMap() {
             styles: myStyles
         });
 
-        let eatingObject = JSON.parse(eating);
-        let attractionsObject = JSON.parse(attractions);
-        let stayingObject = JSON.parse(staying);
+        let listowelEatingObject = JSON.parse(listowelEating);
+        let listowelAttractionsObject = JSON.parse(listowelAttractions);
         let eatingImage = 'https://i.imgur.com/M2nsXS1.png?1';
         let attractionsImage = 'https://i.imgur.com/QlNM9nx.png?1';
-        let stayingImage = 'https://i.imgur.com/z0wt3rY.png?1';
 
-        for (let i = 0; i < eatingObject.eatingString.length; i++) {
-            let lat = eatingObject.eatingString[i].lat;
-            let lng = eatingObject.eatingString[i].lng;
+        for (let i = 0; i < listowelEatingObject.listowelEatingString.length; i++) {
+            let lat = listowelEatingObject.listowelEatingString[i].lat;
+            let lng = listowelEatingObject.listowelEatingString[i].lng;
             let latLng = new google.maps.LatLng(lat, lng);
             let eatingMarker = new google.maps.Marker({
                 position: latLng,
@@ -413,7 +425,7 @@ function initMap() {
                 icon: eatingImage
             });
 
-            let mapContent = eatingObject.eatingString[i].formatted_address + " " + eatingObject.eatingString[i].name;
+            let mapContent = listowelEatingObject.listowelEatingString[i].formatted_address + " " + listowelEatingObject.listowelEatingString[i].name;
             let infowindow = new google.maps.InfoWindow({
                 content: mapContent
             });
@@ -428,9 +440,9 @@ function initMap() {
 
         };
 
-        for (let i = 0; i < attractionsObject.attractionsString.length; i++) {
-            let lat = attractionsObject.attractionsString[i].lat;
-            let lng = attractionsObject.attractionsString[i].lng;
+        for (let i = 0; i < listowelAttractionsObject.listowelAttractionsString.length; i++) {
+            let lat = listowelAttractionsObject.listowelAttractionsString[i].lat;
+            let lng = listowelAttractionsObject.listowelAttractionsString[i].lng;
             let latLng = new google.maps.LatLng(lat, lng);
             let attractionsMarker = new google.maps.Marker({
                 position: latLng,
@@ -439,7 +451,7 @@ function initMap() {
                 icon: attractionsImage
             });
 
-            let mapContent = attractionsObject.attractionsString[i].formatted_address + " " + attractionsObject.attractionsString[i].name;
+            let mapContent = listowelAttractionsObject.listowelAttractionsString[i].formatted_address + " " + listowelAttractionsObject.listowelAttractionsString[i].name;
             let infowindow = new google.maps.InfoWindow({
                 content: mapContent
             });
@@ -451,34 +463,7 @@ function initMap() {
             attractionsMarker.addListener('mouseout', function () {
                 infowindow.close();
             });
-        };
-
-        for (let i = 0; i < stayingObject.stayingString.length; i++) {
-            let lat = stayingObject.stayingString[i].lat;
-            let lng = stayingObject.stayingString[i].lng;
-            let latLng = new google.maps.LatLng(lat, lng);
-            let stayingMarker = new google.maps.Marker({
-                position: latLng,
-                map: map,
-                animation: google.maps.Animation.DROP,
-                icon: stayingImage
-            });
-
-            let mapContent = stayingObject.stayingString[i].formatted_address + " " + stayingObject.stayingString[i].name;
-            let infowindow = new google.maps.InfoWindow({
-                content: mapContent
-            });
-
-            stayingMarker.addListener('mouseover', function () {
-                infowindow.open(map, stayingMarker);
-            });
-
-            stayingMarker.addListener('mouseout', function () {
-                infowindow.close();
-            });
-
-        };
-
+        };        
     });    
     
     // Tralee map code
