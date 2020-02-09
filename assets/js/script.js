@@ -22,10 +22,10 @@ document.getElementById("kenmare-link").addEventListener("click", function () { 
 document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("quote-two").innerHTML = quotesObject.quotesString[4].quote });
 document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("who-two").innerHTML = quotesObject.quotesString[4].who });
 document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("quote-three").innerHTML = quotesObject.quotesString[5].quote + " " + quotesObject.quotesString[5].who });
-document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("three-things-one").src = 'assets/images/kenmare-reenagross.jpg'});
+document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("three-things-one").src = 'assets/images/kenmare-reenagross.jpg' });
 document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("three-things-two").src = 'assets/images/kenmare-square.jpg' });
 document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("three-things-three").src = 'assets/images/kenmare-main.jpg' });
-document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("three-things-one").alt = 'Reenagross Park in Kenmare'});
+document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("three-things-one").alt = 'Reenagross Park in Kenmare' });
 document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("three-things-two").alt = 'The Square in Kenmare' });
 document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("three-things-three").alt = 'Main Street in Kenmare' });
 document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("text-one").innerHTML = 'Reenagross' });
@@ -99,32 +99,46 @@ document.getElementById("dingle-link").addEventListener("click", function () { d
 document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("list-more").style.display = "inline" });
 
 function myFunction(x) {
-  if (x.matches) { // If media query matches
-    document.getElementById("eat").innerHTML = ("Places to eat")
-  } else {
-    document.getElementById("eat").innerHTML = ("Eat")
-  }
+    if (x.matches) { // If media query matches
+        document.getElementById("eat").innerHTML = ("Places to eat")
+    } else {
+        document.getElementById("eat").innerHTML = ("Eat")
+    }
 
     if (x.matches) { // If media query matches
-    document.getElementById("stay").innerHTML = ("Places to stay")
-  } else {
-    document.getElementById("stay").innerHTML = ("Stay")
-  }
+        document.getElementById("stay").innerHTML = ("Places to stay")
+    } else {
+        document.getElementById("stay").innerHTML = ("Stay")
+    }
 
-  if (x.matches) { // If media query matches
-    document.getElementById("go").innerHTML = ("Places to go")
-  } else {
-    document.getElementById("go").innerHTML = ("Go")
-  }
+    if (x.matches) { // If media query matches
+        document.getElementById("go").innerHTML = ("Places to go")
+    } else {
+        document.getElementById("go").innerHTML = ("Go")
+    }
 
-  if (x.matches) { // If media query matches
-    document.getElementById("more").innerHTML = ("Zoom out for more")
-  } else {
-    document.getElementById("more").innerHTML = ("More")
-  }
+    if (x.matches) { // If media query matches
+        document.getElementById("more").innerHTML = ("Zoom out for more")
+    } else {
+        document.getElementById("more").innerHTML = ("More")
+    }
 
 }
 
 var x = window.matchMedia("(min-width: 630px)")
 myFunction(x) // Call listener function at run time
 x.addListener(myFunction) // Attach listener function on state changes
+
+// MODAL
+
+function modalFunction(y) {
+    if (y.matches) {
+        var element = document.getElementById("changeModalPosition");
+        element.classList.remove("modal-dialog-centered");
+        element.classList.add("modal-dialog");
+    }
+}
+
+var y = window.matchMedia("(min-width: 630px)")
+modalFunction(y) // Call listener function at run time
+y.addListener(modalFunction) // Attach listener function on state changes

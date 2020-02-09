@@ -39,26 +39,49 @@
 		</div>
 	</nav>
 
-	<section class="container-fluid" id="background-image">		
-			<div class="row">
-				<div class="col-6 offset-3 col-sm-12 offset-sm-0 ">
-					<div class="flex-container three-things text-center">
-						<div class="flex-item">
-							<img class="three-things-image" id="three-things-one" src="assets/images/dingle-fungie.jpg" alt="Statue of Fungie the dolphin in Dingle">
-							<div class="three-things-text" id="text-one">Fungie</div>
-							<div class="typed"></div>
+	<section class="container-fluid" id="background-image">
+		<div class="row">
+			<div class="col-6 offset-3 col-sm-12 offset-sm-0 ">
+				<div class="flex-container three-things text-center">
+					<div class="flex-item">
+						<img class="three-things-image" id="three-things-one" src="assets/images/dingle-fungie.jpg" alt="Statue of Fungie the dolphin in Dingle">
+						<div class="three-things-text" id="text-one">Fungie</div>
+						<div class="typed"></div>
+					</div>
+					<div class=" flex-item">
+						<img class="three-things-image" id="three-things-two" src="assets/images/dingle-inch.jpg" alt="Inch Beach on the Dingle Peninsula">
+						<div class="three-things-text" id="text-two">Inch</div>
+					</div>
+					<div class="flex-item">
+						<img class="three-things-image" id="three-things-three" src="assets/images/dingle-oceanworld.jpg" alt="Tunnel aquarium at Dingle Oceanworld">
+						<div class="three-things-text" id="text-three">Oceanworld</div>
+					</div>
+				</div>
+				<!-- Trigger the modal with a button -->
+				<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+				<!-- Modal -->
+				<div id="myModal" class="modal fade" role="dialog">
+					<div id="changeModalPosition" class="modal-dialog-centered">
+
+						<!-- Modal content-->
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Modal Header</h4>
+							</div>
+							<div class="modal-body">
+								<p>Some text in the modal.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							</div>
 						</div>
-						<div class=" flex-item">
-							<img class="three-things-image" id="three-things-two" src="assets/images/dingle-inch.jpg" alt="Inch Beach on the Dingle Peninsula">
-							<div class="three-things-text" id="text-two">Inch</div>
-						</div>
-						<div class="flex-item">
-							<img class="three-things-image" id="three-things-three" src="assets/images/dingle-oceanworld.jpg" alt="Tunnel aquarium at Dingle Oceanworld">
-							<div class="three-things-text" id="text-three">Oceanworld</div>
-						</div>
+
 					</div>
 				</div>
 			</div>
+		</div>
 		</div>
 		<div class="row">
 			<div class="col">
@@ -77,13 +100,17 @@
 				<div id="map"></div>
 				<div class="text-center" id="info-box">
 					<ul class="list-inline" id="info-box-list">
-						<li class="list-inline-item"><img src="https://i.imgur.com/M2nsXS1.png?1" alt="Map marker pin icon"><span id="eat">Top places to eat</span>
+						<li class="list-inline-item">
+							<img src="https://i.imgur.com/M2nsXS1.png?1" alt="Map marker pin icon"><span id="eat">Top places to eat</span>
 						</li>
-						<li class="list-inline-item"><img src="https://i.imgur.com/QlNM9nx.png?1" alt="Map marker pin icon"><span id="go">Top places to go</span>
+						<li class="list-inline-item">
+							<img src="https://i.imgur.com/QlNM9nx.png?1" alt="Map marker pin icon"><span id="go">Top places to go</span>
 						</li>
-						<li class="list-inline-item" id="list-stay" ><img src="https://i.imgur.com/z0wt3rY.png?1" alt="Map marker pin icon"><span id="stay">Top places to stay</span>
+						<li class="list-inline-item" id="list-stay">
+							<img src="https://i.imgur.com/z0wt3rY.png?1" alt="Map marker pin icon"><span id="stay">Top places to stay</span>
 						</li>
-						<li class="list-inline-item" id="list-more" ><img src="https://i.imgur.com/He5hxrD.jpg?1" alt="Zoom out icon"><span id="more">Zoom out for more</span>
+						<li class="list-inline-item" id="list-more">
+							<img src="https://i.imgur.com/He5hxrD.jpg?1" alt="Zoom out icon"><span id="more">Zoom out for more</span>
 						</li>
 					</ul>
 				</div>
@@ -164,8 +191,8 @@
 		</div>
 	</section>
 
-	<script src="assets/js/map.js"></script>    
-    <script async defer
+	<script src="assets/js/map.js"></script>
+	<script async defer
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6wPg4sL6mFGbTE_8-469dlsDYW-0F5-Q&libraries=places&callback=initMap">
 	</script>
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
