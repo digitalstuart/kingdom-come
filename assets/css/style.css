@@ -40,6 +40,10 @@ blockquote p {
     margin-right: 32px;
 }
 
+.navbar-brand:hover {
+    color: rgb(255, 221, 0);    
+}
+
 .nav-item {
     cursor: pointer;
 }
@@ -100,7 +104,7 @@ blockquote p {
 }
 
 div#map {
-    min-height: 360px;
+    min-height: 530px;
     }
 
 #map-link {
@@ -258,6 +262,14 @@ blockquote {
 
 }
 
+@media only screen and (max-width: 768px) {
+
+div#map {
+    min-height: 430px;
+    }
+
+}
+
 @media only screen and (min-width: 576px) {
 
 .flex-container {
@@ -293,6 +305,10 @@ blockquote {
     width: 30px;
     height: 30px;
 }
+
+div#map {
+    min-height: 350px;
+    }
 
 }
 
