@@ -31,6 +31,8 @@ document.getElementById("kenmare-link").addEventListener("click", function () { 
 document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("text-one").innerHTML = 'Reenagross' });
 document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("text-two").innerHTML = 'Square' });
 document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("text-three").innerHTML = 'Main St' });
+document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("list-stay").style.display = "inline" });
+document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("list-more").style.display = "inline" });
 
 document.getElementById("killarney-link").addEventListener("click", function () { document.getElementById("background-image").style.backgroundImage = "url('assets/images/killarney.jpg')" });
 document.getElementById("killarney-link").addEventListener("click", function () { document.getElementById("quote-one").innerHTML = quotesObject.quotesString[6].quote + " " + quotesObject.quotesString[6].who });
@@ -45,6 +47,8 @@ document.getElementById("killarney-link").addEventListener("click", function () 
 document.getElementById("killarney-link").addEventListener("click", function () { document.getElementById("text-one").innerHTML = 'Muckross' });
 document.getElementById("killarney-link").addEventListener("click", function () { document.getElementById("text-two").innerHTML = 'Jaunting' });
 document.getElementById("killarney-link").addEventListener("click", function () { document.getElementById("text-three").innerHTML = 'Town' });
+document.getElementById("killarney-link").addEventListener("click", function () { document.getElementById("list-stay").style.display = "inline" });
+document.getElementById("killarney-link").addEventListener("click", function () { document.getElementById("list-more").style.display = "inline" });
 
 document.getElementById("listowel-link").addEventListener("click", function () { document.getElementById("background-image").style.backgroundImage = "url('assets/images/listowel.jpg')" });
 document.getElementById("listowel-link").addEventListener("click", function () { document.getElementById("quote-one").innerHTML = quotesObject.quotesString[9].quote + " " + quotesObject.quotesString[9].who });
@@ -75,6 +79,8 @@ document.getElementById("tralee-link").addEventListener("click", function () { d
 document.getElementById("tralee-link").addEventListener("click", function () { document.getElementById("text-one").innerHTML = 'Blennerville' });
 document.getElementById("tralee-link").addEventListener("click", function () { document.getElementById("text-two").innerHTML = 'Park' });
 document.getElementById("tralee-link").addEventListener("click", function () { document.getElementById("text-three").innerHTML = 'Aquadome' });
+document.getElementById("tralee-link").addEventListener("click", function () { document.getElementById("list-stay").style.display = "inline" });
+document.getElementById("tralee-link").addEventListener("click", function () { document.getElementById("list-more").style.display = "inline" });
 
 document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("background-image").style.backgroundImage = "url('assets/images/dingle.jpg')" });
 document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("quote-one").innerHTML = quotesObject.quotesString[0].quote + " " + quotesObject.quotesString[0].who });
@@ -89,6 +95,8 @@ document.getElementById("dingle-link").addEventListener("click", function () { d
 document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("text-one").innerHTML = 'Fungie' });
 document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("text-two").innerHTML = 'Inch' });
 document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("text-three").innerHTML = 'Oceanworld' });
+document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("list-stay").style.display = "inline" });
+document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("list-more").style.display = "inline" });
 
 function myFunction(x) {
   if (x.matches) { // If media query matches
