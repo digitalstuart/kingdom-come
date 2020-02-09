@@ -75,7 +75,28 @@ let listowelAttractions = '{ "listowelAttractionsString" : [' +
     '{ "formatted_address": "Ballygowloge, Ballygologue, Listowel, County Kerry, Ireland" , "lat" : 52.4443441, "lng" : -9.4753219, "name" : "Garden of Europe", "rating" : 4.0, "user_ratings_total" : 22},' +
     '{ "formatted_address": "36 The Square, Listowel, County Kerry, Ireland" , "lat" : 52.4448391, "lng" : -9.4859721 , "name" : "St John\'s Theatre & Arts Centre", "rating" : 4.5, "user_ratings_total" : 28} ]}';
 
-function initMap() {
+let traleeEating = '{ "traleeEatingString" : [' +
+    '{ "formatted_address": "1 The Mall, Balloonagh, Tralee, County Kerry, Ireland" , "lat" : 52.2695745, "lng" : -9.706239699999999 , "name": "Quinlans Fresh Fish & Seafood Bar" , "rating": 4.5 , "user_ratings_total": 558},' +
+    '{ "formatted_address": "41 Ashe Street, Cloonalour, Tralee, County Kerry, Ireland" , "lat" : 52.2700293, "lng" : -9.7040375 , "name" : "7th Heaven Bistro & Cafe", "rating" : 5.0, "user_ratings_total" : 62},' +
+    '{ "formatted_address": "16 Abbey Street, Tralee, County Kerry, Ireland" , "lat" : 52.2690241, "lng" : -9.707827099999999 , "name" : "Cassidy\'s Restaurants", "rating" : 4.5, "user_ratings_total" : 486},' +
+    '{ "formatted_address": "Rock Street, Balloonagh, Tralee, County Kerry, Ireland" , "lat" : 52.2701812, "lng" : -9.708096899999999 , "name" : "Kirby\'s Brogue Inn", "rating" : 4.5, "user_ratings_total" : 1038},' +
+    '{ "formatted_address": "14 Prince\'s Street, Tralee, County Kerry, Ireland" , "lat" : 52.2664082, "lng" : -9.710678699999999 , "name" : "Croí Restaurant", "rating" : 4.5, "user_ratings_total" : 366} ]}';
+
+let traleeAttractions = '{ "traleeAttractionsString" : [' +
+    '{ "formatted_address": "Town Park, Tralee, County Kerry, Ireland" , "lat" : 52.2664318, "lng" : -9.7083552 , "name" : "Siamsa Tire National Folk Theatre" , "rating" : 5.0 , "user_ratings_total" : 370},' +
+    '{ "formatted_address": "Dan Spring Road, Tralee, County Kerry, Ireland" , "lat" : 52.2635412, "lng" : -9.7100084, "name" : "Aqua Dome", "rating" : 4.5, "user_ratings_total" : 841},' +
+    '{ "formatted_address": "Ballyard Road, Ballyard, Tralee, County Kerry, Ireland" , "lat" : 52.261875, "lng" : -9.711390099999999, "name" : "Tralee Bay Wetlands Eco & Activity Park", "rating" : 4.5, "user_ratings_total" : 227},' +
+    '{ "formatted_address": "Ashe Memorial Hall, Denny Street, Tralee, County Kerry, Ireland" , "lat" : 52.2667702, "lng" : -9.706156499999999 , "name" : "Kerry County Museum", "rating" : 4.5, "user_ratings_total" : 433},' +
+    '{ "formatted_address": "Windmill Lane, Blennerville, Tralee, County Kerry, Ireland" , "lat" : 52.2568655, "lng" : -9.736840899999999 , "name" : "Blennerville Windmill", "rating" : 4.5, "user_ratings_total" : 312} ]}';
+
+let traleeStaying = '{ "traleeStayingString" : [' +
+    '{ "formatted_address": "Ratass, Tralee, County Kerry, Ireland" , "lat" : 52.2640488, "lng" : -9.6762406 , "name": "Manor West Hotel" , "rating": 4.5 , "user_ratings_total": 1095},' +
+    '{ "formatted_address": "Dan Spring Road, Cloon Beg, Tralee, County Kerry, Ireland" , "lat" : 52.2635733, "lng" : -9.700669299999999 , "name" : "The Rose Hotel" , "rating" : 4.5 , "user_ratings_total" : 1464},' +
+    '{ "formatted_address": "Maine Street, Tralee, County Kerry, Ireland" , "lat" : 52.2707571, "lng" : -9.7046674 , "name" : "The Ashe Hotel" , "rating" : 4.5 , "user_ratings_total" : 1242},' +
+    '{ "formatted_address": "Oakpark, Tralee, County Kerry, Ireland" , "lat" : 52.276176, "lng" : -9.691155 , "name" : "Meadowlands Hotel" , "rating" : 4.5 , "user_ratings_total" : 757},' +
+    '{ "formatted_address": "Ballyroe, Tralee, County Kerry, Ireland" , "lat" : 52.296605, "lng" : -9.750987 , "name" : "Ballyroe Heights Hotel" , "rating" : 4.5 , "user_ratings_total" : 1093} ]}';
+
+    function initMap() {
 
     let myStyles = [
         {
@@ -486,16 +507,16 @@ function initMap() {
             styles: myStyles
         });
 
-        let eatingObject = JSON.parse(eating);
-        let attractionsObject = JSON.parse(attractions);
-        let stayingObject = JSON.parse(staying);
+        let traleeEatingObject = JSON.parse(traleeEating);
+        let traleeAttractionsObject = JSON.parse(traleeAttractions);
+        let traleeStayingObject = JSON.parse(traleeStaying);
         let eatingImage = 'https://i.imgur.com/M2nsXS1.png?1';
         let attractionsImage = 'https://i.imgur.com/QlNM9nx.png?1';
         let stayingImage = 'https://i.imgur.com/z0wt3rY.png?1';
 
-        for (let i = 0; i < eatingObject.eatingString.length; i++) {
-            let lat = eatingObject.eatingString[i].lat;
-            let lng = eatingObject.eatingString[i].lng;
+        for (let i = 0; i < traleeEatingObject.traleeEatingString.length; i++) {
+            let lat = traleeEatingObject.traleeEatingString[i].lat;
+            let lng = traleeEatingObject.traleeEatingString[i].lng;
             let latLng = new google.maps.LatLng(lat, lng);
             let eatingMarker = new google.maps.Marker({
                 position: latLng,
@@ -504,7 +525,7 @@ function initMap() {
                 icon: eatingImage
             });
 
-            let mapContent = eatingObject.eatingString[i].formatted_address + " " + eatingObject.eatingString[i].name;
+            let mapContent = traleeEatingObject.traleeEatingString[i].formatted_address + " " + traleeEatingObject.traleeEatingString[i].name;
             let infowindow = new google.maps.InfoWindow({
                 content: mapContent
             });
@@ -519,9 +540,9 @@ function initMap() {
 
         };
 
-        for (let i = 0; i < attractionsObject.attractionsString.length; i++) {
-            let lat = attractionsObject.attractionsString[i].lat;
-            let lng = attractionsObject.attractionsString[i].lng;
+        for (let i = 0; i < traleeAttractionsObject.traleeAttractionsString.length; i++) {
+            let lat = traleeAttractionsObject.traleeAttractionsString[i].lat;
+            let lng = traleeAttractionsObject.traleeAttractionsString[i].lng;
             let latLng = new google.maps.LatLng(lat, lng);
             let attractionsMarker = new google.maps.Marker({
                 position: latLng,
@@ -530,7 +551,7 @@ function initMap() {
                 icon: attractionsImage
             });
 
-            let mapContent = attractionsObject.attractionsString[i].formatted_address + " " + attractionsObject.attractionsString[i].name;
+            let mapContent = traleeAttractionsObject.traleeAttractionsString[i].formatted_address + " " + traleeAttractionsObject.traleeAttractionsString[i].name;
             let infowindow = new google.maps.InfoWindow({
                 content: mapContent
             });
@@ -544,9 +565,9 @@ function initMap() {
             });
         };
 
-        for (let i = 0; i < stayingObject.stayingString.length; i++) {
-            let lat = stayingObject.stayingString[i].lat;
-            let lng = stayingObject.stayingString[i].lng;
+        for (let i = 0; i < traleeStayingObject.traleeStayingString.length; i++) {
+            let lat = traleeStayingObject.traleeStayingString[i].lat;
+            let lng = traleeStayingObject.traleeStayingString[i].lng;
             let latLng = new google.maps.LatLng(lat, lng);
             let stayingMarker = new google.maps.Marker({
                 position: latLng,
@@ -555,7 +576,7 @@ function initMap() {
                 icon: stayingImage
             });
 
-            let mapContent = stayingObject.stayingString[i].formatted_address + " " + stayingObject.stayingString[i].name;
+            let mapContent = traleeStayingObject.traleeStayingString[i].formatted_address + " " + traleeStayingObject.traleeStayingString[i].name;
             let infowindow = new google.maps.InfoWindow({
                 content: mapContent
             });
