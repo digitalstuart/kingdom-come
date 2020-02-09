@@ -59,6 +59,8 @@ document.getElementById("listowel-link").addEventListener("click", function () {
 document.getElementById("listowel-link").addEventListener("click", function () { document.getElementById("text-one").innerHTML = 'Monorail' });
 document.getElementById("listowel-link").addEventListener("click", function () { document.getElementById("text-two").innerHTML = 'Castle' });
 document.getElementById("listowel-link").addEventListener("click", function () { document.getElementById("text-three").innerHTML = 'Gardens' });
+document.getElementById("listowel-link").addEventListener("click", function () { document.getElementById("list-stay").style.display = "none" });
+document.getElementById("listowel-link").addEventListener("click", function () { document.getElementById("list-more").style.display = "none" });
 
 document.getElementById("tralee-link").addEventListener("click", function () { document.getElementById("background-image").style.backgroundImage = "url('assets/images/tralee.jpg')" });
 document.getElementById("tralee-link").addEventListener("click", function () { document.getElementById("quote-one").innerHTML = quotesObject.quotesString[12].quote + " " + quotesObject.quotesString[12].who });
