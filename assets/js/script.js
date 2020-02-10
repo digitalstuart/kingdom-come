@@ -151,7 +151,23 @@ function modalFunction(y) {
         element.classList.remove("modal-dialog-centered");
     } else {
         var element = document.getElementById("changeModalPosition");
-        element.classList.add("modal-dialog-");
+        element.classList.add("modal-dialog");
+    }
+
+    if (y.matches) {
+        var element = document.getElementById("changeModalPosition2");
+        element.classList.remove("modal-dialog-centered");
+    } else {
+        var element = document.getElementById("changeModalPosition2");
+        element.classList.add("modal-dialog");
+    }
+
+    if (y.matches) {
+        var element = document.getElementById("changeModalPosition3");
+        element.classList.remove("modal-dialog-centered");
+    } else {
+        var element = document.getElementById("changeModalPosition3");
+        element.classList.add("modal-dialog");
     }
 }
 

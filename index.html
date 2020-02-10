@@ -12,7 +12,7 @@
 	<title>Kingdom Come</title>
 </head>
 
-<body id="scroll-point">
+<body id="topheader">
 	<nav class="navbar fixed-top navbar-expand-md">
 		<a class="navbar-brand" href="index.html">KINGDOM COME</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,21 +44,21 @@
 			<div class="col-6 offset-3 col-sm-12 offset-sm-0 ">
 				<div class="flex-container three-things text-center">
 					<div class="flex-item">
-						<img class="three-things-image" id="three-things-one" src="assets/images/dingle-fungie.jpg" alt="Statue of Fungie the dolphin in Dingle">
+						<img class="three-things-image" id="three-things-one" src="assets/images/dingle-fungie.jpg" alt="Statue of Fungie the dolphin in Dingle" data-toggle="modal" data-target="#myModal">
 						<div class="three-things-text" id="text-one">Fungie</div>
 						<div class="typed"></div>
 					</div>
 					<div class=" flex-item">
-						<img class="three-things-image" id="three-things-two" src="assets/images/dingle-inch.jpg" alt="Inch Beach on the Dingle Peninsula">
+						<img class="three-things-image" id="three-things-two" src="assets/images/dingle-inch.jpg" alt="Inch Beach on the Dingle Peninsula" data-toggle="modal" data-target="#myModal2" >
 						<div class="three-things-text" id="text-two">Inch</div>
 					</div>
 					<div class="flex-item">
-						<img class="three-things-image" id="three-things-three" src="assets/images/dingle-oceanworld.jpg" alt="Tunnel aquarium at Dingle Oceanworld">
+						<img class="three-things-image" id="three-things-three" src="assets/images/dingle-oceanworld.jpg" alt="Tunnel aquarium at Dingle Oceanworld" data-toggle="modal" data-target="#myModal3">
 						<div class="three-things-text" id="text-three">Oceanworld</div>
 					</div>
 				</div>
 				<!-- Trigger the modal with a button -->
-				<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+				
 
 				<!-- Modal -->
 				<div id="myModal" class="modal fade" role="dialog">
@@ -66,12 +66,47 @@
 
 						<!-- Modal content-->
 						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal">&times;</button>
-								<h4 class="modal-title">Modal Header</h4>
+							<div class="modal-header">								
+								<h4 class="modal-title">Fungie</h4>
 							</div>
 							<div class="modal-body">
-								<p>Some text in the modal.</p>
+								<p>Some words about Fungie.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+
+					</div>
+				</div>
+                <div id="myModal2" class="modal fade" role="dialog">
+					<div id="changeModalPosition2" class="modal-dialog-centered">
+
+						<!-- Modal content-->
+						<div class="modal-content">
+							<div class="modal-header">								
+								<h4 class="modal-title">Inch Beach</h4>
+							</div>
+							<div class="modal-body">
+								<p>Some words about Inch Beach.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+
+					</div>
+				</div>
+                <div id="myModal3" class="modal fade" role="dialog">
+					<div id="changeModalPosition3" class="modal-dialog-centered">
+
+						<!-- Modal content-->
+						<div class="modal-content">
+							<div class="modal-header">								
+								<h4 class="modal-title">Oceanworld</h4>
+							</div>
+							<div class="modal-body">
+								<p>Some words about Oceanworld.</p>
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -114,17 +149,6 @@
 						</li>
 					</ul>
 				</div>
-				<!--
-				<div>
-					<ul>
-						<li><input type="checkbox" class="checkbox" value="hotels"><label>Hotels</label></li>
-						<li><input type="checkbox" class="checkbox" value="restaurants"><label>Restaurants</label></li>
-						<li><input type="checkbox" class="checkbox" value="pubs"><label>Pubs</label></li>
-						<li><input type="checkbox" class="checkbox" value="attractions"><label>Attractions</label></li>
-						<li><input type="checkbox" class="checkbox" value="cafes"><label>Cafes</label></li>
-					</ul>
-				</div>
-                -->
 			</div>
 		</div>
 	</section>
