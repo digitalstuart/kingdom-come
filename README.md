@@ -20,19 +20,20 @@ So as a starting point for visitors to Kerry, this site tells them - if you're c
 
 ### User Stories
 
-* 1
+* I am planning a trip to Kerry and I want to know what the main towns around the county have to offer me as a visitor.
 
-SCREENSHOT
-* 2
+![alt text](https://i.imgur.com/iLy9U3h.jpg "Kingdom Come screenshot")
+* I'm coming to County Kerry and I want to know the locations of the best hotels/restaurants/attractions in a certain town.
 
-SCREENSHOT
-* 3
+![alt text](https://i.imgur.com/D56Tugb.jpg "Kingdom Come screenshot")
+* I haven't got a great deal of time to spend in County Kerry, I want to know why [name of town] should be on my list.
 
-SCREENSHOT
+![alt text](https://i.imgur.com/GGjyC6j.jpg "Kingdom Come screenshot")
 
-I used Balsamiq to create some wireframes for the project. This initial one shows that the basic premise for the website was clear from the start, however the structure and layout was modified to make it more dynamic and interactive.
+I used Balsamiq to create some wireframes for the project. This initial one shows that the basic premise for the website was clear from the start, however the structure and layout was modified to make it more dynamic and interactive. The video idea was put on the shelf at this stage.
 
 ![alt text](https://i.imgur.com/6Ro7Wcy.jpg "Kingdom Come wireframe")
+![alt text](https://i.imgur.com/SEltWEW.jpg "Kingdom Come wireframe")
 
 ## Features
 
@@ -59,21 +60,63 @@ NB: my work during the project with the Google Maps API, .json files, modals and
 * Modals for the 'three things' images, different ones for each town.
 * Populating the map from the Google Maps API/.json files, rather than hard-coded data. I would also look at marker clustering and 'info window' styling.
 * I would also aim for the map to have a companion list view for all the markers, containing extra content such as images and external website links.
+* There could be scope for adding 'showcase' videos of each of the towns to the content offering.
 
 ## Technologies
 
 This project uses HTML, CSS and JavaScript, plus Bootstrap and jQuery.
-Here, mention Google Maps API, typed.js, etc.
+I also worked extensively with the Google Maps API developer documentation, as well as .json files and the typed.js JavaScript typing animation.
 
 ## Testing
+
+1. Navbar
+    * Clicking on the site logo redirects correctly to /index.html.
+    * Clicking on the individual town names achieves the following dynamic effects:
+        * The main background image changes
+        * The images, words and alt text change for the 'three things' section
+        * The map updates to a new location with relevant map markers
+        * The accordion quotes panels update accordingly
+    * In mobile view, the burger icon correctly displays the dropdown menu. All the menu links behave in the expected way, as above
+    * The navbar auto-collapses when an option is selected from the burger menu
+    * The navbar stays fixed in place on the site
+
+2. Landing page
+    * The 'three things' oval-shaped images convert from a row to a column for smaller screen sizes
+    
+3. 'Bouncing arrow' map link
+    * This jumps the user down to the map element
+    * The icon disappears when the page is scrolled down and reappears when the top of the screen is reached
+
+4. Map
+    * Clicking a marker icon displays an 'info window' with all fields populated correctly
+    * 'Mouseout' functionality makes the 'info window' disappear
+    * The map has zooming and panning working correctly
+    * The map updates with new markers when a different town name is selected
+    * The main cluster of markers remain visible on the map in mobile view
+    * The text for the individual items in the map key is shortened for smaller devices
+    
+5. Quotes section
+    * The content of each accordion panel updates correctly when a different town is selected from the navbar menu
+    * The different quotes panels open and display correctly when their title is clicked
+    * The accordion panels change from a row display on desktop to full column width on mobile
+
+The site was manually viewed and tested in the Chrome and Firefox browsers on a Windows 10 Pro PC, as well on iOS and Android mobile devices.
+
+This was done with a view to ensuring that: navigation functions respond appropriately on mobile and desktop; responsive changes in the navbar, site layout, background images, text and map are all present and correct for different devices; and the site remains fully functional, useable and well presented across all screen sizes.
+
+Testing on iOS mobile/tablet devices identified a previously known issue, where using 'background-attachment: fixed;' led to poorly sized images and no background scrolling effect. Background-attachment was thus changed to 'scroll' in order to fix the issue. 
+
+Finally, I also ran my code through the W3C validator tools for HTML/CSS and corrected the small number of errors which appeared.
 
 ## Deployment
 
 I went to Settings > GitHub Pages from my 'kingdom-come' GitHub repository.
 
-Then I selected 'master branch' from the Source dropdown.
+Then I selected for the site to be deployed directly from the 'master branch' in the Source dropdown.
 
 My site was then automatically published at https://digitalstuart.github.io/kingdom-come.
+
+In order to clone this project, you should paste https://github.com/digitalstuart/kingdom-come.git into your chosen editor's terminal. Then type 'git remote rm origin' into the terminal to sever the link with the original.
 
 ## Credits
 
