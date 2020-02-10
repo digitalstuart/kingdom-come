@@ -52,16 +52,18 @@ WIREFRAME 3
 
 ### Features left to implement
 
-* 
-* 
-* 
-* 
+* Modals
+* Calling from the API/marker clustering/info window styling
+* List view for map
 
 ## Technologies
 
 This project uses HTML, CSS and JavaScript, plus Bootstrap and jQuery.
-
+https://mattboldt.com/demos/typed-js/
+https://github.com/mattboldt/typed.js/blob/master/README.md
+https://drive.google.com/file/d/1yCbLe0qT6v84VhX0o8P9Eiti4GL8AUj8/view
 Here, mention Google Maps API, typed.js, etc.
+http://jsfiddle.net/apougher/WEK7C/
 
 ## Testing
 
@@ -77,8 +79,16 @@ My site was then automatically published at https://digitalstuart.github.io/king
 
 ### Content
 
+* The 'bouncing arrow' code was obtained from https://jsfiddle.net/Hybridx24/9fos1r9f.
+* For calling .json files from Google Maps API - https://softauthor.com/google-maps-javascript-places-api.
+* For removing all other default markers from Google map - https://stackoverflow.com/questions/7538444/how-do-i-remove-default-markers.
+* For JavaScript media queries - https://www.w3schools.com/howto/howto_js_media_queries.asp
+* For scrolling to the top with a 'back to menu' button (since removed from the site), I referred to https://www.w3schools.com/howto/howto_js_scroll_to_top.asp and https://www.sitepoint.com/community/t/scrolltop-to-a-div-instead-of-body-solved/213672.
+
 ### Media
 
 The photos used in this site were sourced from Google image searches.
 
 ### Acknowledgements
+
+My massive thanks and appreciation go to my project mentor, Ali Ashik, and Code Institute tutor, Stephen Moody, for their help, guidance and instructions on code for working with .json files from the Google Maps API.
