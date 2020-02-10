@@ -137,7 +137,7 @@ let traleeStaying = '{ "traleeStayingString" : [' +
             content: mapContent
         });
 
-        eatingMarker.addListener('mouseover', function () {
+        eatingMarker.addListener('click', function () {
             infowindow.open(map, eatingMarker);
         });
 
@@ -163,7 +163,7 @@ let traleeStaying = '{ "traleeStayingString" : [' +
             content: mapContent
         });
 
-        attractionsMarker.addListener('mouseover', function () {
+        attractionsMarker.addListener('click', function () {
             infowindow.open(map, attractionsMarker);
         });
 
@@ -188,7 +188,7 @@ let traleeStaying = '{ "traleeStayingString" : [' +
             content: mapContent
         });
 
-        stayingMarker.addListener('mouseover', function () {
+        stayingMarker.addListener('click', function () {
             infowindow.open(map, stayingMarker);
         });
 
