@@ -30,11 +30,9 @@ SCREENSHOT
 
 SCREENSHOT
 
-I used Balsamiq to create some wireframes for the project, they further illustrate the layout and content ideas which I outlined above.
+I used Balsamiq to create some wireframes for the project. This initial one shows that the basic premise for the website was clear from the start, however the structure and layout was modified to make it more dynamic and interactive.
 
-WIREFRAME 1
-WIREFRAME 2
-WIREFRAME 3
+![alt text](https://i.imgur.com/6Ro7Wcy.jpg "Kingdom Come wireframe")
 
 ## Features
 
@@ -44,26 +42,28 @@ WIREFRAME 3
 * The navbar and dropdown burger menu show options to click for each of the five main towns, which are neatly presented in alphabetical order.
 * The landing page has an attractive hero image when each town is clicked. The default is Dingle, which is first alphabetically, but is also fitting to be at the forefront because of the beautiful image of the Dingle Peninsula.
 * The 'three things' oval-shaped images are desgined to further entice the user with a glimpse at some of the main things each town/area has to offer.
+    * I added modals for each of the images (see screenshot below), but unfortunately I encountered issues with not being able to close them on mobile devices. I also tried some code for only having the modals as working functionality on larger screens, however time constraints meant I had to move them into 'features left to implement'.
+![alt text](https://i.imgur.com/ISAwCcb.jpg "Kingdom Come screenshot")
 * The 'bouncing arrow' map link at the bottom of the landing page is a call to action for the website user to see that there is more content further down. It is also clickable and uses an anchor link.
-* 
-* 
-* 
-* 
+* The Google map contains 5x markers for restaurants, hotels and attractions. The map content dynamically changes when each town name is clicked. Each marker icon has an 'info window'. There is a map key which behaves responsively. NB: the Listowel map has fewer icons due to, well, fewer places of note!
+    * My work on the map began with calling .json files from the Google Maps API and working with them in Gitpod (e.g. the 'tralee_restaurants.json' file). I did manage to write a for loop whereby I could iterate through the data (with a successful console.log test) and place markers on the map by accessing the latitude and longitude keys and values. 
+    * I was also working on a checkbox where users could select to see only restaurants or only hotels (as there were a lot more markers than the final deployed version of the site). I was referring to this code for the checkbox testing - http://jsfiddle.net/apougher/WEK7C.
+    * Unfortunately I then got to a point where I felt my JavaScript knowledge and aptitude was not yet strong enough for me to be able complete all my desired features in the project timeframe. At this point I decided to go back to having hard-coded data for the map.
+* The quotes section uses the Bootstrap accordion functionality, with CSS styling and responsive behaviour. The quotes dynamically change according to which town is selected. NB: the landing page has real quotes, all other towns contain filler text due to project time pressures.
+    * I also played around with some nice functionality from https://mattboldt.com/demos/typed-js for the quotes section. I did manage adapt some of the code in order to create a typing effect for my quotes (an example can be seen at this link - https://drive.google.com/file/d/1yCbLe0qT6v84VhX0o8P9Eiti4GL8AUj8/view); unfortunately though, it led to performance issues and bugs which I was unable to solve at this stage of my learning.
+
+NB: my work during the project with the Google Maps API, .json files, modals and the typed.js functionality can be seen in the version control history.
 
 ### Features left to implement
 
-* Modals
-* Calling from the API/marker clustering/info window styling
-* List view for map
+* Modals for the 'three things' images, different ones for each town.
+* Populating the map from the Google Maps API/.json files, rather than hard-coded data. I would also look at marker clustering and 'info window' styling.
+* I would also aim for the map to have a companion list view for all the markers, containing extra content such as images and external website links.
 
 ## Technologies
 
 This project uses HTML, CSS and JavaScript, plus Bootstrap and jQuery.
-https://mattboldt.com/demos/typed-js/
-https://github.com/mattboldt/typed.js/blob/master/README.md
-https://drive.google.com/file/d/1yCbLe0qT6v84VhX0o8P9Eiti4GL8AUj8/view
 Here, mention Google Maps API, typed.js, etc.
-http://jsfiddle.net/apougher/WEK7C/
 
 ## Testing
 
