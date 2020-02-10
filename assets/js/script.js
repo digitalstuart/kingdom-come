@@ -135,10 +135,12 @@ function modalFunction(y) {
     if (y.matches) {
         var element = document.getElementById("changeModalPosition");
         element.classList.remove("modal-dialog-centered");
-        element.classList.add("modal-dialog");
+    } else {
+        var element = document.getElementById("changeModalPosition");
+        element.classList.add("modal-dialog-");
     }
 }
 
-var y = window.matchMedia("(min-width: 630px)")
+var y = window.matchMedia("(max-width: 630px)")
 modalFunction(y) // Call listener function at run time
 y.addListener(modalFunction) // Attach listener function on state changes
