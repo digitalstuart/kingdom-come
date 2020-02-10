@@ -18,10 +18,12 @@ let quotes = '{ "quotesString" : [' +
 let quotesObject = JSON.parse(quotes);
 
 document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("background-image").style.backgroundImage = "url('assets/images/kenmare.jpg')" });
-document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("quote-one").innerHTML = quotesObject.quotesString[3].quote + " " + quotesObject.quotesString[3].who });
+document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("quote-one").innerHTML = quotesObject.quotesString[3].quote });
+document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("who-one").innerHTML = quotesObject.quotesString[3].who });
 document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("quote-two").innerHTML = quotesObject.quotesString[4].quote });
 document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("who-two").innerHTML = quotesObject.quotesString[4].who });
-document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("quote-three").innerHTML = quotesObject.quotesString[5].quote + " " + quotesObject.quotesString[5].who });
+document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("quote-three").innerHTML = quotesObject.quotesString[5].quote });
+document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("who-three").innerHTML = quotesObject.quotesString[5].who });
 document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("three-things-one").src = 'assets/images/kenmare-reenagross.jpg' });
 document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("three-things-two").src = 'assets/images/kenmare-square.jpg' });
 document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("three-things-three").src = 'assets/images/kenmare-main.jpg' });
@@ -35,9 +37,12 @@ document.getElementById("kenmare-link").addEventListener("click", function () { 
 document.getElementById("kenmare-link").addEventListener("click", function () { document.getElementById("list-more").style.display = "inline" });
 
 document.getElementById("killarney-link").addEventListener("click", function () { document.getElementById("background-image").style.backgroundImage = "url('assets/images/killarney.jpg')" });
-document.getElementById("killarney-link").addEventListener("click", function () { document.getElementById("quote-one").innerHTML = quotesObject.quotesString[6].quote + " " + quotesObject.quotesString[6].who });
-document.getElementById("killarney-link").addEventListener("click", function () { document.getElementById("quote-two").innerHTML = quotesObject.quotesString[7].quote + " " + quotesObject.quotesString[7].who });
-document.getElementById("killarney-link").addEventListener("click", function () { document.getElementById("quote-three").innerHTML = quotesObject.quotesString[8].quote + " " + quotesObject.quotesString[8].who });
+document.getElementById("killarney-link").addEventListener("click", function () { document.getElementById("quote-one").innerHTML = quotesObject.quotesString[6].quote });
+document.getElementById("killarney-link").addEventListener("click", function () { document.getElementById("who-one").innerHTML = quotesObject.quotesString[6].who });
+document.getElementById("killarney-link").addEventListener("click", function () { document.getElementById("quote-two").innerHTML = quotesObject.quotesString[7].quote });
+document.getElementById("killarney-link").addEventListener("click", function () { document.getElementById("who-two").innerHTML = quotesObject.quotesString[7].who });
+document.getElementById("killarney-link").addEventListener("click", function () { document.getElementById("quote-three").innerHTML = quotesObject.quotesString[8].quote });
+document.getElementById("killarney-link").addEventListener("click", function () { document.getElementById("who-three").innerHTML = quotesObject.quotesString[8].who });
 document.getElementById("killarney-link").addEventListener("click", function () { document.getElementById("three-things-one").src = 'assets/images/killarney-muckross.jpg' });
 document.getElementById("killarney-link").addEventListener("click", function () { document.getElementById("three-things-two").src = 'assets/images/killarney-horses.jpg' });
 document.getElementById("killarney-link").addEventListener("click", function () { document.getElementById("three-things-three").src = 'assets/images/killarney-town.jpg' });
@@ -51,9 +56,12 @@ document.getElementById("killarney-link").addEventListener("click", function () 
 document.getElementById("killarney-link").addEventListener("click", function () { document.getElementById("list-more").style.display = "inline" });
 
 document.getElementById("listowel-link").addEventListener("click", function () { document.getElementById("background-image").style.backgroundImage = "url('assets/images/listowel.jpg')" });
-document.getElementById("listowel-link").addEventListener("click", function () { document.getElementById("quote-one").innerHTML = quotesObject.quotesString[9].quote + " " + quotesObject.quotesString[9].who });
-document.getElementById("listowel-link").addEventListener("click", function () { document.getElementById("quote-two").innerHTML = quotesObject.quotesString[10].quote + " " + quotesObject.quotesString[10].who });
-document.getElementById("listowel-link").addEventListener("click", function () { document.getElementById("quote-three").innerHTML = quotesObject.quotesString[11].quote + " " + quotesObject.quotesString[11].who });
+document.getElementById("listowel-link").addEventListener("click", function () { document.getElementById("quote-one").innerHTML = quotesObject.quotesString[9].quote });
+document.getElementById("listowel-link").addEventListener("click", function () { document.getElementById("who-one").innerHTML = quotesObject.quotesString[9].who });
+document.getElementById("listowel-link").addEventListener("click", function () { document.getElementById("quote-two").innerHTML = quotesObject.quotesString[10].quote });
+document.getElementById("listowel-link").addEventListener("click", function () { document.getElementById("who-two").innerHTML = quotesObject.quotesString[10].who });
+document.getElementById("listowel-link").addEventListener("click", function () { document.getElementById("quote-three").innerHTML = quotesObject.quotesString[11].quote });
+document.getElementById("listowel-link").addEventListener("click", function () { document.getElementById("who-three").innerHTML = quotesObject.quotesString[11].who });
 document.getElementById("listowel-link").addEventListener("click", function () { document.getElementById("three-things-one").src = 'assets/images/listowel-monorail.jpg' });
 document.getElementById("listowel-link").addEventListener("click", function () { document.getElementById("three-things-two").src = 'assets/images/listowel-castle.jpg' });
 document.getElementById("listowel-link").addEventListener("click", function () { document.getElementById("three-things-three").src = 'assets/images/listowel-garden.jpg' });
@@ -67,9 +75,12 @@ document.getElementById("listowel-link").addEventListener("click", function () {
 document.getElementById("listowel-link").addEventListener("click", function () { document.getElementById("list-more").style.display = "none" });
 
 document.getElementById("tralee-link").addEventListener("click", function () { document.getElementById("background-image").style.backgroundImage = "url('assets/images/tralee.jpg')" });
-document.getElementById("tralee-link").addEventListener("click", function () { document.getElementById("quote-one").innerHTML = quotesObject.quotesString[12].quote + " " + quotesObject.quotesString[12].who });
-document.getElementById("tralee-link").addEventListener("click", function () { document.getElementById("quote-two").innerHTML = quotesObject.quotesString[13].quote + " " + quotesObject.quotesString[13].who });
-document.getElementById("tralee-link").addEventListener("click", function () { document.getElementById("quote-three").innerHTML = quotesObject.quotesString[14].quote + " " + quotesObject.quotesString[14].who });
+document.getElementById("tralee-link").addEventListener("click", function () { document.getElementById("quote-one").innerHTML = quotesObject.quotesString[12].quote });
+document.getElementById("tralee-link").addEventListener("click", function () { document.getElementById("who-one").innerHTML = quotesObject.quotesString[12].who });
+document.getElementById("tralee-link").addEventListener("click", function () { document.getElementById("quote-two").innerHTML = quotesObject.quotesString[13].quote });
+document.getElementById("tralee-link").addEventListener("click", function () { document.getElementById("who-two").innerHTML = quotesObject.quotesString[13].who });
+document.getElementById("tralee-link").addEventListener("click", function () { document.getElementById("quote-three").innerHTML = quotesObject.quotesString[14].quote });
+document.getElementById("tralee-link").addEventListener("click", function () { document.getElementById("who-three").innerHTML = quotesObject.quotesString[14].who });
 document.getElementById("tralee-link").addEventListener("click", function () { document.getElementById("three-things-one").src = 'assets/images/tralee-blennerville.jpg' });
 document.getElementById("tralee-link").addEventListener("click", function () { document.getElementById("three-things-two").src = 'assets/images/tralee-park.jpg' });
 document.getElementById("tralee-link").addEventListener("click", function () { document.getElementById("three-things-three").src = 'assets/images/tralee-aquadome.jpg' });
@@ -83,9 +94,12 @@ document.getElementById("tralee-link").addEventListener("click", function () { d
 document.getElementById("tralee-link").addEventListener("click", function () { document.getElementById("list-more").style.display = "inline" });
 
 document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("background-image").style.backgroundImage = "url('assets/images/dingle.jpg')" });
-document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("quote-one").innerHTML = quotesObject.quotesString[0].quote + " " + quotesObject.quotesString[0].who });
-document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("quote-two").innerHTML = quotesObject.quotesString[1].quote + " " + quotesObject.quotesString[1].who });
-document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("quote-three").innerHTML = quotesObject.quotesString[2].quote + " " + quotesObject.quotesString[2].who });
+document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("quote-one").innerHTML = quotesObject.quotesString[0].quote });
+document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("who-one").innerHTML = quotesObject.quotesString[0].who });
+document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("quote-two").innerHTML = quotesObject.quotesString[1].quote });
+document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("who-two").innerHTML = quotesObject.quotesString[1].who });
+document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("quote-three").innerHTML = quotesObject.quotesString[2].quote });
+document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("who-three").innerHTML = quotesObject.quotesString[2].who });
 document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("three-things-one").src = 'assets/images/dingle-fungie.jpg' });
 document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("three-things-two").src = 'assets/images/dingle-inch.jpg' });
 document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("three-things-three").src = 'assets/images/dingle-oceanworld.jpg' });
