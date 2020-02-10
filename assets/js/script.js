@@ -113,25 +113,25 @@ document.getElementById("dingle-link").addEventListener("click", function () { d
 document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("list-more").style.display = "inline" });
 
 function myFunction(x) {
-    if (x.matches) { // If media query matches
+    if (x.matches) { 
         document.getElementById("eat").innerHTML = ("Places to eat")
     } else {
         document.getElementById("eat").innerHTML = ("Eat")
     }
 
-    if (x.matches) { // If media query matches
+    if (x.matches) { 
         document.getElementById("stay").innerHTML = ("Places to stay")
     } else {
         document.getElementById("stay").innerHTML = ("Stay")
     }
 
-    if (x.matches) { // If media query matches
+    if (x.matches) { 
         document.getElementById("go").innerHTML = ("Places to go")
     } else {
         document.getElementById("go").innerHTML = ("Go")
     }
 
-    if (x.matches) { // If media query matches
+    if (x.matches) { 
         document.getElementById("more").innerHTML = ("Zoom out for more")
     } else {
         document.getElementById("more").innerHTML = ("More")
@@ -140,37 +140,5 @@ function myFunction(x) {
 }
 
 var x = window.matchMedia("(min-width: 630px)")
-myFunction(x) // Call listener function at run time
-x.addListener(myFunction) // Attach listener function on state changes
-
-// MODAL
-
-function modalFunction(y) {
-    if (y.matches) {
-        var element = document.getElementById("changeModalPosition");
-        element.classList.remove("modal-dialog-centered");
-    } else {
-        var element = document.getElementById("changeModalPosition");
-        element.classList.add("modal-dialog");
-    }
-
-    if (y.matches) {
-        var element = document.getElementById("changeModalPosition2");
-        element.classList.remove("modal-dialog-centered");
-    } else {
-        var element = document.getElementById("changeModalPosition2");
-        element.classList.add("modal-dialog");
-    }
-
-    if (y.matches) {
-        var element = document.getElementById("changeModalPosition3");
-        element.classList.remove("modal-dialog-centered");
-    } else {
-        var element = document.getElementById("changeModalPosition3");
-        element.classList.add("modal-dialog");
-    }
-}
-
-var y = window.matchMedia("(max-width: 630px)")
-modalFunction(y) // Call listener function at run time
-y.addListener(modalFunction) // Attach listener function on state changes
+myFunction(x) 
+x.addListener(myFunction) 
