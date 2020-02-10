@@ -12,12 +12,12 @@
 	<title>Kingdom Come</title>
 </head>
 
-<body id="topheader">
+<body>
 	<nav class="navbar fixed-top navbar-expand-md">
 		<a class="navbar-brand" href="index.html">KINGDOM COME</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span><i class="fas fa-bars"></i></span>
-                </button>
+        </button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
@@ -38,15 +38,15 @@
 			</ul>
 		</div>
 	</nav>
-
+	<!-- Hero image and 'three things' images -->
 	<section class="container-fluid" id="background-image">
 		<div class="row">
 			<div class="col-6 offset-3 col-sm-12 offset-sm-0 ">
 				<div class="flex-container three-things text-center">
-					<div class="flex-item">
+                    <!-- Classes used for CSS styling, IDs for Javascript -->
+					<div class="flex-item">                    
 						<img class="three-things-image" id="three-things-one" src="assets/images/dingle-fungie.jpg" alt="Statue of Fungie the dolphin in Dingle">
 						<div class="three-things-text" id="text-one">Fungie</div>
-						<div class="typed"></div>
 					</div>
 					<div class=" flex-item">
 						<img class="three-things-image" id="three-things-two" src="assets/images/dingle-inch.jpg" alt="Inch Beach on the Dingle Peninsula" >
@@ -59,7 +59,7 @@
 				</div>
 			</div>
 		</div>
-		</div>
+		<!-- The 'bouncing arrow' code was obtained from https://jsfiddle.net/Hybridx24/9fos1r9f -->
 		<div class="row">
 			<div class="col">
 				<div class="arrow bounce">
@@ -70,11 +70,12 @@
 			</div>
 		</div>
 	</section>
-
 	<section class="container-fluid">
 		<div class="row">
 			<div class="col">
+				<!-- For removing all other default markers from Google map - https://stackoverflow.com/questions/7538444/how-do-i-remove-default-markers -->
 				<div id="map"></div>
+                <!-- Key of icons for the map -->
 				<div class="text-center" id="info-box">
 					<ul class="list-inline" id="info-box-list">
 						<li class="list-inline-item">
@@ -94,7 +95,7 @@
 			</div>
 		</div>
 	</section>
-
+    <!-- Bootstrap accordion for quotes section -->
 	<section class="container-fluid container-accordion">
 		<div class="row">
 			<div class="col">
@@ -109,6 +110,7 @@
 							data-parent="#accordionExample">
 							<div class="card-body">
 								<blockquote>
+                                    <!-- IDs used for JavaScript-->
 									<p id="quote-one">It is beautiful. It is well worth the trip. It is something
 										everyone should do if they get the chance.</p>
 								</blockquote>
@@ -156,7 +158,6 @@
 			</div>
 		</div>
 	</section>
-
 	<script src="assets/js/map.js"></script>
 	<script async defer
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6wPg4sL6mFGbTE_8-469dlsDYW-0F5-Q&libraries=places&callback=initMap">

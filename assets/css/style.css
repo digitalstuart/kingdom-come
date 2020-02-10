@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Uncial+Antiqua&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
 
+/* SITE-WIDE */
+
 html {
     margin: 0;
     padding: 0;    
@@ -10,24 +12,7 @@ body {
     font-family: "Uncial Antiqua", sans-serif;
 }
 
-blockquote {
-  background: #f9f9f9;
-  border-left: 10px solid #ccc;
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
-}
-
-blockquote:before {
-  color: #ccc;  
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
-}
-
-blockquote p {
-  display: inline;
-}
+/* NAVBAR */
 
 .navbar {
     color: rgb(255, 221, 0);
@@ -61,6 +46,8 @@ blockquote p {
     padding-right: 1px;
     padding-left: 1px;
 }
+
+/* LANDING PAGE */
 
 #background-image {
     background: url("../images/dingle.jpg") no-repeat center center scroll;
@@ -104,16 +91,6 @@ blockquote p {
     font-size: 0.8rem;
 }
 
-.modal-content {
-    font-family: 'Courgette', sans-serif;
-}
-
-#map {
-    margin-top: 1rem;    
-    min-height: 530px;
-    border: 1px solid black;
-}
-
 #map-link {
     position: absolute;
     bottom: 30px;
@@ -122,6 +99,14 @@ blockquote p {
 #map-link > a {
     color: #fff;
     text-decoration: none;
+}
+
+/* MAP & KEY */
+
+#map {
+    margin-top: 1rem;    
+    min-height: 530px;
+    border: 1px solid black;
 }
 
 #info-box {
@@ -134,6 +119,8 @@ blockquote p {
 #info-box-list {
     list-style-type: none;
 }
+
+/* ACCORDION QUOTES */
 
 .btn-link:hover {
     text-decoration: none;
@@ -177,7 +164,97 @@ blockquote {
     font-size: 1.25rem;
 }
 
-/* Bounce down arrow */
+/* MEDIA QUERIES */
+
+@media only screen and (min-width: 768px) {
+
+.nav-item {
+    margin-top: 13px;
+}
+
+.nav-item:not(:last-child) {
+    margin-right: 20px;  
+}
+
+.accordion {
+    text-align: center;
+}
+
+.card {
+    width: 31vw;
+    display: inline-block;
+}
+
+}
+
+@media only screen and (max-width: 768px) {
+
+#map {
+    min-height: 430px;
+}
+
+}
+
+@media only screen and (min-width: 576px) {
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.flex-item:not(:last-child) {
+    margin-right: 2rem;
+    margin-bottom: 0;
+}
+
+}
+
+@media only screen and (max-width: 425px) {
+
+.three-things {
+    margin-top: 15rem;
+    color: #fff;
+}
+
+#three-things-three, #text-three {
+    display: none;    
+}
+
+#map-link {
+    position: absolute;
+    bottom: 18px;
+}
+
+#map-link > a {
+    font-size: 10px;
+}
+
+.arrow {
+    width: 30px;
+    height: 30px;
+}
+
+#map {
+    min-height: 350px;
+}
+
+}
+
+@media only screen and (min-width: 410px) {
+
+.three-things-text {
+    color: black;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.9rem;
+}
+
+} 
+
+/* BOUNCE DOWN ARROW (https://jsfiddle.net/Hybridx24/9fos1r9f) */
 
 @-moz-keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
@@ -245,97 +322,4 @@ blockquote {
     -moz-animation: bounce 2s infinite;
     -webkit-animation: bounce 2s infinite;
     animation: bounce 2s infinite;
-}
-
-@media only screen and (min-width: 768px) {
-
-.nav-item {
-    margin-top: 13px;
-}
-
-.nav-item:not(:last-child) {
-    margin-right: 20px;  
-}
-
-.accordion {
-    text-align: center;
-}
-
-.card {
-    width: 31vw;
-    display: inline-block;
-}
-
-}
-
-@media only screen and (max-width: 768px) {
-
-#map {
-    min-height: 430px;
-    }
-
-}
-
-@media only screen and (min-width: 576px) {
-
-.flex-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.flex-item:not(:last-child) {
-    margin-right: 2rem;
-    margin-bottom: 0;
-}
-
-}
-
-@media only screen and (max-width: 425px) {
-
-.three-things {
-    margin-top: 15rem;
-    color: #fff;
-}
-
-#map-link {
-    position: absolute;
-    bottom: 18px;
-}
-
-#map-link > a {
-    font-size: 10px;
-    }
-
-.arrow {
-    width: 30px;
-    height: 30px;
-}
-
-#map {
-    min-height: 350px;
-    }
-
-}
-
-@media only screen and (min-width: 410px) {
-
-.three-things-text {
-    color: black;
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 0.9rem;
-}
-
-}  
-
-@media only screen and (max-width: 425px) {
-
-#three-things-three, #text-three {
-    display: none;    
-
-}
-
 }

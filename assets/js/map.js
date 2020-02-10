@@ -151,7 +151,7 @@ let traleeStaying = '{ "traleeStayingString" : [' +
             infowindow.close();
         });
 
-    };
+    }
 
     for (let i = 0; i < attractionsObject.attractionsString.length; i++) {
         let lat = attractionsObject.attractionsString[i].lat;
@@ -176,7 +176,7 @@ let traleeStaying = '{ "traleeStayingString" : [' +
         attractionsMarker.addListener('mouseout', function () {
             infowindow.close();
         });
-    };
+    }
 
     for (let i = 0; i < stayingObject.stayingString.length; i++) {
         let lat = stayingObject.stayingString[i].lat;
