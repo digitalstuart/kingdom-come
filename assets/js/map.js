@@ -1,3 +1,5 @@
+// Map data
+
 let eating = '{ "eatingString" : [' +
     '{ "formatted_address": "Green Street, Dingle, County Kerry, Ireland" , "lat": 52.1415429 , "lng": -10.2704251 , "name": "The Fish Box/Flannery\'s Seafood Bar" , "rating": 5.0 , "user_ratings_total": 500},' +
     '{ "formatted_address": "Main Street, Grove, Dingle, County Kerry, Ireland" , "lat" : 52.1415871 , "lng" : -10.2686796, "name" : "Land To Sea", "rating" : 5.0, "user_ratings_total" : 89},' +
@@ -96,7 +98,11 @@ let traleeStaying = '{ "traleeStayingString" : [' +
     '{ "formatted_address": "Oakpark, Tralee, County Kerry, Ireland" , "lat" : 52.276176, "lng" : -9.691155 , "name" : "Meadowlands Hotel" , "rating" : 4.5 , "user_ratings_total" : 757},' +
     '{ "formatted_address": "Ballyroe, Tralee, County Kerry, Ireland" , "lat" : 52.296605, "lng" : -9.750987 , "name" : "Ballyroe Heights Hotel" , "rating" : 4.5 , "user_ratings_total" : 1093} ]}';
 
+// Core map function
+
     function initMap() {
+    
+    //Base map code
 
     let myStyles = [
         {
@@ -132,7 +138,7 @@ let traleeStaying = '{ "traleeStayingString" : [' +
             icon: eatingImage
         });
 
-        let mapContent = eatingObject.eatingString[i].formatted_address + " " + eatingObject.eatingString[i].name;
+        let mapContent = "Name: " + eatingObject.eatingString[i].name + "<br>" + "Where: " + eatingObject.eatingString[i].formatted_address + "<br>" + "Rating: " + eatingObject.eatingString[i].rating + "<br>" + "No. of ratings: " + eatingObject.eatingString[i].user_ratings_total;
         let infowindow = new google.maps.InfoWindow({
             content: mapContent
         });
@@ -158,7 +164,7 @@ let traleeStaying = '{ "traleeStayingString" : [' +
             icon: attractionsImage
         });
 
-        let mapContent = attractionsObject.attractionsString[i].formatted_address + " " + attractionsObject.attractionsString[i].name;
+        let mapContent = "Name: " + attractionsObject.attractionsString[i].name + "<br>" + "Where: " + attractionsObject.attractionsString[i].formatted_address + "<br>" + "Rating: " + attractionsObject.attractionsString[i].rating + "<br>" + "No. of ratings: " + attractionsObject.attractionsString[i].user_ratings_total;
         let infowindow = new google.maps.InfoWindow({
             content: mapContent
         });
@@ -183,7 +189,7 @@ let traleeStaying = '{ "traleeStayingString" : [' +
             icon: stayingImage
         });
 
-        let mapContent = stayingObject.stayingString[i].formatted_address + " " + stayingObject.stayingString[i].name;
+        let mapContent = "Name: " + stayingObject.stayingString[i].name + "<br>" + "Where: " + stayingObject.stayingString[i].formatted_address + "<br>" + "Rating: " + stayingObject.stayingString[i].rating + "<br>" + "No. of ratings: " + stayingObject.stayingString[i].user_ratings_total;
         let infowindow = new google.maps.InfoWindow({
             content: mapContent
         });
@@ -236,12 +242,12 @@ let traleeStaying = '{ "traleeStayingString" : [' +
                 icon: eatingImage
             });
 
-            let mapContent = kenmareEatingObject.kenmareEatingString[i].formatted_address + " " + kenmareEatingObject.kenmareEatingString[i].name;
+            let mapContent = "Name: " + kenmareEatingObject.kenmareEatingString[i].name + "<br>" + "Where: " + kenmareEatingObject.kenmareEatingString[i].formatted_address + "<br>" + "Rating: " + kenmareEatingObject.kenmareEatingString[i].rating + "<br>" + "No. of ratings: " + kenmareEatingObject.kenmareEatingString[i].user_ratings_total;
             let infowindow = new google.maps.InfoWindow({
                 content: mapContent
             });
 
-            eatingMarker.addListener('mouseover', function () {
+            eatingMarker.addListener('click', function () {
                 infowindow.open(map, eatingMarker);
             });
 
@@ -262,12 +268,12 @@ let traleeStaying = '{ "traleeStayingString" : [' +
                 icon: attractionsImage
             });
 
-            let mapContent = kenmareAttractionsObject.kenmareAttractionsString[i].formatted_address + " " + kenmareAttractionsObject.kenmareAttractionsString[i].name;
+            let mapContent = "Name: " + kenmareAttractionsObject.kenmareAttractionsString[i].name + "<br>" + "Where: " + kenmareAttractionsObject.kenmareAttractionsString[i].formatted_address + "<br>" + "Rating: " + kenmareAttractionsObject.kenmareAttractionsString[i].rating + "<br>" + "No. of ratings: " + kenmareAttractionsObject.kenmareAttractionsString[i].user_ratings_total;
             let infowindow = new google.maps.InfoWindow({
                 content: mapContent
             });
 
-            attractionsMarker.addListener('mouseover', function () {
+            attractionsMarker.addListener('click', function () {
                 infowindow.open(map, attractionsMarker);
             });
 
@@ -287,12 +293,12 @@ let traleeStaying = '{ "traleeStayingString" : [' +
                 icon: stayingImage
             });
 
-            let mapContent = kenmareStayingObject.kenmareStayingString[i].formatted_address + " " + kenmareStayingObject.kenmareStayingString[i].name;
+            let mapContent = "Name: " + kenmareStayingObject.kenmareStayingString[i].name + "<br>" + "Where: " + kenmareStayingObject.kenmareStayingString[i].formatted_address + "<br>" + "Rating: " + kenmareStayingObject.kenmareStayingString[i].rating + "<br>" + "No. of ratings: " + kenmareStayingObject.kenmareStayingString[i].user_ratings_total;
             let infowindow = new google.maps.InfoWindow({
                 content: mapContent
             });
 
-            stayingMarker.addListener('mouseover', function () {
+            stayingMarker.addListener('click', function () {
                 infowindow.open(map, stayingMarker);
             });
 
@@ -342,12 +348,12 @@ let traleeStaying = '{ "traleeStayingString" : [' +
                 icon: eatingImage
             });
 
-            let mapContent = killarneyEatingObject.killarneyEatingString[i].formatted_address + " " + killarneyEatingObject.killarneyEatingString[i].name;
+            let mapContent = "Name: " + killarneyEatingObject.killarneyEatingString[i].name + "<br>" + "Where: " + killarneyEatingObject.killarneyEatingString[i].formatted_address + "<br>" + "Rating: " + killarneyEatingObject.killarneyEatingString[i].rating + "<br>" + "No. of ratings: " + killarneyEatingObject.killarneyEatingString[i].user_ratings_total;
             let infowindow = new google.maps.InfoWindow({
                 content: mapContent
             });
 
-            eatingMarker.addListener('mouseover', function () {
+            eatingMarker.addListener('click', function () {
                 infowindow.open(map, eatingMarker);
             });
 
@@ -368,12 +374,12 @@ let traleeStaying = '{ "traleeStayingString" : [' +
                 icon: attractionsImage
             });
 
-            let mapContent = killarneyAttractionsObject.killarneyAttractionsString[i].formatted_address + " " + killarneyAttractionsObject.killarneyAttractionsString[i].name;
+            let mapContent = "Name: " + killarneyAttractionsObject.killarneyAttractionsString[i].name + "<br>" + "Where: " + killarneyAttractionsObject.killarneyAttractionsString[i].formatted_address + "<br>" + "Rating: " + killarneyAttractionsObject.killarneyAttractionsString[i].rating + "<br>" + "No. of ratings: " + killarneyAttractionsObject.killarneyAttractionsString[i].user_ratings_total;
             let infowindow = new google.maps.InfoWindow({
                 content: mapContent
             });
 
-            attractionsMarker.addListener('mouseover', function () {
+            attractionsMarker.addListener('click', function () {
                 infowindow.open(map, attractionsMarker);
             });
 
@@ -393,12 +399,12 @@ let traleeStaying = '{ "traleeStayingString" : [' +
                 icon: stayingImage
             });
 
-            let mapContent = killarneyStayingObject.killarneyStayingString[i].formatted_address + " " + killarneyStayingObject.killarneyStayingString[i].name;
+            let mapContent = "Name: " + killarneyStayingObject.killarneyStayingString[i].name + "<br>" + "Where: " + killarneyStayingObject.killarneyStayingString[i].formatted_address + "<br>" + "Rating: " + killarneyStayingObject.killarneyStayingString[i].rating + "<br>" + "No. of ratings: " + killarneyStayingObject.killarneyStayingString[i].user_ratings_total;
             let infowindow = new google.maps.InfoWindow({
                 content: mapContent
             });
 
-            stayingMarker.addListener('mouseover', function () {
+            stayingMarker.addListener('click', function () {
                 infowindow.open(map, stayingMarker);
             });
 
@@ -446,12 +452,12 @@ let traleeStaying = '{ "traleeStayingString" : [' +
                 icon: eatingImage
             });
 
-            let mapContent = listowelEatingObject.listowelEatingString[i].formatted_address + " " + listowelEatingObject.listowelEatingString[i].name;
+            let mapContent = "Name: " + listowelEatingObject.listowelEatingString[i].name + "<br>" + "Where: " + listowelEatingObject.listowelEatingString[i].formatted_address + "<br>" + "Rating: " + listowelEatingObject.listowelEatingString[i].rating + "<br>" + "No. of ratings: " + listowelEatingObject.listowelEatingString[i].user_ratings_total;
             let infowindow = new google.maps.InfoWindow({
                 content: mapContent
             });
 
-            eatingMarker.addListener('mouseover', function () {
+            eatingMarker.addListener('click', function () {
                 infowindow.open(map, eatingMarker);
             });
 
@@ -472,12 +478,12 @@ let traleeStaying = '{ "traleeStayingString" : [' +
                 icon: attractionsImage
             });
 
-            let mapContent = listowelAttractionsObject.listowelAttractionsString[i].formatted_address + " " + listowelAttractionsObject.listowelAttractionsString[i].name;
+            let mapContent = "Name: " + listowelAttractionsObject.listowelAttractionsString[i].name + "<br>" + "Where: " + listowelAttractionsObject.listowelAttractionsString[i].formatted_address + "<br>" + "Rating: " + listowelAttractionsObject.listowelAttractionsString[i].rating + "<br>" + "No. of ratings: " + listowelAttractionsObject.listowelAttractionsString[i].user_ratings_total;
             let infowindow = new google.maps.InfoWindow({
                 content: mapContent
             });
 
-            attractionsMarker.addListener('mouseover', function () {
+            attractionsMarker.addListener('click', function () {
                 infowindow.open(map, attractionsMarker);
             });
 
@@ -525,12 +531,12 @@ let traleeStaying = '{ "traleeStayingString" : [' +
                 icon: eatingImage
             });
 
-            let mapContent = traleeEatingObject.traleeEatingString[i].formatted_address + " " + traleeEatingObject.traleeEatingString[i].name;
+            let mapContent = "Name: " + traleeEatingObject.traleeEatingString[i].name + "<br>" + "Where: " + traleeEatingObject.traleeEatingString[i].formatted_address + "<br>" + "Rating: " + traleeEatingObject.traleeEatingString[i].rating + "<br>" + "No. of ratings: " + traleeEatingObject.traleeEatingString[i].user_ratings_total;
             let infowindow = new google.maps.InfoWindow({
                 content: mapContent
             });
 
-            eatingMarker.addListener('mouseover', function () {
+            eatingMarker.addListener('click', function () {
                 infowindow.open(map, eatingMarker);
             });
 
@@ -551,12 +557,12 @@ let traleeStaying = '{ "traleeStayingString" : [' +
                 icon: attractionsImage
             });
 
-            let mapContent = traleeAttractionsObject.traleeAttractionsString[i].formatted_address + " " + traleeAttractionsObject.traleeAttractionsString[i].name;
+            let mapContent = "Name: " + traleeAttractionsObject.traleeAttractionsString[i].name + "<br>" + "Where: " + traleeAttractionsObject.traleeAttractionsString[i].formatted_address + "<br>" + "Rating: " + traleeAttractionsObject.traleeAttractionsString[i].rating + "<br>" + "No. of ratings: " + traleeAttractionsObject.traleeAttractionsString[i].user_ratings_total;
             let infowindow = new google.maps.InfoWindow({
                 content: mapContent
             });
 
-            attractionsMarker.addListener('mouseover', function () {
+            attractionsMarker.addListener('click', function () {
                 infowindow.open(map, attractionsMarker);
             });
 
@@ -576,12 +582,12 @@ let traleeStaying = '{ "traleeStayingString" : [' +
                 icon: stayingImage
             });
 
-            let mapContent = traleeStayingObject.traleeStayingString[i].formatted_address + " " + traleeStayingObject.traleeStayingString[i].name;
+            let mapContent = "Name: " + traleeStayingObject.traleeStayingString[i].name + "<br>" + "Where: " + traleeStayingObject.traleeStayingString[i].formatted_address + "<br>" + "Rating: " + traleeStayingObject.traleeStayingString[i].rating + "<br>" + "No. of ratings: " + traleeStayingObject.traleeStayingString[i].user_ratings_total;
             let infowindow = new google.maps.InfoWindow({
                 content: mapContent
             });
 
-            stayingMarker.addListener('mouseover', function () {
+            stayingMarker.addListener('click', function () {
                 infowindow.open(map, stayingMarker);
             });
 
@@ -621,81 +627,81 @@ let traleeStaying = '{ "traleeStayingString" : [' +
         let stayingImage = 'https://i.imgur.com/z0wt3rY.png?1';
 
         for (let i = 0; i < eatingObject.eatingString.length; i++) {
-            let lat = eatingObject.eatingString[i].lat;
-            let lng = eatingObject.eatingString[i].lng;
-            let latLng = new google.maps.LatLng(lat, lng);
-            let eatingMarker = new google.maps.Marker({
-                position: latLng,
-                map: map,
-                animation: google.maps.Animation.DROP,
-                icon: eatingImage
-            });
+        let lat = eatingObject.eatingString[i].lat;
+        let lng = eatingObject.eatingString[i].lng;
+        let latLng = new google.maps.LatLng(lat, lng);
+        let eatingMarker = new google.maps.Marker({
+            position: latLng,
+            map: map,
+            animation: google.maps.Animation.DROP,
+            icon: eatingImage
+        });
 
-            let mapContent = eatingObject.eatingString[i].formatted_address + " " + eatingObject.eatingString[i].name;
-            let infowindow = new google.maps.InfoWindow({
-                content: mapContent
-            });
+        let mapContent = "Name: " + eatingObject.eatingString[i].name + "<br>" + "Where: " + eatingObject.eatingString[i].formatted_address + "<br>" + "Rating: " + eatingObject.eatingString[i].rating + "<br>" + "No. of ratings: " + eatingObject.eatingString[i].user_ratings_total;
+        let infowindow = new google.maps.InfoWindow({
+            content: mapContent
+        });
 
-            eatingMarker.addListener('mouseover', function () {
-                infowindow.open(map, eatingMarker);
-            });
+        eatingMarker.addListener('click', function () {
+            infowindow.open(map, eatingMarker);
+        });
 
-            eatingMarker.addListener('mouseout', function () {
-                infowindow.close();
-            });
+        eatingMarker.addListener('mouseout', function () {
+            infowindow.close();
+        });
 
-        };
+    };
 
-        for (let i = 0; i < attractionsObject.attractionsString.length; i++) {
-            let lat = attractionsObject.attractionsString[i].lat;
-            let lng = attractionsObject.attractionsString[i].lng;
-            let latLng = new google.maps.LatLng(lat, lng);
-            let attractionsMarker = new google.maps.Marker({
-                position: latLng,
-                map: map,
-                animation: google.maps.Animation.DROP,
-                icon: attractionsImage
-            });
+    for (let i = 0; i < attractionsObject.attractionsString.length; i++) {
+        let lat = attractionsObject.attractionsString[i].lat;
+        let lng = attractionsObject.attractionsString[i].lng;
+        let latLng = new google.maps.LatLng(lat, lng);
+        let attractionsMarker = new google.maps.Marker({
+            position: latLng,
+            map: map,
+            animation: google.maps.Animation.DROP,
+            icon: attractionsImage
+        });
 
-            let mapContent = attractionsObject.attractionsString[i].formatted_address + " " + attractionsObject.attractionsString[i].name;
-            let infowindow = new google.maps.InfoWindow({
-                content: mapContent
-            });
+        let mapContent = "Name: " + attractionsObject.attractionsString[i].name + "<br>" + "Where: " + attractionsObject.attractionsString[i].formatted_address + "<br>" + "Rating: " + attractionsObject.attractionsString[i].rating + "<br>" + "No. of ratings: " + attractionsObject.attractionsString[i].user_ratings_total;
+        let infowindow = new google.maps.InfoWindow({
+            content: mapContent
+        });
 
-            attractionsMarker.addListener('mouseover', function () {
-                infowindow.open(map, attractionsMarker);
-            });
+        attractionsMarker.addListener('click', function () {
+            infowindow.open(map, attractionsMarker);
+        });
 
-            attractionsMarker.addListener('mouseout', function () {
-                infowindow.close();
-            });
-        };
+        attractionsMarker.addListener('mouseout', function () {
+            infowindow.close();
+        });
+    };
 
-        for (let i = 0; i < stayingObject.stayingString.length; i++) {
-            let lat = stayingObject.stayingString[i].lat;
-            let lng = stayingObject.stayingString[i].lng;
-            let latLng = new google.maps.LatLng(lat, lng);
-            let stayingMarker = new google.maps.Marker({
-                position: latLng,
-                map: map,
-                animation: google.maps.Animation.DROP,
-                icon: stayingImage
-            });
+    for (let i = 0; i < stayingObject.stayingString.length; i++) {
+        let lat = stayingObject.stayingString[i].lat;
+        let lng = stayingObject.stayingString[i].lng;
+        let latLng = new google.maps.LatLng(lat, lng);
+        let stayingMarker = new google.maps.Marker({
+            position: latLng,
+            map: map,
+            animation: google.maps.Animation.DROP,
+            icon: stayingImage
+        });
 
-            let mapContent = stayingObject.stayingString[i].formatted_address + " " + stayingObject.stayingString[i].name;
-            let infowindow = new google.maps.InfoWindow({
-                content: mapContent
-            });
+        let mapContent = "Name: " + stayingObject.stayingString[i].name + "<br>" + "Where: " + stayingObject.stayingString[i].formatted_address + "<br>" + "Rating: " + stayingObject.stayingString[i].rating + "<br>" + "No. of ratings: " + stayingObject.stayingString[i].user_ratings_total;
+        let infowindow = new google.maps.InfoWindow({
+            content: mapContent
+        });
 
-            stayingMarker.addListener('mouseover', function () {
-                infowindow.open(map, stayingMarker);
-            });
+        stayingMarker.addListener('click', function () {
+            infowindow.open(map, stayingMarker);
+        });
 
-            stayingMarker.addListener('mouseout', function () {
-                infowindow.close();
-            });
+        stayingMarker.addListener('mouseout', function () {
+            infowindow.close();
+        });
 
-        };
+    };
 
     });
 
