@@ -261,11 +261,16 @@ blockquote {
     text-align: center;
 }
 
+.card {
+    width: 31vw;
+    display: inline-block;
+}
+
 }
 
 @media only screen and (max-width: 768px) {
 
-div#map {
+#map {
     min-height: 430px;
     }
 
@@ -307,7 +312,7 @@ div#map {
     height: 30px;
 }
 
-div#map {
+#map {
     min-height: 350px;
     }
 
@@ -325,3 +330,12 @@ div#map {
 }
 
 }  
+
+@media only screen and (max-width: 425px) {
+
+#three-things-three, #text-three {
+    display: none;    
+
+}
+
+}
