@@ -1,4 +1,4 @@
-// Map data
+// Map data for towns
 
 let eating = '{ "eatingString" : [' +
     '{ "formatted_address": "Green Street, Dingle, County Kerry, Ireland" , "lat": 52.1415429 , "lng": -10.2704251 , "name": "The Fish Box/Flannery\'s Seafood Bar" , "rating": 5.0 , "user_ratings_total": 500},' +

@@ -1,6 +1,6 @@
 # Kingdom Come
 
-PROMO IMAGE HERE
+![alt text](https://i.imgur.com/AnMrH9n.jpg "Kingdom Come as seen on different devices")
 
 This is intended to be a destination website for County Kerry in Ireland, aka The Kingdom. It sets out to promote the five main towns around the county, using images, relevant information, mapping of key locations and glowing testimonials from visitors and other interested parties.
 
@@ -51,7 +51,7 @@ I used Balsamiq to create some wireframes for the project. This initial one show
     * I was also working on a checkbox where users could select to see only restaurants or only hotels (as there were a lot more markers than the final deployed version of the site). I was referring to this code for the checkbox testing - http://jsfiddle.net/apougher/WEK7C.
     * Unfortunately I then got to a point where I felt my JavaScript knowledge and aptitude was not yet strong enough for me to be able complete all my desired features in the project timeframe. At this point I decided to go back to having hard-coded data for the map.
 * The quotes section uses the Bootstrap accordion functionality, with CSS styling and responsive behaviour. The quotes dynamically change according to which town is selected. NB: the landing page has real quotes, all other towns contain filler text due to project time pressures.
-    * I also played around with some nice functionality from https://mattboldt.com/demos/typed-js for the quotes section. I did manage adapt some of the code in order to create a typing effect for my quotes (an example can be seen at this link - https://drive.google.com/file/d/1yCbLe0qT6v84VhX0o8P9Eiti4GL8AUj8/view); unfortunately though, it led to performance issues and bugs which I was unable to solve at this stage of my learning.
+    * I also played around with some nice functionality from https://mattboldt.com/demos/typed-js for the quotes section. I did manage to adapt some of the code in order to create a typing effect for my quotes (an example can be seen at this link - https://drive.google.com/file/d/1yCbLe0qT6v84VhX0o8P9Eiti4GL8AUj8/view); unfortunately though, it led to performance issues and bugs which I was unable to solve at this stage of my learning.
 
 NB: my work during the project with the Google Maps API, .json files, modals and the typed.js functionality can be seen in the version control history.
 
@@ -89,7 +89,7 @@ I also worked extensively with the Google Maps API developer documentation, as w
 
 4. Map
     * Clicking a marker icon displays an 'info window' with all fields populated correctly
-    * 'Mouseout' functionality makes the 'info window' disappear
+    * 'Mouseout' functionality makes the 'info window' disappear (the 'x' symbol on the 'info window' has to be clicked on mobile)
     * The map has zooming and panning working correctly
     * The map updates with new markers when a different town name is selected
     * The main cluster of markers remain visible on the map in mobile view
@@ -104,9 +104,9 @@ The site was manually viewed and tested in the Chrome and Firefox browsers on a 
 
 This was done with a view to ensuring that: navigation functions respond appropriately on mobile and desktop; responsive changes in the navbar, site layout, background images, text and map are all present and correct for different devices; and the site remains fully functional, useable and well presented across all screen sizes.
 
-Testing on iOS mobile/tablet devices identified a previously known issue, where using 'background-attachment: fixed;' led to poorly sized images and no background scrolling effect. Background-attachment was thus changed to 'scroll' in order to fix the issue. 
+On some mobile devices, the 3rd of the 'three things' images overlapped beyond the bottom of the viewport. This was solved with a short-term fix of 'display: none'.
 
-Finally, I also ran my code through the W3C validator tools for HTML/CSS and corrected the small number of errors which appeared.
+Finally, I also ran my code through the W3C validator tools for HTML/CSS, as well as JSHint.
 
 ## Deployment
 

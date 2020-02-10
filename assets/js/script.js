@@ -152,7 +152,7 @@ document.getElementById("dingle-link").addEventListener("click", function () { d
 document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("three-things-two").alt = 'Inch Beach on the Dingle Peninsula'; });
 document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("three-things-three").alt = 'Tunnel aquarium at Dingle Oceanworld'; });
 document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("text-one").innerHTML = 'Fungie'; });
-document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("text-two").innerHTML = 'Inch;'; });
+document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("text-two").innerHTML = 'Inch'; });
 document.getElementById("dingle-link").addEventListener("click", function () { document.getElementById("text-three").innerHTML = 'Oceanworld'; });
 
 // Bring back missing map key elements after Listowel click makes them 'display:none'
